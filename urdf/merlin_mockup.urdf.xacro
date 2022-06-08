@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="merlin_mockup">
+  <xacro:arg name="example_arg" default="" />
+  <xacro:if value="$(arg example_arg)">
+    <!-- just printing this comment-->
+  </xacro:if>
+
+  <link name="wood_frame">
+    <visual>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/aso_freezer_wood_only.stl" scale="0.02527 0.02527 0.02527"/>
+      </geometry>
+    </visual>
+    <collision> 
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/aso_freezer_wood_only.stl" scale="0.02527 0.02527 0.02527"/>
+      </geometry>
+    </collision>    
+  </link>
+
+  <link name="door">
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 ${pi}"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_outer_door.stl"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 ${pi}"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_outer_door.stl"/>
+      </geometry>
+    </collision>    
+  </link>
+
+  <!-- positioning is totally wrong but just checking to see if it all hooks up at this point-->
+  <joint name="door_to_frame_joint" type="revolute">
+    <parent link="wood_frame"/>
+    <child link="door"/>
+    <origin xyz="0 0.025 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0" />
+    <limit effort="10" velocity="10" lower="0" upper="${pi/2}"/>
+  </joint>
+
+</robot>
