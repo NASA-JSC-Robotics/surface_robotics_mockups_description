@@ -14,8 +14,15 @@ def generate_launch_description():
             description="example arg to show how to do this",
         )
     )
-
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "rviz",
+            default_value='true',
+            description="launch rviz",
+        )
+    )
     example_arg = LaunchConfiguration("example_arg")
+    rviz = LaunchConfiguration("rviz")
 
     robot_description_content = Command(
         [
@@ -54,6 +61,7 @@ def generate_launch_description():
         name="rviz2",
         output="log",
         arguments=["-d", rviz_config_file],
+        condition=IfCondition(rviz)
     )
 
     nodes_to_start = [
