@@ -38,11 +38,14 @@ def generate_launch_description():
         package="joint_state_publisher_gui",
         executable="joint_state_publisher_gui",
     )
+   
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
         output="both",
-        parameters=[robot_description],
+        parameters=[
+            robot_description,
+            {'frame_prefix': 'merlin_mockup/'}],
     )
 
     rviz_node = Node(
