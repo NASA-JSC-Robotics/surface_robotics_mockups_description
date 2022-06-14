@@ -42,4 +42,123 @@
     <limit effort="10" velocity="10" lower="0" upper="${pi/2}"/>
   </joint>
 
+  <link name="latch_housing">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 ${pi} 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_housing.stl"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 ${pi} 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_housing.stl"/>
+      </geometry>
+    </collision>    
+  </link>
+
+  <!-- positioning is totally wrong but just checking to see if it all hooks up at this point-->
+  <joint name="door_to_latch" type="fixed">
+    <parent link="door"/>
+    <child link="latch_housing"/>
+    <origin xyz="0 0.0 0.2" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Cover section-->
+  <link name="latch_cover">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_cover.stl"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_cover.stl"/>
+      </geometry>
+    </collision>    
+  </link>
+
+  <joint name="housing_to_cover" type="fixed">
+    <parent link="latch_housing"/>
+    <child link="latch_cover"/>
+    <origin xyz="0 0.012 0.0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Right latch pull section-->
+  <link name="right_latch_pull">
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi} -${pi/2} -${pi/2}"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_pull.stl"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi} -${pi/2} -${pi/2}"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_pull.stl"/>
+      </geometry>
+    </collision>    
+  </link>
+
+  <!-- positioning is totally wrong but just checking to see if it all hooks up at this point-->
+  <joint name="housing_to_right_latch_pull" type="prismatic">
+    <parent link="latch_housing"/>
+    <child link="right_latch_pull"/>
+    <origin xyz="0.0258 0.01 -0.004" rpy="0 0 0"/>
+    <axis xyz="1 0 0" />
+    <limit effort="10" velocity="10" lower="0" upper="0.2"/>
+  </joint>
+
+  <!-- Left latch pull section-->
+  <link name="left_latch_pull">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 ${pi/2} -${pi/2}"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_pull.stl"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 ${pi/2} -${pi/2}"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_pull.stl"/>
+      </geometry>
+    </collision>    
+  </link>
+
+  <!-- positioning is totally wrong but just checking to see if it all hooks up at this point-->
+  <joint name="housing_to_left_latch_pull" type="prismatic">
+    <parent link="latch_housing"/>
+    <child link="left_latch_pull"/>
+    <origin xyz="-0.0258 0.01 -0.004" rpy="0 0 0"/>
+    <axis xyz="1 0 0" />
+    <limit effort="10" velocity="10" lower="-0.020" upper="0"/>
+  </joint>
+
+  <!-- Latch lock section-->
+  <link name="latch_lock">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_lock.stl"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_lock.stl"/>
+      </geometry>
+    </collision>    
+  </link>
+
+  <!-- positioning is totally wrong but just checking to see if it all hooks up at this point-->
+  <joint name="housing_to_latch_lock" type="revolute">
+    <parent link="latch_housing"/>
+    <child link="latch_lock"/>
+    <origin xyz="0 0.02 -0.001" rpy="0 0 0"/>
+    <axis xyz="1 0 0" />
+    <limit effort="10" velocity="10" lower="0" upper="${pi/4}"/>
+  </joint>
+
 </robot>
