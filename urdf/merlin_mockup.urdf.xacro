@@ -20,13 +20,13 @@
 
   <link name="door">
     <visual>
-      <origin xyz="0 0 0" rpy="${pi/2} 0 ${pi}"/>
+      <origin xyz="0 0 0.110" rpy="${pi/2} 0 ${pi}"/>
       <geometry>
         <mesh filename="package://merlin_mockup_description/meshes/visual/csm_outer_door.stl"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="${pi/2} 0 ${pi}"/>
+      <origin xyz="0 0 0.110" rpy="${pi/2} 0 ${pi}"/>
       <geometry>
         <mesh filename="package://merlin_mockup_description/meshes/visual/csm_outer_door.stl"/>
       </geometry>
@@ -37,9 +37,9 @@
   <joint name="door_to_frame_joint" type="revolute">
     <parent link="wood_frame"/>
     <child link="door"/>
-    <origin xyz="0 0.025 0" rpy="0 0 0"/>
+    <origin xyz="0 0.0125 -0.110" rpy="0 0 0"/>
     <axis xyz="1 0 0" />
-    <limit effort="10" velocity="10" lower="0" upper="${pi/2}"/>
+    <limit effort="10" velocity="10" lower="-${pi/2}" upper="0"/>
   </joint>
 
   <link name="latch_housing">
@@ -61,7 +61,7 @@
   <joint name="door_to_latch" type="fixed">
     <parent link="door"/>
     <child link="latch_housing"/>
-    <origin xyz="0 0.0 0.123" rpy="0 0 0"/>
+    <origin xyz="0 0.0 0.233" rpy="0 0 0"/>
   </joint>
 
   <!-- Cover section-->
