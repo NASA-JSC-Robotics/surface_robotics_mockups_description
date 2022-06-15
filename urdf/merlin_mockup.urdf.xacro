@@ -54,14 +54,14 @@
       <geometry>
         <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_housing.stl"/>
       </geometry>
-    </collision>    
+    </collision>
   </link>
 
   <!-- positioning is totally wrong but just checking to see if it all hooks up at this point-->
   <joint name="door_to_latch" type="fixed">
     <parent link="door"/>
     <child link="latch_housing"/>
-    <origin xyz="0 0.0 0.135" rpy="0 0 0"/>
+    <origin xyz="0 0.0 0.123" rpy="0 0 0"/>
   </joint>
 
   <!-- Cover section-->
