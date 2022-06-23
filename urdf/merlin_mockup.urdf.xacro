@@ -8,36 +8,128 @@
   <link name="wood_frame">
     <visual>
       <geometry>
-        <mesh filename="package://merlin_mockup_description/meshes/visual/aso_freezer_wood_only.stl" scale="0.02527 0.02527 0.02527"/>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/aso_locker_cavity_only.stl" scale="0.02527 0.02527 0.02527"/>
       </geometry>
     </visual>
     <collision> 
       <geometry>
-        <mesh filename="package://merlin_mockup_description/meshes/visual/aso_freezer_wood_only.stl" scale="0.02527 0.02527 0.02527"/>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/aso_locker_cavity_only.stl" scale="0.02527 0.02527 0.02527"/>
       </geometry>
     </collision>    
   </link>
 
+
+  <!-- Door section-->
   <link name="door">
     <visual>
-      <origin xyz="0 0 0" rpy="${pi/2} 0 ${pi}"/>
+      <origin xyz="0 0 0.110" rpy="${pi/2} 0 ${pi}"/>
       <geometry>
         <mesh filename="package://merlin_mockup_description/meshes/visual/csm_outer_door.stl"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="${pi/2} 0 ${pi}"/>
+      <origin xyz="0 0 0.110" rpy="${pi/2} 0 ${pi}"/>
       <geometry>
         <mesh filename="package://merlin_mockup_description/meshes/visual/csm_outer_door.stl"/>
       </geometry>
     </collision>    
   </link>
 
-  <!-- positioning is totally wrong but just checking to see if it all hooks up at this point-->
   <joint name="door_to_frame_joint" type="revolute">
     <parent link="wood_frame"/>
     <child link="door"/>
-    <origin xyz="0 0.025 0" rpy="0 0 0"/>
+    <origin xyz="0 0.0125 -0.113" rpy="0 0 0"/>
+    <axis xyz="1 0 0" />
+    <limit effort="10" velocity="10" lower="-${pi/2}" upper="0"/>
+  </joint>
+
+
+  <!-- Latch housing section-->
+  <link name="latch_housing">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 ${pi} 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_housing.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="door_to_latch" type="fixed">
+    <parent link="door"/>
+    <child link="latch_housing"/>
+    <origin xyz="0 0.0 0.233" rpy="0 0 0"/>
+  </joint>
+
+
+  <!-- Latch cover section-->
+  <link name="latch_cover">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_cover.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="housing_to_cover" type="fixed">
+    <parent link="latch_housing"/>
+    <child link="latch_cover"/>
+    <origin xyz="0 0.012 0.0" rpy="0 0 0"/>
+  </joint>
+
+
+  <!-- Right latch pull section-->
+  <link name="right_latch_pull">
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi} -${pi/2} -${pi/2}"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_pull.stl"/>
+      </geometry>
+    </visual>  
+  </link>
+
+  <joint name="housing_to_right_latch_pull" type="prismatic">
+    <parent link="latch_housing"/>
+    <child link="right_latch_pull"/>
+    <origin xyz="0.0258 0.01 -0.004" rpy="0 0 0"/>
+    <axis xyz="1 0 0" />
+    <limit effort="10" velocity="10" lower="-0.0084" upper="0"/>
+  </joint>
+
+
+  <!-- Left latch pull section-->
+  <link name="left_latch_pull">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 ${pi/2} -${pi/2}"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_pull.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="housing_to_left_latch_pull" type="prismatic">
+    <parent link="latch_housing"/>
+    <child link="left_latch_pull"/>
+    <origin xyz="-0.0258 0.01 -0.004" rpy="0 0 0"/>
+    <axis xyz="1 0 0" />
+    <limit effort="10" velocity="10" lower="0" upper="0.0084"/>
+  </joint>
+
+
+  <!-- Latch lock section-->
+  <link name="latch_lock">
+    <visual>
+      <origin xyz="0 0.0012 -0.0084" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_lock.stl"/>
+      </geometry>
+    </visual>  
+  </link>
+
+  <joint name="housing_to_latch_lock" type="revolute">
+    <parent link="latch_housing"/>
+    <child link="latch_lock"/>
+    <origin xyz="0 0.019 0.007" rpy="0 0 0"/>
     <axis xyz="1 0 0" />
     <limit effort="10" velocity="10" lower="0" upper="${pi/2}"/>
   </joint>
