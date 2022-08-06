@@ -18,6 +18,28 @@
     </collision>    
   </link>
 
+  <!-- Velcro section-->
+  <link name="velcro"> <!-- need to set all values -->
+    <visual>
+      <geometry>
+        <box size="0.01 0.001 0.05"/>
+      </geometry>
+    </visual>
+    <material name="Cyan">
+       <color rgba="0 1.0 1.0 1.0"/>
+     </material>
+    <collision> 
+      <geometry>
+        <box size="0.01 0.001 0.05"/>
+      </geometry>
+    </collision>    
+  </link>
+
+  <joint name="velcro_to_frame_joint" type="fixed">
+    <parent link="wood_frame"/>
+    <child link="velcro"/>
+    <origin xyz="-0.0 0.012 0.18" rpy="0 0 0"/>
+  </joint>
 
   <!-- Door section-->
   <link name="door">
