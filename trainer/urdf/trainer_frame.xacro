@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="trainer_frame">
+
+    <link name="trainer">
+      <visual>
+        <origin xyz="2.246 1.504 0.565" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="file://$(find trainer)/meshes/visual/ivr_tasktrainer_frame.stl"/>
+          </geometry>
+        <material name="red">
+          <color rgba="1.0 0 0 0.5"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="2.246 1.504 0.565" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="file://$(find trainer)/meshes/collision/ivr_tasktrainer_frame.stl"/>
+          </geometry>
+        <material name="red">
+          <color rgba="1.0 0 0 0.5"/>
+        </material>
+      </collision>
+    </link>
+
+</robot>
