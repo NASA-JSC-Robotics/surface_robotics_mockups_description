@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="mocks">
+
+    <link name="trainer">
+      <visual>
+        <origin xyz="0.0 0.0 ${1.6002/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="1.27 0.89535 1.6002"/>
+        </geometry>
+        <material name="red">
+          <color rgba="1.0 0 0 0.5"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="trainer_bench" type="fixed">
+      <parent link="trainer"/>
+      <child link="bench"/>
+      <origin xyz="${1.27/2 + 0.7112/2} 0.0 0.4969" rpy="0 0 0"/>
+    </joint>
+
+    <link name="bench">
+      <visual>
+        <origin xyz="0.0 0.0 ${0.10/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.7112 0.89535 0.10"/>
+        </geometry>
+        <material name="green">
+          <color rgba="0.0 1.0 0 0.5"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="trainer_hatch" type="fixed">
+      <parent link="trainer"/>
+      <child link="hatch_bottom"/>
+      <origin xyz="${-1.27/2 + 0.635/2} ${0.89535/2 + 1.27/2} 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="hatch_bottom">
+      <visual>
+        <origin xyz="0.0 0.0 ${0.508/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.635 1.27 0.508"/>
+        </geometry>
+        <material name="blue">
+          <color rgba="0.0 0 1.0 0.5"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="hatch_bottom_left" type="fixed">
+      <parent link="hatch_bottom"/>
+      <child link="hatch_left"/>
+      <origin xyz="0.0 ${0.127/2 - 0.635} 0.508" rpy="0 0 0"/>
+    </joint>
+
+    <link name="hatch_left">
+      <visual>
+        <origin xyz="0.0 0.0 ${1.016/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.635 0.127 1.016"/>
+        </geometry>
+        <material name="blue">
+          <color rgba="0.0 0 1.0 0.5"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="hatch_bottom_right" type="fixed">
+      <parent link="hatch_bottom"/>
+      <child link="hatch_right"/>
+      <origin xyz="0.0 ${-0.127/2 + 0.635} 0.508" rpy="0 0 0"/>
+    </joint>
+
+    <link name="hatch_right">
+      <visual>
+        <origin xyz="0.0 0.0 ${1.016/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.635 0.127 1.016"/>
+        </geometry>
+        <material name="blue">
+          <color rgba="0.0 0 1.0 0.5"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="hatch_bottom_top" type="fixed">
+      <parent link="hatch_bottom"/>
+      <child link="hatch_top"/>
+      <origin xyz="0.0 0.0 1.524" rpy="0 0 0"/>
+    </joint>
+
+    <link name="hatch_top">
+      <visual>
+        <origin xyz="0.0 0.0 ${0.5842/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.635 1.27 0.5842"/>
+        </geometry>
+        <material name="blue">
+          <color rgba="0.0 0 1.0 0.5"/>
+        </material>
+      </visual>
+    </link>
+
+</robot>
