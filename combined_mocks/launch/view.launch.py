@@ -10,7 +10,7 @@ def generate_launch_description():
         [
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
-            PathJoinSubstitution([FindPackageShare("combined_mocks"), "urdf", "mocks.xacro"]),
+            PathJoinSubstitution([FindPackageShare("combined_mocks"), "urdf", "combined_mocks.urdf.xacro"]),
         ]
     )
 
