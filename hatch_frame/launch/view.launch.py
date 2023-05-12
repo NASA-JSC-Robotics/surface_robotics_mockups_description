@@ -17,7 +17,7 @@ def generate_launch_description():
     robot_description = {"robot_description": robot_description_content}
 
     rviz_config_file = PathJoinSubstitution(
-        [FindPackageShare("hatch_frame"), "rviz", "visualization_mocks.rviz"]
+        [FindPackageShare("hatch_frame"), "rviz", "visualization.rviz"]
     )
 
     joint_state_publisher_node = Node(

@@ -10,14 +10,14 @@ def generate_launch_description():
         [
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
-            PathJoinSubstitution([FindPackageShare("trainer"), "urdf", "mocks.xacro"]),
+            PathJoinSubstitution([FindPackageShare("trainer"), "urdf", "trainer_frame.xacro"]),
         ]
     )
 
     robot_description = {"robot_description": robot_description_content}
 
     rviz_config_file = PathJoinSubstitution(
-        [FindPackageShare("trainer"), "rviz", "visualization_mocks.rviz"]
+        [FindPackageShare("trainer"), "rviz", "visualization.rviz"]
     )
 
     joint_state_publisher_node = Node(
