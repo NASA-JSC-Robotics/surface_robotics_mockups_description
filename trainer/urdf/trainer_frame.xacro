@@ -3,7 +3,7 @@
 
     <link name="trainer">
       <visual>
-        <origin xyz="2.246 1.504 0.565" rpy="0 0 0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
           <geometry>
             <mesh filename="file://$(find trainer)/meshes/visual/ivr_tasktrainer_frame.stl"/>
           </geometry>
@@ -12,7 +12,7 @@
         </material>
       </visual>
       <collision>
-        <origin xyz="2.246 1.504 0.565" rpy="0 0 0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
           <geometry>
             <mesh filename="file://$(find trainer)/meshes/collision/ivr_tasktrainer_frame.stl"/>
           </geometry>
