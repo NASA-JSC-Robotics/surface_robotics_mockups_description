@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="front_face_plate" params="
+    name:=''
+    prefix:=''
+    parent:=''
+    *origin">
+
+    <joint name="${prefix}trainer_front_face_base_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${prefix}front_face_plate"/>
+      <xacro:insert_block name="origin"/>
+    </joint>
+
+    <link name="${prefix}front_face_plate">
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="file://$(find trainer)/meshes/visual/front_face_plate.stl"/>
+          </geometry>
+        <material name="red">
+          <color rgba="1.0 0 0 0.75"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="file://$(find trainer)/meshes/collision/front_face_plate.stl"/>
+          </geometry>
+        <material name="red">
+          <color rgba="1.0 0 0 0.75"/>
+        </material>
+      </collision>
+    </link>
+
+  </xacro:macro>
+</robot>

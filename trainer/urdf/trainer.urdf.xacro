@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="trainer_frame">
+  <xacro:arg name="name" default=""/>
+  <xacro:arg name="prefix" default=""/>
+
+  <xacro:include filename="$(find trainer)/urdf/trainer_frame.xacro"/>
+  <xacro:include filename="$(find trainer)/urdf/trainer_side.xacro"/>
+  <xacro:include filename="$(find trainer)/urdf/trainer_cubby.xacro"/>
+
+  <link name="world"/>
+
+  <xacro:trainer_frame name="$(arg name)" prefix="$(arg prefix)" parent="world">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:trainer_frame>
+
+  <xacro:side_face name="$(arg name)" prefix="$(arg prefix)" parent="world">
+    <origin xyz="0.8119 0.8865 0.04" rpy="0 0 0"/>
+  </xacro:side_face>
+
+  <xacro:cubby name="$(arg name)" prefix="$(arg prefix)" parent="world">
+    <origin xyz="1.2596 0.04 0.8308" rpy="0 0 0"/>
+  </xacro:cubby>
+
+</robot>
