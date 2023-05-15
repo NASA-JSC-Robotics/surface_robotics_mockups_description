@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="bench_seat" params="
+    name:=''
+    prefix:=''
+    parent:=''
+    *origin">
+
+    <joint name="${prefix}bench_base_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${prefix}bench"/>
+      <xacro:insert_block name="origin"/>
+    </joint>
+
+    <link name="${prefix}bench">
+      <visual>
+        <origin xyz="${0.7112/2} ${0.89535/2} ${0.05/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.7112 0.89535 0.05"/>
+        </geometry>
+        <material name="green">
+          <color rgba="0.0 1.0 0 0.5"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="${0.7112/2} ${0.89535/2} ${0.05/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.7112 0.89535 0.05"/>
+        </geometry>
+        <material name="green">
+          <color rgba="0.0 1.0 0 0.5"/>
+        </material>
+      </collision>
+    </link>
+
+    <joint name="${prefix}bench_lid_joint" type="revolute">
+      <axis xyz="0 1 0"/>
+      <limit effort="10.0" lower="-1.57" upper="0.0" velocity="0.5"/>
+      <parent link="${prefix}bench"/>
+      <child link="${prefix}bench_lid"/>
+      <origin xyz="0.0 0.0 0.05" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}bench_lid">
+      <visual>
+        <origin xyz="${0.7112/2} ${0.89535/2} ${0.05/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.7112 0.89535 0.05"/>
+        </geometry>
+        <material name="blue">
+          <color rgba="0.0 0.0 1.0 0.5"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="${0.7112/2} ${0.89535/2} ${0.05/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.7112 0.89535 0.05"/>
+        </geometry>
+        <material name="blue">
+          <color rgba="0.0 0.0 1.0 0.5"/>
+        </material>
+      </collision>
+    </link>
+
+  </xacro:macro>
+</robot>
