@@ -6,6 +6,7 @@
 
   <xacro:include filename="$(find trainer)/urdf/trainer_frame.xacro"/>
   <xacro:include filename="$(find trainer)/urdf/bench_seat.xacro"/>
+  <xacro:include filename="$(find trainer)/urdf/trainer_front.xacro"/>
   <xacro:include filename="$(find trainer)/urdf/trainer_cubby.xacro"/>
   <xacro:include filename="$(find trainer)/urdf/trainer_side.xacro"/>
   
@@ -25,6 +26,10 @@
       <origin xyz="0.0 0.0 1.6002" rpy="0 0 0"/>
     </xacro:ceiling>
   </xacro:if>
+
+  <xacro:front_face_plate name="$(arg name)" prefix="$(arg prefix)" parent="world">
+    <origin xyz="1.25 0.08 0.45683932" rpy="0 0 0"/>
+  </xacro:front_face_plate>
 
   <xacro:cubby name="$(arg name)" prefix="$(arg prefix)1_" parent="trainer_frame">
     <origin xyz="1.260 0.254 0.830" rpy="0 0 0"/>
