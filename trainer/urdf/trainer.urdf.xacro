@@ -24,7 +24,6 @@
     </xacro:ceiling>
   </xacro:if>
   
-  <!--
   <xacro:include filename="$(find trainer)/urdf/trainer_front.xacro"/>
   <xacro:front_face_plate name="$(arg name)" prefix="$(arg prefix)" parent="world">
     <origin xyz="1.25 0.08 0.45683932" rpy="0 0 0"/>
@@ -38,7 +37,8 @@
   <xacro:cubby name="$(arg name)" prefix="$(arg prefix)2_" parent="trainer_frame">
     <origin xyz="1.260 0.254 1.162" rpy="0 0 0"/>
   </xacro:cubby>
-  
+
+  <!--
   <xacro:include filename="$(find trainer)/urdf/trainer_side.xacro"/>
   <xacro:side_face name="$(arg name)" prefix="$(arg prefix)" parent="trainer_frame">
     <origin xyz="0.812 0.887 0.04" rpy="0 0 0"/>
