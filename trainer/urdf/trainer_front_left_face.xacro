@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="trainer_front_left_face" params="
+    name:=''
+    prefix:=''
+    parent:=''
+    *origin
+    shelf:='true'">
+  
+  <joint name="${prefix}trainer_front_face_base_joint" type="fixed">
+    <parent link="${parent}"/>
+    <child link="${prefix}front_face_plate"/>
+    <xacro:insert_block name="origin"/>
+  </joint>
+
+  <link name="${prefix}front_face_plate">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/visual/front_face_plate.stl"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1.0 0 0 0.75"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/collision/front_face_plate.stl"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1.0 0 0 0.75"/>
+      </material>
+    </collision>
+  </link>
+  
+  <xacro:include filename="$(find trainer)/urdf/trainer_cubby_1.xacro"/>
+  <xacro:cubby_1 name="$(arg name)" prefix="${prefix}" parent="${prefix}front_face_plate">
+    <origin xyz="0.0 0.002 0.525" rpy="0 0 0"/>
+  </xacro:cubby_1>
+
+  <xacro:include filename="$(find trainer)/urdf/trainer_cubby_2.xacro"/>
+  <xacro:cubby_2 name="$(arg name)" prefix="${prefix}" parent="${prefix}front_face_plate">
+    <origin xyz="0.0 0.002 0.875" rpy="0 0 0"/>
+  </xacro:cubby_2>
+
+  <xacro:if value="${shelf}">
+    <joint name="${prefix}trainer_cubby_shelf_joint" type="fixed">
+      <parent link="${prefix}front_face_plate"/>
+      <child link="${prefix}cubby_shelf"/>
+      <origin xyz="-0.173 -0.04 0.031" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}cubby_shelf">
+      <visual>
+        <origin xyz="${0.173/2} ${0.428/2} ${0.02/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.173 0.428 0.02"/>
+        </geometry>
+        <material name="red">
+          <color rgba="1.0 0.0 0 0.75"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="${0.173/2} ${0.428/2} ${0.02/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.173 0.428 0.02"/>
+        </geometry>
+        <material name="red">
+          <color rgba="1.0 0.0 0 0.75"/>
+        </material>
+      </collision>
+    </link>
+  </xacro:if>
+
+  </xacro:macro>
+</robot>
