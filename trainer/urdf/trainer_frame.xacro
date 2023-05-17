@@ -32,7 +32,7 @@
     </joint>
 
     <link name="trainer_box">
-    <!--TODO set proper inertia-->
+      <!--TODO set proper inertia-->
       <inertial>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
         <mass value="0.0"/>
