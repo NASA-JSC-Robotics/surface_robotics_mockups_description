@@ -9,24 +9,111 @@
 
     <joint name="${prefix}bench_base_joint" type="fixed">
       <parent link="${parent}"/>
-      <child link="${prefix}bench"/>
+      <child link="${prefix}bench_back"/>
       <xacro:insert_block name="origin"/>
     </joint>
 
-    <link name="${prefix}bench">
+    <link name="${prefix}bench_back">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
       <visual>
-        <origin xyz="${0.7112/2} ${0.89535/2} ${0.05/2}" rpy="0 0 0"/>
+        <origin xyz="${0.163/2} ${0.895/2} ${0.05/2}" rpy="0 0 0"/>
         <geometry>
-          <box size="0.7112 0.89535 0.05"/>
+          <box size="0.163 0.895 0.05"/>
         </geometry>
         <material name="green">
           <color rgba="0.0 1.0 0 0.5"/>
         </material>
       </visual>
       <collision>
-        <origin xyz="${0.7112/2} ${0.89535/2} ${0.05/2}" rpy="0 0 0"/>
+        <origin xyz="${0.163/2} ${0.895/2} ${0.05/2}" rpy="0 0 0"/>
         <geometry>
-          <box size="0.7112 0.89535 0.05"/>
+          <box size="0.163 0.895 0.05"/>
+        </geometry>
+        <material name="green">
+          <color rgba="0.0 1.0 0 0.5"/>
+        </material>
+      </collision>
+    </link>
+
+    <joint name="${prefix}bench_left_joint" type="fixed">
+      <parent link="${prefix}bench_back"/>
+      <child link="${prefix}bench_left"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}bench_left">
+      <visual>
+        <origin xyz="${0.7112/2} ${0.05/2} ${0.05/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.7112 0.05 0.05"/>
+        </geometry>
+        <material name="green">
+          <color rgba="0.0 1.0 0 0.5"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="${0.7112/2} ${0.05/2} ${0.05/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.7112 0.05 0.05"/>
+        </geometry>
+        <material name="green">
+          <color rgba="0.0 1.0 0 0.5"/>
+        </material>
+      </collision>
+    </link>
+
+    <joint name="${prefix}bench_right_joint" type="fixed">
+      <parent link="${prefix}bench_back"/>
+      <child link="${prefix}bench_right"/>
+      <origin xyz="0.0 0.84535 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}bench_right">
+      <visual>
+        <origin xyz="${0.7112/2} ${0.05/2} ${0.05/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.7112 0.05 0.05"/>
+        </geometry>
+        <material name="green">
+          <color rgba="0.0 1.0 0 0.5"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="${0.7112/2} ${0.05/2} ${0.05/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.7112 0.05 0.05"/>
+        </geometry>
+        <material name="green">
+          <color rgba="0.0 1.0 0 0.5"/>
+        </material>
+      </collision>
+    </link>
+
+    <joint name="${prefix}bench_front_joint" type="fixed">
+      <parent link="${prefix}bench_back"/>
+      <child link="${prefix}bench_front"/>
+      <origin xyz="0.6612 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}bench_front">
+      <visual>
+        <origin xyz="${0.05/2} ${0.895/2} ${0.05/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.895 0.05"/>
+        </geometry>
+        <material name="green">
+          <color rgba="0.0 1.0 0 0.5"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="${0.05/2} ${0.895/2} ${0.05/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.895 0.05"/>
         </geometry>
         <material name="green">
           <color rgba="0.0 1.0 0 0.5"/>
@@ -37,25 +124,31 @@
     <joint name="${prefix}bench_lid_joint" type="revolute">
       <axis xyz="0 1 0"/>
       <limit effort="10.0" lower="-1.57" upper="0.0" velocity="0.5"/>
-      <parent link="${prefix}bench"/>
+      <parent link="${prefix}bench_back"/>
       <child link="${prefix}bench_lid"/>
-      <origin xyz="0.0 0.0 0.05" rpy="0 0 0"/>
+      <origin xyz="0.163 0.0 0.05" rpy="0 0 0"/>
     </joint>
 
     <link name="${prefix}bench_lid">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
       <visual>
-        <origin xyz="${0.7112/2} ${0.89535/2} ${0.05/2}" rpy="0 0 0"/>
+        <origin xyz="${0.524/2} ${0.895/2} ${0.05/2}" rpy="0 0 0"/>
         <geometry>
-          <box size="0.7112 0.89535 0.05"/>
+          <box size="0.524 0.895 0.05"/>
         </geometry>
         <material name="blue">
           <color rgba="0.0 0.0 1.0 0.5"/>
         </material>
       </visual>
       <collision>
-        <origin xyz="${0.7112/2} ${0.89535/2} ${0.05/2}" rpy="0 0 0"/>
+        <origin xyz="${0.524/2} ${0.895/2} ${0.05/2}" rpy="0 0 0"/>
         <geometry>
-          <box size="0.7112 0.89535 0.05"/>
+          <box size="0.524 0.895 0.05"/>
         </geometry>
         <material name="blue">
           <color rgba="0.0 0.0 1.0 0.5"/>
