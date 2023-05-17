@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="hatch_frame" params="
+    name:=''
+    prefix:=''
+    parent:=''
+    *origin">
+
+    <joint name="${prefix}hatch_frame_base_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${prefix}hatch_frame"/>
+      <xacro:insert_block name="origin"/>
+    </joint>
+
+    <link name="${prefix}hatch_frame">
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="file://$(find hatch_frame)/meshes/visual/ivr_hatch_frame.stl"/>
+          </geometry>
+        <material name="red">
+          <color rgba="1.0 0 0 0.75"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="file://$(find hatch_frame)/meshes/collision/ivr_hatch_frame.stl"/>
+          </geometry>
+        <material name="red">
+          <color rgba="1.0 0 0 0.75"/>
+        </material>
+      </collision>
+    </link>
+
+  </xacro:macro>
+</robot>
