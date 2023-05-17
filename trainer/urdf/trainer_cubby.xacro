@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="cubby" params="
+    name:=''
+    prefix:=''
+    parent:=''
+    *origin">
+
+    <joint name="${prefix}cubby_base_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${prefix}cubby"/>
+      <xacro:insert_block name="origin"/>
+    </joint>
+
+    <link name="${prefix}cubby">
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="file://$(find trainer)/meshes/visual/cubby.stl"/>
+          </geometry>
+        <material name="red">
+          <color rgba="1.0 0 0 0.75"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="file://$(find trainer)/meshes/collision/cubby.stl"/>
+          </geometry>
+        <material name="red">
+          <color rgba="1.0 0 0 0.75"/>
+        </material>
+      </collision>
+    </link>
+
+  </xacro:macro>
+</robot>
