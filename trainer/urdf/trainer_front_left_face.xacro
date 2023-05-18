@@ -24,7 +24,7 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/visual/front_face_plate.stl"/>
+        <mesh filename="file://$(find trainer)/meshes/visual/front_left_face.stl"/>
       </geometry>
       <material name="red">
         <color rgba="1.0 0 0 0.75"/>
@@ -33,7 +33,7 @@
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/collision/front_face_plate.stl"/>
+        <mesh filename="file://$(find trainer)/meshes/collision/front_left_face.stl"/>
       </geometry>
       <material name="red">
         <color rgba="1.0 0 0 0.75"/>
