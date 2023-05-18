@@ -19,9 +19,7 @@
           <geometry>
             <mesh filename="file://$(find hatch_frame)/meshes/visual/ivr_hatch_frame.stl"/>
           </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.75"/>
-        </material>
+        <material name="gray"/>
       </visual>
     </link>
 
@@ -32,7 +30,7 @@
     </joint>
 
     <link name="hatch_bottom">
-      <!--TODO: set proper inertia-->
+      <!--TODO set proper inertia-->
       <inertial>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
         <mass value="0.0"/>
@@ -43,9 +41,7 @@
         <geometry>
           <box size="0.675 1.307 0.04"/>
         </geometry>
-        <material name="blue">
-          <color rgba="0.0 0.0 1.0 1.0"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -61,9 +57,7 @@
         <geometry>
           <box size="0.1 1.307 0.610"/>
         </geometry>
-        <material name="blue">
-          <color rgba="0.0 0.0 1.0 1.0"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -79,9 +73,7 @@
         <geometry>
           <box size="0.1 1.307 0.610"/>
         </geometry>
-        <material name="blue">
-          <color rgba="0.0 0.0 1.0 1.0"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -97,9 +89,7 @@
         <geometry>
           <box size="0.675 0.1 2.1082"/>
         </geometry>
-        <material name="blue">
-          <color rgba="0.0 0.0 1.0 1.0"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -115,9 +105,7 @@
         <geometry>
           <box size="0.675 0.1 2.1082"/>
         </geometry>
-        <material name="blue">
-          <color rgba="0.0 0.0 1.0 1.0"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -133,9 +121,7 @@
         <geometry>
           <box size="0.1 1.307 0.197"/>
         </geometry>
-        <material name="blue">
-          <color rgba="0.0 0.0 1.0 1.0"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
