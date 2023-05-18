@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="trainer_front_right_face" params="
+    name:=''
+    prefix:=''
+    parent:=''
+    *origin">
+  
+  <joint name="${prefix}trainer_front_right_face_joint" type="fixed">
+    <parent link="${parent}"/>
+    <child link="${prefix}front_right_face"/>
+    <xacro:insert_block name="origin"/>
+  </joint>
+
+  <link name="${prefix}front_right_face">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/visual/front_right_face.stl"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1.0 0 0 0.75"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/collision/front_right_face.stl"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1.0 0 0 0.75"/>
+      </material>
+    </collision>
+  </link>
+
+  </xacro:macro>
+</robot>

@@ -8,7 +8,7 @@
     *origin
     shelf:='true'">
   
-  <joint name="${prefix}trainer_front_face_base_joint" type="fixed">
+  <joint name="${prefix}trainer_front_left_face_joint" type="fixed">
     <parent link="${parent}"/>
     <child link="${prefix}front_left_face"/>
     <xacro:insert_block name="origin"/>
