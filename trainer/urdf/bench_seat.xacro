@@ -122,8 +122,8 @@
     </link>
 
     <joint name="${prefix}bench_lid_joint" type="revolute">
-      <axis xyz="0 1 0"/>
-      <limit effort="10.0" lower="-1.57" upper="0.0" velocity="0.5"/>
+      <axis xyz="0 -1 0"/>
+      <limit effort="10.0" lower="0.0" upper="1.57" velocity="0.5"/>
       <parent link="${prefix}bench_back"/>
       <child link="${prefix}bench_lid"/>
       <origin xyz="0.127 0.0 0.05" rpy="0 0 0"/>
