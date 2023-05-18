@@ -26,8 +26,8 @@
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/visual/front_left_face.stl"/>
       </geometry>
-      <material name="red">
-        <color rgba="1.0 0 0 0.75"/>
+      <material name="gray">
+        <color rgba="0.85 0.85 0.85 0.75"/>
       </material>
     </visual>
     <collision>
@@ -56,18 +56,18 @@
     </inertial>
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="file://$(find trainer)/meshes/visual/cubby_1.stl"/>
-        </geometry>
-      <material name="red">
-        <color rgba="1.0 0 0 0.75"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/visual/cubby_1.stl"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.85 0.85 0.85 0.75"/>
       </material>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="file://$(find trainer)/meshes/collision/cubby_1.stl"/>
-        </geometry>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/collision/cubby_1.stl"/>
+      </geometry>
       <material name="red">
         <color rgba="1.0 0 0 0.75"/>
       </material>
@@ -89,18 +89,18 @@
     </inertial>
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="file://$(find trainer)/meshes/visual/cubby_2.stl"/>
-        </geometry>
-      <material name="red">
-        <color rgba="1.0 0 0 0.75"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/visual/cubby_2.stl"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.85 0.85 0.85 0.75"/>
       </material>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="file://$(find trainer)/meshes/collision/cubby_2.stl"/>
-        </geometry>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/collision/cubby_2.stl"/>
+      </geometry>
       <material name="red">
         <color rgba="1.0 0 0 0.75"/>
       </material>
@@ -126,8 +126,8 @@
         <geometry>
           <box size="0.173 0.428 0.02"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0.0 0 0.75"/>
+        <material name="gray">
+          <color rgba="0.85 0.85 0.85 0.75"/>
         </material>
       </visual>
       <collision>

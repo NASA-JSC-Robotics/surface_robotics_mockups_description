@@ -14,13 +14,19 @@
     </joint>
 
     <link name="${prefix}side_bottom_face">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-          <geometry>
-            <mesh filename="file://$(find trainer)/meshes/visual/side_bottom_face.stl"/>
-          </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.75"/>
+        <geometry>
+          <mesh filename="file://$(find trainer)/meshes/visual/side_bottom_face.stl"/>
+        </geometry>
+        <material name="gray">
+          <color rgba="0.85 0.85 0.85 0.75"/>
         </material>
       </visual>
       <collision>
@@ -41,13 +47,19 @@
     </joint>
 
     <link name="${prefix}side_top_face">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-          <geometry>
-            <mesh filename="file://$(find trainer)/meshes/visual/side_top_face.stl"/>
-          </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.75"/>
+        <geometry>
+          <mesh filename="file://$(find trainer)/meshes/visual/side_top_face.stl"/>
+        </geometry>
+        <material name="gray">
+          <color rgba="0.85 0.85 0.85 0.75"/>
         </material>
       </visual>
       <collision>
@@ -90,8 +102,8 @@
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/collision/cabinet_door_4.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0 0 1.0 0.75"/>
+      <material name="red">
+        <color rgba="1.0 0 0 0.75"/>
       </material>
     </collision>
   </link>
@@ -125,8 +137,8 @@
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/collision/drawer_1_face.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0 0 1.0 0.75"/>
+      <material name="red">
+        <color rgba="1.0 0 0 0.75"/>
       </material>
     </collision>
   </link>
@@ -138,6 +150,12 @@
   </joint>
 
   <link name="${prefix}drawer_1_left">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
     <visual>
       <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
       <geometry>
@@ -152,8 +170,8 @@
       <geometry>
         <box size="0.013 0.305 0.096"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0 0 1.0 0.75"/>
+      <material name="red">
+        <color rgba="1.0 0 0 0.75"/>
       </material>
     </collision>
   </link>
@@ -165,6 +183,12 @@
   </joint>
 
   <link name="${prefix}drawer_1_right">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
     <visual>
       <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
       <geometry>
@@ -179,8 +203,8 @@
       <geometry>
         <box size="0.013 0.305 0.096"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0 0 1.0 0.75"/>
+      <material name="red">
+        <color rgba="1.0 0 0 0.75"/>
       </material>
     </collision>
   </link>
@@ -192,6 +216,12 @@
   </joint>
 
   <link name="${prefix}drawer_1_bottom">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
     <visual>
       <origin xyz="${0.293/2} ${0.305/2} ${0.013/2}" rpy="0 0 0"/>
       <geometry>
@@ -206,8 +236,8 @@
       <geometry>
         <box size="0.293 0.305 0.013"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0 0 1.0 0.75"/>
+      <material name="red">
+        <color rgba="1.0 0 0 0.75"/>
       </material>
     </collision>
   </link>
@@ -241,8 +271,8 @@
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/collision/drawer_2_face.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0 0 1.0 0.75"/>
+      <material name="red">
+        <color rgba="1.0 0 0 0.75"/>
       </material>
     </collision>
   </link>
@@ -254,6 +284,12 @@
   </joint>
 
   <link name="${prefix}drawer_2_left">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
     <visual>
       <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
       <geometry>
@@ -268,8 +304,8 @@
       <geometry>
         <box size="0.013 0.305 0.096"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0 0 1.0 0.75"/>
+      <material name="red">
+        <color rgba="1.0 0 0 0.75"/>
       </material>
     </collision>
   </link>
@@ -281,6 +317,12 @@
   </joint>
 
   <link name="${prefix}drawer_2_right">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
     <visual>
       <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
       <geometry>
@@ -295,8 +337,8 @@
       <geometry>
         <box size="0.013 0.305 0.096"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0 0 1.0 0.75"/>
+      <material name="red">
+        <color rgba="1.0 0 0 0.75"/>
       </material>
     </collision>
   </link>
@@ -308,6 +350,12 @@
   </joint>
 
   <link name="${prefix}drawer_2_bottom">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
     <visual>
       <origin xyz="${0.293/2} ${0.305/2} ${0.013/2}" rpy="0 0 0"/>
       <geometry>
@@ -322,8 +370,8 @@
       <geometry>
         <box size="0.293 0.305 0.013"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0 0 1.0 0.75"/>
+      <material name="red">
+        <color rgba="1.0 0 0 0.75"/>
       </material>
     </collision>
   </link>

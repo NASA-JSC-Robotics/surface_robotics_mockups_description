@@ -19,8 +19,8 @@
         <geometry>
           <box size="1.901 1.4694 0.05"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0.0 0.0 0.75"/>
+        <material name="gray">
+          <color rgba="0.85 0.85 0.85 0.75"/>
         </material>
       </visual>
       <collision>
