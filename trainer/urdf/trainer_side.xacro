@@ -9,15 +9,15 @@
 
     <joint name="${prefix}trainer_side_face_base_joint" type="fixed">
       <parent link="${parent}"/>
-      <child link="${prefix}side_face_lower"/>
+      <child link="${prefix}side_bottom_face"/>
       <xacro:insert_block name="origin"/>
     </joint>
 
-    <link name="${prefix}side_face_lower">
+    <link name="${prefix}side_bottom_face">
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
           <geometry>
-            <mesh filename="file://$(find trainer)/meshes/visual/side_face_lower.stl"/>
+            <mesh filename="file://$(find trainer)/meshes/visual/side_bottom_face.stl"/>
           </geometry>
         <material name="red">
           <color rgba="1.0 0 0 0.75"/>
@@ -26,7 +26,7 @@
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
           <geometry>
-            <mesh filename="file://$(find trainer)/meshes/collision/side_face_lower.stl"/>
+            <mesh filename="file://$(find trainer)/meshes/collision/side_bottom_face.stl"/>
           </geometry>
         <material name="red">
           <color rgba="1.0 0 0 0.75"/>
@@ -34,17 +34,17 @@
       </collision>
     </link>
 
-    <joint name="${prefix}side_face_plate_joint" type="fixed">
-      <parent link="${prefix}side_face_lower"/>
-      <child link="${prefix}side_face_plate"/>
+    <joint name="${prefix}side_top_face_joint" type="fixed">
+      <parent link="${prefix}side_bottom_face"/>
+      <child link="${prefix}side_top_face"/>
       <origin xyz="0.0 0.0 0.5084191" rpy="0 0 0"/>
     </joint>
 
-    <link name="${prefix}side_face_plate">
+    <link name="${prefix}side_top_face">
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
           <geometry>
-            <mesh filename="file://$(find trainer)/meshes/visual/side_face_plate.stl"/>
+            <mesh filename="file://$(find trainer)/meshes/visual/side_top_face.stl"/>
           </geometry>
         <material name="red">
           <color rgba="1.0 0 0 0.75"/>
@@ -53,7 +53,7 @@
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
           <geometry>
-            <mesh filename="file://$(find trainer)/meshes/collision/side_face_plate.stl"/>
+            <mesh filename="file://$(find trainer)/meshes/collision/side_top_face.stl"/>
           </geometry>
         <material name="red">
           <color rgba="1.0 0 0 0.75"/>
