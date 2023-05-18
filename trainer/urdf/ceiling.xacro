@@ -19,18 +19,14 @@
         <geometry>
           <box size="1.901 1.4694 0.05"/>
         </geometry>
-        <material name="gray">
-          <color rgba="0.85 0.85 0.85 0.75"/>
-        </material>
+        <material name="gray"/>
       </visual>
       <collision>
         <origin xyz="${1.901/2} ${1.4694/2} ${0.05/2}" rpy="0 0 0"/>
         <geometry>
           <box size="1.901 1.4694 0.05"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0.0 0.0 0.75"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 

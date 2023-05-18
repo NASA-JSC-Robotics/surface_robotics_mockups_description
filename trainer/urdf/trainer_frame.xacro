@@ -19,9 +19,7 @@
         <geometry>
           <mesh filename="file://$(find trainer)/meshes/visual/ivr_tasktrainer_frame.stl"/>
         </geometry>
-        <material name="gray">
-          <color rgba="0.85 0.85 0.85 0.75"/>
-        </material>
+        <material name="gray"/>
       </visual>
     </link>
 
@@ -43,9 +41,7 @@
         <geometry>
           <box size="1.27 0.816 0.47"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.5"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -61,9 +57,7 @@
         <geometry>
           <box size="1.27 0.816 0.1"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 1.0"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -79,9 +73,7 @@
         <geometry>
           <box size="1.27 0.1 1.60"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.5"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -97,9 +89,7 @@
         <geometry>
           <box size="1.27 0.05 1.60"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.5"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -115,9 +105,7 @@
         <geometry>
           <box size="0.810 0.1 1.60"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.5"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -133,9 +121,7 @@
         <geometry>
           <box size="0.13335 0.1 1.60"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.5"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 

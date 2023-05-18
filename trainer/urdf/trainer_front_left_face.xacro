@@ -26,18 +26,14 @@
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/visual/front_left_face.stl"/>
       </geometry>
-      <material name="gray">
-        <color rgba="0.85 0.85 0.85 0.75"/>
-      </material>
+      <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/collision/front_left_face.stl"/>
       </geometry>
-      <material name="red">
-        <color rgba="1.0 0 0 0.75"/>
-      </material>
+      <material name="red"/>
     </collision>
   </link>
 
@@ -59,18 +55,14 @@
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/visual/cubby_1.stl"/>
       </geometry>
-      <material name="gray">
-        <color rgba="0.85 0.85 0.85 0.75"/>
-      </material>
+      <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/collision/cubby_1.stl"/>
       </geometry>
-      <material name="red">
-        <color rgba="1.0 0 0 0.75"/>
-      </material>
+      <material name="red"/>
     </collision>
   </link>
 
@@ -92,18 +84,14 @@
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/visual/cubby_2.stl"/>
       </geometry>
-      <material name="gray">
-        <color rgba="0.85 0.85 0.85 0.75"/>
-      </material>
+      <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/collision/cubby_2.stl"/>
       </geometry>
-      <material name="red">
-        <color rgba="1.0 0 0 0.75"/>
-      </material>
+      <material name="red"/>
     </collision>
   </link>
 
@@ -126,18 +114,14 @@
         <geometry>
           <box size="0.173 0.428 0.02"/>
         </geometry>
-        <material name="gray">
-          <color rgba="0.85 0.85 0.85 0.75"/>
-        </material>
+        <material name="gray"/>
       </visual>
       <collision>
         <origin xyz="${0.173/2} ${0.428/2} ${0.02/2}" rpy="0 0 0"/>
         <geometry>
           <box size="0.173 0.428 0.02"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0.0 0 0.75"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
   </xacro:if>

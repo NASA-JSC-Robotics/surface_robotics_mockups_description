@@ -25,18 +25,14 @@
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/visual/front_right_face.stl"/>
       </geometry>
-      <material name="gray">
-        <color rgba="0.85 0.85 0.85 0.75"/>
-      </material>
+      <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/collision/front_right_face.stl"/>
       </geometry>
-      <material name="red">
-        <color rgba="1.0 0 0 0.75"/>
-      </material>
+      <material name="red"/>
     </collision>
   </link>
 
@@ -60,18 +56,14 @@
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/visual/cabinet_door_1.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0 0 1.0 0.75"/>
-      </material>
+      <material name="blue"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/collision/cabinet_door_1.stl"/>
       </geometry>
-      <material name="red">
-        <color rgba="1.0 0 0 0.75"/>
-      </material>
+      <material name="red"/>
     </collision>
   </link>
 
@@ -95,18 +87,14 @@
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/visual/cabinet_door_2.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0 0 1.0 0.75"/>
-      </material>
+      <material name="blue"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/collision/cabinet_door_2.stl"/>
       </geometry>
-      <material name="red">
-        <color rgba="1.0 0 0 0.75"/>
-      </material>
+      <material name="red"/>
     </collision>
   </link>
 
@@ -130,18 +118,14 @@
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/visual/cabinet_door_3.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0 0 1.0 0.75"/>
-      </material>
+      <material name="blue"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/collision/cabinet_door_3.stl"/>
       </geometry>
-      <material name="red">
-        <color rgba="1.0 0 0 0.75"/>
-      </material>
+      <material name="red"/>
     </collision>
   </link>
 
