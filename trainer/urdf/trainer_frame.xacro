@@ -16,21 +16,112 @@
     <link name="${prefix}trainer_frame">
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-          <geometry>
-            <mesh filename="file://$(find trainer)/meshes/visual/ivr_tasktrainer_frame.stl"/>
-          </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.75"/>
-        </material>
+        <geometry>
+          <mesh filename="file://$(find trainer)/meshes/visual/ivr_tasktrainer_frame.stl"/>
+        </geometry>
+        <material name="gray"/>
       </visual>
+    </link>
+
+    <joint name="trainer_box_joint" type="fixed">
+      <parent link="trainer_frame"/>
+      <child link="trainer_box"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="trainer_box">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
       <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-          <geometry>
-            <mesh filename="file://$(find trainer)/meshes/collision/ivr_tasktrainer_frame.stl"/>
-          </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.75"/>
-        </material>
+        <origin xyz="${1.27/2} 0.48 ${0.47/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="1.27 0.816 0.47"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <joint name="trainer_top_joint" type="fixed">
+      <parent link="trainer_frame"/>
+      <child link="trainer_top"/>
+      <origin xyz="0.0 0.0 1.52" rpy="0 0 0"/>
+    </joint>
+
+    <link name="trainer_top">
+      <collision>
+        <origin xyz="${1.27/2} 0.48 ${0.1/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="1.27 0.816 0.1"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <joint name="trainer_plane_left_joint" type="fixed">
+      <parent link="trainer_frame"/>
+      <child link="trainer_plane_left"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="trainer_plane_left">
+      <collision>
+        <origin xyz="${1.27/2} ${0.1/2} ${1.60/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="1.27 0.1 1.60"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <joint name="trainer_plane_middle_joint" type="fixed">
+      <parent link="trainer_frame"/>
+      <child link="trainer_plane_middle"/>
+      <origin xyz="0.0 0.42 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="trainer_plane_middle">
+      <collision>
+        <origin xyz="${1.27/2} ${0.05/2} ${1.60/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="1.27 0.05 1.60"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <joint name="trainer_plane_right_1_joint" type="fixed">
+      <parent link="trainer_frame"/>
+      <child link="trainer_plane_right_1"/>
+      <origin xyz="0.0 0.8 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="trainer_plane_right_1">
+      <collision>
+        <origin xyz="${0.810/2} ${0.1/2} ${1.60/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.810 0.1 1.60"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <joint name="trainer_plane_right_2_joint" type="fixed">
+      <parent link="trainer_frame"/>
+      <child link="trainer_plane_right_2"/>
+      <origin xyz="1.129 0.8 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="trainer_plane_right_2">
+      <collision>
+        <origin xyz="${0.13335/2} ${0.1/2} ${1.60/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.13335 0.1 1.60"/>
+        </geometry>
+        <material name="red"/>
       </collision>
     </link>
 

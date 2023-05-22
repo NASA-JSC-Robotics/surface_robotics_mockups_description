@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="trainer_frame">
+  <xacro:arg name="name" default=""/>
+  <xacro:arg name="prefix" default=""/>
+  <xacro:property name="shelf" default="false"/>
+  <xacro:property name="ceiling_prop" value="true"/>
+
+  <xacro:include filename="$(find trainer)/urdf/colors.xacro"/>
+
+  <link name="world"/>
+  
+  <xacro:include filename="$(find trainer)/urdf/trainer_frame.xacro"/>
+  <xacro:trainer_frame name="$(arg name)" prefix="$(arg prefix)" parent="world">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:trainer_frame>
+
+  <xacro:include filename="$(find trainer)/urdf/bench_seat.xacro"/>
+  <xacro:bench_seat name="$(arg name)" prefix="$(arg prefix)" parent="trainer_frame">
+    <origin xyz="1.27 0 0.4969" rpy="0 0 0"/>
+  </xacro:bench_seat>
+
+  <xacro:if value="${ceiling_prop}">
+    <xacro:include filename="$(find trainer)/urdf/ceiling.xacro"/>
+    <xacro:ceiling name="$(arg name)" prefix="$(arg prefix)" parent="trainer_frame">
+      <origin xyz="0.0 0.0 1.6002" rpy="0 0 0"/>
+    </xacro:ceiling>
+  </xacro:if>
+  
+  <xacro:include filename="$(find trainer)/urdf/trainer_front_left_face.xacro"/>
+  <xacro:trainer_front_left_face name="$(arg name)" prefix="$(arg prefix)" parent="trainer_frame" shelf="${shelf}">
+    <origin xyz="1.25 0.08 0.457" rpy="0 0 0"/>
+  </xacro:trainer_front_left_face>
+
+  <xacro:include filename="$(find trainer)/urdf/trainer_front_right_face.xacro"/>
+  <xacro:trainer_front_right_face name="$(arg name)" prefix="$(arg prefix)" parent="trainer_frame">
+    <origin xyz="1.25 0.465 0.457" rpy="0 0 0"/>
+  </xacro:trainer_front_right_face>
+
+  <xacro:include filename="$(find trainer)/urdf/trainer_side.xacro"/>
+  <xacro:side_face name="$(arg name)" prefix="$(arg prefix)" parent="trainer_frame">
+    <origin xyz="0.812 0.887 0.04" rpy="0 0 0"/>
+  </xacro:side_face>
+
+</robot>
