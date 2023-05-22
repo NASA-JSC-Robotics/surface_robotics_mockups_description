@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="trainer_side">
+  <xacro:arg name="name" default=""/>
+  <xacro:arg name="prefix" default=""/>
+
+  <xacro:include filename="$(find trainer)/urdf/colors.xacro"/>
+  <xacro:include filename="$(find trainer)/urdf/trainer_side.xacro"/>
+
+  <link name="world"/>
+
+  <xacro:side_face name="$(arg name)" prefix="$(arg prefix)" parent="world">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:side_face>
+
+</robot>

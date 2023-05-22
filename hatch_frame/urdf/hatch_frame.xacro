@@ -21,10 +21,105 @@
         </geometry>
         <material name="gray"/>
       </visual>
+    </link>
+
+    <joint name="hatch_frame_joint" type="fixed">
+      <parent link="hatch_frame"/>
+      <child link="hatch_bottom"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="hatch_bottom">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
       <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <origin xyz="${0.675/2} ${1.307/2} ${0.04/2}" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_frame)/meshes/collision/ivr_hatch_frame.stl"/>
+          <box size="0.675 1.307 0.04"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <joint name="hatch_bottom_back" type="fixed">
+      <parent link="hatch_bottom"/>
+      <child link="hatch_back"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="hatch_back">
+      <collision>
+        <origin xyz="${0.1/2} ${1.307/2} ${0.610/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.1 1.307 0.610"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <joint name="hatch_bottom_front" type="fixed">
+      <parent link="hatch_bottom"/>
+      <child link="hatch_front"/>
+      <origin xyz="0.589 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="hatch_front">
+      <collision>
+        <origin xyz="${0.1/2} ${1.307/2} ${0.610/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.1 1.307 0.610"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <joint name="hatch_bottom_left" type="fixed">
+      <parent link="hatch_bottom"/>
+      <child link="hatch_left"/>
+      <origin xyz="0.0 -0.01 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="hatch_left">
+      <collision>
+        <origin xyz="${0.675/2} ${0.1/2} ${2.1082/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.675 0.1 2.1082"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <joint name="hatch_bottom_right" type="fixed">
+      <parent link="hatch_bottom"/>
+      <child link="hatch_right"/>
+      <origin xyz="0.0 1.22 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="hatch_right">
+      <collision>
+        <origin xyz="${0.675/2} ${0.1/2} ${2.108/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.675 0.1 2.1082"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <joint name="hatch_bottom_top" type="fixed">
+      <parent link="hatch_bottom"/>
+      <child link="hatch_top"/>
+      <origin xyz="0.589 0.0 1.913" rpy="0 0 0"/>
+    </joint>
+
+    <link name="hatch_top">
+      <collision>
+        <origin xyz="${0.1/2} ${1.307/2} ${0.197/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.1 1.307 0.197"/>
         </geometry>
         <material name="red"/>
       </collision>
