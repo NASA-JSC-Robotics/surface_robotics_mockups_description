@@ -16,21 +16,17 @@
     <link name="${prefix}hatch_frame">
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-          <geometry>
-            <mesh filename="file://$(find hatch_frame)/meshes/visual/ivr_hatch_frame.stl"/>
-          </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.75"/>
-        </material>
+        <geometry>
+          <mesh filename="file://$(find hatch_frame)/meshes/visual/ivr_hatch_frame.stl"/>
+        </geometry>
+        <material name="gray"/>
       </visual>
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-          <geometry>
-            <mesh filename="file://$(find hatch_frame)/meshes/collision/ivr_hatch_frame.stl"/>
-          </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.75"/>
-        </material>
+        <geometry>
+          <mesh filename="file://$(find hatch_frame)/meshes/collision/ivr_hatch_frame.stl"/>
+        </geometry>
+        <material name="red"/>
       </collision>
     </link>
 

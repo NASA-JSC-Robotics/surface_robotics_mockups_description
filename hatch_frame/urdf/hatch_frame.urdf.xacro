@@ -4,6 +4,7 @@
   <xacro:arg name="prefix" default=""/>
 
   <xacro:include filename="$(find hatch_frame)/urdf/hatch_frame.xacro"/>
+  <xacro:include filename="$(find hatch_frame)/urdf/colors.xacro"/>
 
   <link name="world"/>
 
