@@ -15,7 +15,8 @@
 
     <link name="${prefix}trainer_frame">
       <visual>
-        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <!--Offset is to adjust for the radius on the extrusion-->
+        <origin xyz="0.0 0.004 0.0" rpy="0 0 0"/>
           <geometry>
             <mesh filename="file://$(find trainer)/meshes/visual/ivr_tasktrainer_frame.stl"/>
           </geometry>
@@ -39,9 +40,9 @@
         <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
       </inertial>
       <collision>
-        <origin xyz="${1.27/2} 0.48 ${0.47/2}" rpy="0 0 0"/>
+        <origin xyz="${1.27/2} ${0.896/2} ${0.47/2}" rpy="0 0 0"/>
         <geometry>
-          <box size="1.27 0.816 0.47"/>
+          <box size="1.27 0.896 0.47"/>
         </geometry>
         <material name="red">
           <color rgba="1.0 0 0 0.5"/>
@@ -57,9 +58,9 @@
 
     <link name="trainer_top">
       <collision>
-        <origin xyz="${1.27/2} 0.48 ${0.1/2}" rpy="0 0 0"/>
+        <origin xyz="${1.27/2} ${0.896/2} ${0.1/2}" rpy="0 0 0"/>
         <geometry>
-          <box size="1.27 0.816 0.1"/>
+          <box size="1.27 0.896 0.1"/>
         </geometry>
         <material name="red">
           <color rgba="1.0 0 0 1.0"/>
