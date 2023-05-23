@@ -125,14 +125,14 @@
     <joint name="trainer_plane_right_2_joint" type="fixed">
       <parent link="trainer_frame"/>
       <child link="trainer_plane_right_2"/>
-      <origin xyz="1.129 0.8 0.0" rpy="0 0 0"/>
+      <origin xyz="1.124 0.81 0.0" rpy="0 0 0"/>
     </joint>
 
     <link name="trainer_plane_right_2">
       <collision>
-        <origin xyz="${0.13335/2} ${0.1/2} ${1.60/2}" rpy="0 0 0"/>
+        <origin xyz="${0.14/2} ${0.1/2} ${1.60/2}" rpy="0 0 0"/>
         <geometry>
-          <box size="0.13335 0.1 1.60"/>
+          <box size="0.14 0.1 1.60"/>
         </geometry>
         <material name="red">
           <color rgba="1.0 0 0 0.5"/>
