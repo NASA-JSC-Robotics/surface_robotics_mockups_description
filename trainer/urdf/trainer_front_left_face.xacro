@@ -40,7 +40,7 @@
   <joint name="${prefix}cubby_1_joint" type="fixed">
     <parent link="${prefix}front_left_face"/>
     <child link="${prefix}cubby_1"/>
-    <origin xyz="0.0 0.002 0.525" rpy="0 0 0"/>
+    <origin xyz="0.0 0.0 0.525" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}cubby_1">
