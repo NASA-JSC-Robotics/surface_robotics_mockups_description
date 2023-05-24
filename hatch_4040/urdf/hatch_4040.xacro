@@ -45,6 +45,12 @@
     </joint>
 
     <link name="${prefix}hatch_4040_face">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
@@ -60,6 +66,16 @@
         <material name="red"/>
       </collision>
     </link>
+
+    <xacro:include filename="$(find trainer)/urdf/crank_wheel.xacro"/>
+    <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_4040_face">
+      <origin xyz="0.0522475 -0.473371 0.606772" rpy="0 ${pi/2} 0"/>
+    </xacro:crank_wheel>
+
+    <xacro:include filename="$(find trainer)/urdf/crank_wheel.xacro"/>
+    <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)internal_" parent="${prefix}hatch_4040_face">
+      <origin xyz="-0.1795475 -0.473371 0.606772" rpy="0 -${pi/2} 0"/>
+    </xacro:crank_wheel>
 
   </xacro:macro>
 </robot>

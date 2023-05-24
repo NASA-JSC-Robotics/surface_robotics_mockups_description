@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="crank_wheel" params="
+    name:=''
+    prefix:=''
+    parent:=''
+    *origin">
+  
+    <joint name="${prefix}rotary_joint" type="revolute">
+      <axis xyz="0 0 1"/>
+      <!--This is continuously rotatable-->
+      <limit effort="10.0" lower="0.0" upper="6.28" velocity="0.5"/>
+      <parent link="${parent}"/>
+      <child link="${prefix}rotary_wheel"/>
+      <xacro:insert_block name="origin"/>
+    </joint>
+
+    <link name="${prefix}rotary_wheel">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find hatch_4040)/meshes/visual/crank_wheel.stl"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find hatch_4040)/meshes/collision/crank_wheel.stl"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <joint name="${prefix}rotary_handle_joint" type="revolute">
+      <axis xyz="0 -1 0"/>
+      <!--This is continuously rotatable-->
+      <limit effort="10.0" lower="0.0" upper="1.57" velocity="0.5"/>
+      <parent link="${prefix}rotary_wheel"/>
+      <child link="${prefix}rotary_handle"/>
+      <origin xyz="0.053975 0.0 0.0190500" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}rotary_handle">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find hatch_4040)/meshes/visual/crank_handle.stl"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find hatch_4040)/meshes/collision/crank_handle.stl"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+  </xacro:macro>
+</robot>
