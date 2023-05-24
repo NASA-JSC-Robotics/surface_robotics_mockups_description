@@ -15,7 +15,8 @@
 
     <link name="${prefix}trainer_frame">
       <visual>
-        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <!--Offset is to adjust for the radius on the extrusion-->
+        <origin xyz="0.0 0.004 0.0" rpy="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find trainer)/meshes/visual/ivr_tasktrainer_frame.stl"/>
         </geometry>
