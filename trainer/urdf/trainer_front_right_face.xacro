@@ -103,7 +103,7 @@
     <limit effort="10.0" lower="0.0" upper="3.14" velocity="0.5"/>
     <parent link="${prefix}front_right_face"/>
     <child link="${prefix}cabinet_3"/>
-    <origin xyz="0.017 0.342 0.007" rpy="0 0 0"/>
+    <origin xyz="0.017 0.344 0.007" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}cabinet_3">
