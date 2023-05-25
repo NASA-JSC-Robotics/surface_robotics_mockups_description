@@ -21,16 +21,18 @@
         <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
       </inertial>
       <visual>
-        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <!--This transform is for the stl file origin-->
+        <origin xyz="-0.92001848 0.1492 0.0403" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4040)/meshes/visual/grab_handle.stl"/>
+          <mesh filename="file://$(find hatch_4040)/meshes/visual/grab_handle.stl" scale="0.254 0.254 0.254"/>
         </geometry>
         <material name="gray"/>
       </visual>
       <collision>
+        <!--This transform is for the stl file origin-->
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4040)/meshes/collision/grab_handle.stl"/>
+          <mesh filename="file://$(find hatch_4040)/meshes/collision/grab_handle.stl" scale="0.254 0.254 0.254"/>
         </geometry>
         <material name="red"/>
       </collision>
