@@ -69,16 +69,16 @@
 
     <xacro:include filename="$(find hatch_4040)/urdf/crank_wheel.xacro"/>
     <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_4040_face">
-      <origin xyz="0.0522475 -0.473371 0.606772" rpy="0 ${pi/2} 0"/>
+      <origin xyz="0.0522475 -0.473371 0.604" rpy="0 ${pi/2} 0"/>
     </xacro:crank_wheel>
 
     <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)internal_" parent="${prefix}hatch_4040_face">
-      <origin xyz="-0.1795475 -0.473371 0.606772" rpy="0 -${pi/2} 0"/>
+      <origin xyz="-0.1795475 -0.473371 0.604" rpy="0 -${pi/2} 0"/>
     </xacro:crank_wheel>
 
     <xacro:include filename="$(find hatch_4040)/urdf/grab_handle.xacro"/>
     <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_4040_face">
-      <origin xyz="-0.0497 -0.788394 0.3147147" rpy="0 0 0"/>
+      <origin xyz="-0.0497 -0.788394 0.3147147" rpy="-0.436332 0 0"/>
     </xacro:grab_handle>
 
     <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)internal_" parent="${prefix}hatch_4040_face">

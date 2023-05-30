@@ -22,9 +22,9 @@
       </inertial>
       <visual>
         <!--This transform is for the stl file origin-->
-        <origin xyz="-0.92001848 0.1492 0.0403" rpy="0 0 0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4040)/meshes/visual/grab_handle.stl" scale="0.254 0.254 0.254"/>
+          <mesh filename="file://$(find hatch_4040)/meshes/visual/grab_handle.stl"/>
         </geometry>
         <material name="gray"/>
       </visual>
@@ -32,7 +32,7 @@
         <!--This transform is for the stl file origin-->
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4040)/meshes/collision/grab_handle.stl" scale="0.254 0.254 0.254"/>
+          <mesh filename="file://$(find hatch_4040)/meshes/collision/grab_handle.stl"/>
         </geometry>
         <material name="red"/>
       </collision>
