@@ -130,7 +130,7 @@
   <joint name="${prefix}drawer_1_left_joint" type="fixed">
     <parent link="${prefix}drawer_1_face"/>
     <child link="${prefix}drawer_1_left"/>
-    <origin xyz="${0.293 - 0.013} -0.305 -0.007" rpy="0 0 0"/>
+    <origin xyz="${0.293 - 0.013} -0.305 -0.00435" rpy="0 0 0"/>
   </joint>
  
   <link name="${prefix}drawer_1_left">
@@ -159,7 +159,7 @@
   <joint name="${prefix}drawer_1_right_joint" type="fixed">
     <parent link="${prefix}drawer_1_face"/>
     <child link="${prefix}drawer_1_right"/>
-    <origin xyz="0.0 -0.305 -0.007" rpy="0 0 0"/>
+    <origin xyz="0.0 -0.305 -0.00435" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}drawer_1_right">
@@ -188,7 +188,7 @@
   <joint name="${prefix}drawer_1_bottom_joint" type="fixed">
     <parent link="${prefix}drawer_1_face"/>
     <child link="${prefix}drawer_1_bottom"/>
-    <origin xyz="0.0 -0.305 -0.007" rpy="0 0 0"/>
+    <origin xyz="0.0 -0.305 -0.00435" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}drawer_1_bottom">
@@ -248,7 +248,7 @@
   <joint name="${prefix}drawer_2_left_joint" type="fixed">
     <parent link="${prefix}drawer_2_face"/>
     <child link="${prefix}drawer_2_left"/>
-    <origin xyz="${0.293 - 0.013} -0.305 -0.007" rpy="0 0 0"/>
+    <origin xyz="${0.293 - 0.013} -0.305 -0.00435" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}drawer_2_left">
@@ -277,7 +277,7 @@
   <joint name="${prefix}drawer_2_right_joint" type="fixed">
     <parent link="${prefix}drawer_2_face"/>
     <child link="${prefix}drawer_2_right"/>
-    <origin xyz="0.0 -0.305 -0.007" rpy="0 0 0"/>
+    <origin xyz="0.0 -0.305 -0.00435" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}drawer_2_right">
@@ -306,7 +306,7 @@
   <joint name="${prefix}drawer_2_bottom_joint" type="fixed">
     <parent link="${prefix}drawer_2_face"/>
     <child link="${prefix}drawer_2_bottom"/>
-    <origin xyz="0.0 -0.305 -0.007" rpy="0 0 0"/>
+    <origin xyz="0.0 -0.305 -0.00435" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}drawer_2_bottom">
