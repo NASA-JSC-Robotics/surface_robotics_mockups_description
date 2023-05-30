@@ -10,7 +10,7 @@ def generate_launch_description():
         [
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
-            PathJoinSubstitution([FindPackageShare("trainer"), "urdf", "trainer.urdf.xacro"]),
+            PathJoinSubstitution([FindPackageShare("trainer"), "urdf", "trainer_front_right_face.urdf.xacro"]),
         ]
     )
 

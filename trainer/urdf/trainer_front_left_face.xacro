@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="trainer_front_left_face" params="
+    name:=''
+    prefix:=''
+    parent:=''
+    *origin
+    shelf:='true'">
+  
+  <joint name="${prefix}trainer_front_left_face_joint" type="fixed">
+    <parent link="${parent}"/>
+    <child link="${prefix}front_left_face"/>
+    <xacro:insert_block name="origin"/>
+  </joint>
+
+  <link name="${prefix}front_left_face">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/visual/front_left_face.stl"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/collision/front_left_face.stl"/>
+      </geometry>
+      <material name="red"/>
+    </collision>
+  </link>
+
+  <joint name="${prefix}cubby_1_joint" type="fixed">
+    <parent link="${prefix}front_left_face"/>
+    <child link="${prefix}cubby_1"/>
+    <origin xyz="0.0 0.0 0.525" rpy="0 0 0"/>
+  </joint>
+
+  <link name="${prefix}cubby_1">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/visual/cubby_1.stl"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/collision/cubby_1.stl"/>
+      </geometry>
+      <material name="red"/>
+    </collision>
+  </link>
+
+  <joint name="${prefix}cubby_2_joint" type="fixed">
+    <parent link="${prefix}front_left_face"/>
+    <child link="${prefix}cubby_2"/>
+    <origin xyz="0.0 0.0 0.875" rpy="0 0 0"/>
+  </joint>
+
+  <link name="${prefix}cubby_2">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/visual/cubby_2.stl"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/collision/cubby_2.stl"/>
+      </geometry>
+      <material name="red"/>
+    </collision>
+  </link>
+
+  <xacro:if value="${shelf}">
+    <joint name="${prefix}trainer_cubby_shelf_joint" type="fixed">
+      <parent link="${prefix}front_left_face"/>
+      <child link="${prefix}cubby_shelf"/>
+      <origin xyz="-0.173 -0.04 0.031" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}cubby_shelf">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="${0.173/2} ${0.428/2} ${0.02/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.173 0.428 0.02"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <collision>
+        <origin xyz="${0.173/2} ${0.428/2} ${0.02/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.173 0.428 0.02"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+  </xacro:if>
+
+  </xacro:macro>
+</robot>

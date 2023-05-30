@@ -17,12 +17,10 @@
       <visual>
         <!--Offset is to adjust for the radius on the extrusion-->
         <origin xyz="0.0 0.004 0.0" rpy="0 0 0"/>
-          <geometry>
-            <mesh filename="file://$(find trainer)/meshes/visual/ivr_tasktrainer_frame.stl"/>
-          </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.75"/>
-        </material>
+        <geometry>
+          <mesh filename="file://$(find trainer)/meshes/visual/ivr_tasktrainer_frame.stl"/>
+        </geometry>
+        <material name="gray"/>
       </visual>
     </link>
 
@@ -33,7 +31,7 @@
     </joint>
 
     <link name="trainer_box">
-    <!--TODO set proper inertia-->
+      <!--TODO set proper inertia-->
       <inertial>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
         <mass value="0.0"/>
@@ -44,9 +42,7 @@
         <geometry>
           <box size="1.27 0.896 0.47"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.5"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -62,9 +58,7 @@
         <geometry>
           <box size="1.27 0.896 0.1"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 1.0"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -80,9 +74,7 @@
         <geometry>
           <box size="1.27 0.1 1.60"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.5"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -98,9 +90,7 @@
         <geometry>
           <box size="1.27 0.05 1.60"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.5"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -116,9 +106,7 @@
         <geometry>
           <box size="0.810 0.1 1.60"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.5"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 
@@ -134,9 +122,7 @@
         <geometry>
           <box size="0.14 0.1 1.60"/>
         </geometry>
-        <material name="red">
-          <color rgba="1.0 0 0 0.5"/>
-        </material>
+        <material name="red"/>
       </collision>
     </link>
 

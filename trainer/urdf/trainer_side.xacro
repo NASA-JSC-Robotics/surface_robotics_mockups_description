@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="side_face" params="
+    name:=''
+    prefix:=''
+    parent:=''
+    *origin">
+
+    <joint name="${prefix}trainer_side_face_base_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${prefix}side_bottom_face"/>
+      <xacro:insert_block name="origin"/>
+    </joint>
+
+    <link name="${prefix}side_bottom_face">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find trainer)/meshes/visual/side_bottom_face.stl"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="file://$(find trainer)/meshes/collision/side_bottom_face.stl"/>
+          </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <joint name="${prefix}side_top_face_joint" type="fixed">
+      <parent link="${prefix}side_bottom_face"/>
+      <child link="${prefix}side_top_face"/>
+      <origin xyz="0.0 0.0 0.5084191" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}side_top_face">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find trainer)/meshes/visual/side_top_face.stl"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="file://$(find trainer)/meshes/collision/side_top_face.stl"/>
+          </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+  <joint name="${prefix}cabinet_4_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort="10.0" lower="0.0" upper="3.14" velocity="0.5"/>
+    <parent link="${prefix}side_top_face"/>
+    <child link="${prefix}cabinet_4"/>
+    <origin xyz="0.004 0.006 0.484" rpy="0 0 0"/>
+  </joint>
+
+  <link name="${prefix}cabinet_4">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/visual/cabinet_door_4.stl"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/collision/cabinet_door_4.stl"/>
+      </geometry>
+      <material name="red"/>
+    </collision>
+  </link>
+
+  <joint name="${prefix}drawer_1_joint" type="prismatic">
+    <axis xyz="0 1 0"/>
+    <limit effort="10.0" lower="0.0" upper="0.305" velocity="0.5"/>
+    <parent link="${prefix}side_top_face"/>
+    <child link="${prefix}drawer_1_face"/>
+    <origin xyz="0.011 0.003 0.283" rpy="0 0 0"/>
+  </joint>
+
+  <link name="${prefix}drawer_1_face">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/visual/drawer_1_face.stl"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/collision/drawer_1_face.stl"/>
+      </geometry>
+      <material name="red"/>
+    </collision>
+  </link>
+
+  <joint name="${prefix}drawer_1_left_joint" type="fixed">
+    <parent link="${prefix}drawer_1_face"/>
+    <child link="${prefix}drawer_1_left"/>
+    <origin xyz="${0.293 - 0.013} -0.305 -0.00435" rpy="0 0 0"/>
+  </joint>
+ 
+  <link name="${prefix}drawer_1_left">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.013 0.305 0.096"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.013 0.305 0.096"/>
+      </geometry>
+      <material name="red"/>
+    </collision>
+  </link>
+
+  <joint name="${prefix}drawer_1_right_joint" type="fixed">
+    <parent link="${prefix}drawer_1_face"/>
+    <child link="${prefix}drawer_1_right"/>
+    <origin xyz="0.0 -0.305 -0.00435" rpy="0 0 0"/>
+  </joint>
+
+  <link name="${prefix}drawer_1_right">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.013 0.305 0.096"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.013 0.305 0.096"/>
+      </geometry>
+      <material name="red"/>
+    </collision>
+  </link>
+
+  <joint name="${prefix}drawer_1_bottom_joint" type="fixed">
+    <parent link="${prefix}drawer_1_face"/>
+    <child link="${prefix}drawer_1_bottom"/>
+    <origin xyz="0.0 -0.305 -0.00435" rpy="0 0 0"/>
+  </joint>
+
+  <link name="${prefix}drawer_1_bottom">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="${0.293/2} ${0.305/2} ${0.013/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.293 0.305 0.013"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="${0.293/2} ${0.305/2} ${0.013/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.293 0.305 0.013"/>
+      </geometry>
+      <material name="red"/>
+    </collision>
+  </link>
+
+  <joint name="${prefix}drawer_2_joint" type="prismatic">
+    <axis xyz="0 1 0"/>
+    <limit effort="10.0" lower="0.0" upper="0.2921" velocity="0.5"/>
+    <parent link="${prefix}side_top_face"/>
+    <child link="${prefix}drawer_2_face"/>
+    <origin xyz="0.011 0.003 0.086" rpy="0 0 0"/>
+  </joint>
+
+  <link name="${prefix}drawer_2_face">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/visual/drawer_2_face.stl"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/collision/drawer_2_face.stl"/>
+      </geometry>
+      <material name="red"/>
+    </collision>
+  </link>
+
+  <joint name="${prefix}drawer_2_left_joint" type="fixed">
+    <parent link="${prefix}drawer_2_face"/>
+    <child link="${prefix}drawer_2_left"/>
+    <origin xyz="${0.293 - 0.013} -0.305 -0.00435" rpy="0 0 0"/>
+  </joint>
+
+  <link name="${prefix}drawer_2_left">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.013 0.305 0.096"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.013 0.305 0.096"/>
+      </geometry>
+      <material name="red"/>
+    </collision>
+  </link>
+
+  <joint name="${prefix}drawer_2_right_joint" type="fixed">
+    <parent link="${prefix}drawer_2_face"/>
+    <child link="${prefix}drawer_2_right"/>
+    <origin xyz="0.0 -0.305 -0.00435" rpy="0 0 0"/>
+  </joint>
+
+  <link name="${prefix}drawer_2_right">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.013 0.305 0.096"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.013 0.305 0.096"/>
+      </geometry>
+      <material name="red"/>
+    </collision>
+  </link>
+
+  <joint name="${prefix}drawer_2_bottom_joint" type="fixed">
+    <parent link="${prefix}drawer_2_face"/>
+    <child link="${prefix}drawer_2_bottom"/>
+    <origin xyz="0.0 -0.305 -0.00435" rpy="0 0 0"/>
+  </joint>
+
+  <link name="${prefix}drawer_2_bottom">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="${0.293/2} ${0.305/2} ${0.013/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.293 0.305 0.013"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="${0.293/2} ${0.305/2} ${0.013/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.293 0.305 0.013"/>
+      </geometry>
+      <material name="red"/>
+    </collision>
+  </link>
+
+  </xacro:macro>
+</robot>

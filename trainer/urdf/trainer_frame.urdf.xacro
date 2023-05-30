@@ -3,6 +3,7 @@
   <xacro:arg name="name" default=""/>
   <xacro:arg name="prefix" default=""/>
 
+  <xacro:include filename="$(find trainer)/urdf/colors.xacro"/>
   <xacro:include filename="$(find trainer)/urdf/trainer_frame.xacro"/>
 
   <link name="world"/>
