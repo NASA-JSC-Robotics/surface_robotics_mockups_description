@@ -78,7 +78,7 @@
 
     <xacro:include filename="$(find hatch_4040)/urdf/grab_handle.xacro"/>
     <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_4040_face">
-      <origin xyz="-0.0497 -0.788394 0.3147147" rpy="-0.436332 0 0"/>
+      <origin xyz="-0.0497 -0.788394 0.3147147" rpy="-0.3926991 0 0"/>
     </xacro:grab_handle>
 
     <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)internal_" parent="${prefix}hatch_4040_face">
