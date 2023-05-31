@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="hatch_4040" params="
+    name:=''
+    prefix:=''
+    parent:=''
+    *origin">
+
+    <joint name="${prefix}hatch_4040_frame_joint" type="fixed">
+      <parent link="${prefix}${parent}"/>
+      <child link="${prefix}hatch_4040_frame"/>
+      <xacro:insert_block name="origin"/>
+    </joint>
+
+    <link name="${prefix}hatch_4040_frame">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find hatch_4040)/meshes/visual/hatch_4040_frame.stl"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find hatch_4040)/meshes/collision/hatch_4040_frame_no_latches.stl"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <joint name="${prefix}hatch_4040_frame_face_joint" type="revolute">
+      <axis xyz="0 0 1"/>
+      <limit effort="10.0" lower="0.0" upper="3.14" velocity="0.5"/>
+      <parent link="${prefix}hatch_4040_frame"/>
+      <child link="${prefix}hatch_4040_face"/>
+      <origin xyz="0.083 1.215 0.103" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}hatch_4040_face">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find hatch_4040)/meshes/visual/hatch_4040_face.stl"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find hatch_4040)/meshes/collision/hatch_4040_collision.stl"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <xacro:include filename="$(find hatch_4040)/urdf/crank_wheel.xacro"/>
+    <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_4040_face">
+      <origin xyz="0.0522475 -0.473371 0.604" rpy="0 ${pi/2} 0"/>
+    </xacro:crank_wheel>
+
+    <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)internal_" parent="${prefix}hatch_4040_face">
+      <origin xyz="-0.1795475 -0.473371 0.604" rpy="0 -${pi/2} 0"/>
+    </xacro:crank_wheel>
+
+    <xacro:include filename="$(find hatch_4040)/urdf/grab_handle.xacro"/>
+    <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_4040_face">
+      <origin xyz="-0.0497 -0.788394 0.3147147" rpy="-0.3926991 0 0"/>
+    </xacro:grab_handle>
+
+    <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)internal_" parent="${prefix}hatch_4040_face">
+      <origin xyz="-0.0776 -0.851588 0.3093442" rpy="0 ${pi} 0"/>
+    </xacro:grab_handle>
+
+  </xacro:macro>
+</robot>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="grab_handle" params="
+    name:=''
+    prefix:=''
+    parent:=''
+    *origin">
+
+    <joint name="${prefix}grab_handle_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${prefix}exterior_grab_handle"/>
+      <xacro:insert_block name="origin"/>
+    </joint>
+
+    <link name="${prefix}exterior_grab_handle">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+      <visual>
+        <!--This transform is for the stl file origin-->
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find hatch_4040)/meshes/visual/grab_handle.stl"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <collision>
+        <!--This transform is for the stl file origin-->
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find hatch_4040)/meshes/collision/grab_handle.stl"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+  </xacro:macro>
+</robot>

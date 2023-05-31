@@ -16,9 +16,9 @@
     <link name="${prefix}hatch_frame">
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-          <geometry>
-            <mesh filename="file://$(find hatch_frame)/meshes/visual/ivr_hatch_frame.stl"/>
-          </geometry>
+        <geometry>
+          <mesh filename="file://$(find hatch_frame)/meshes/visual/ivr_hatch_frame.stl"/>
+        </geometry>
         <material name="gray"/>
       </visual>
     </link>
@@ -64,7 +64,7 @@
     <joint name="hatch_bottom_front" type="fixed">
       <parent link="hatch_bottom"/>
       <child link="hatch_front"/>
-      <origin xyz="0.589 0.0 0.0" rpy="0 0 0"/>
+      <origin xyz="0.578 0.0 0.0" rpy="0 0 0"/>
     </joint>
 
     <link name="hatch_front">
