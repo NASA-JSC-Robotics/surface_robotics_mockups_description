@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(4040_hatch)
+project(hatch_4040)
 
 find_package(ament_cmake REQUIRED)
 

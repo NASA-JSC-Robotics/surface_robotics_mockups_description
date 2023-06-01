@@ -70,7 +70,7 @@
     <limit effort="10.0" lower="0.0" upper="3.14" velocity="0.5"/>
     <parent link="${prefix}side_top_face"/>
     <child link="${prefix}cabinet_4"/>
-    <origin xyz="0.0 0.017 0.484" rpy="0 0 0"/>
+    <origin xyz="-0.0018 0.017 0.484" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}cabinet_4">
@@ -101,7 +101,7 @@
     <limit effort="10.0" lower="0.0" upper="0.305" velocity="0.5"/>
     <parent link="${prefix}side_top_face"/>
     <child link="${prefix}drawer_1_face"/>
-    <origin xyz="0.004 0.006 0.282" rpy="0 0 0"/>
+    <origin xyz="0.011 0.003 0.283" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}drawer_1_face">
@@ -130,9 +130,9 @@
   <joint name="${prefix}drawer_1_left_joint" type="fixed">
     <parent link="${prefix}drawer_1_face"/>
     <child link="${prefix}drawer_1_left"/>
-    <origin xyz="0.293 -0.305 -0.007" rpy="0 0 0"/>
+    <origin xyz="${0.293 - 0.013} -0.305 -0.00435" rpy="0 0 0"/>
   </joint>
-
+ 
   <link name="${prefix}drawer_1_left">
     <!--TODO set proper inertia-->
     <inertial>
@@ -159,7 +159,7 @@
   <joint name="${prefix}drawer_1_right_joint" type="fixed">
     <parent link="${prefix}drawer_1_face"/>
     <child link="${prefix}drawer_1_right"/>
-    <origin xyz="0.0 -0.305 -0.007" rpy="0 0 0"/>
+    <origin xyz="0.0 -0.305 -0.00435" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}drawer_1_right">
@@ -188,7 +188,7 @@
   <joint name="${prefix}drawer_1_bottom_joint" type="fixed">
     <parent link="${prefix}drawer_1_face"/>
     <child link="${prefix}drawer_1_bottom"/>
-    <origin xyz="0.0 -0.305 -0.007" rpy="0 0 0"/>
+    <origin xyz="0.0 -0.305 -0.00435" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}drawer_1_bottom">
@@ -219,7 +219,7 @@
     <limit effort="10.0" lower="0.0" upper="0.2921" velocity="0.5"/>
     <parent link="${prefix}side_top_face"/>
     <child link="${prefix}drawer_2_face"/>
-    <origin xyz="0.004 0.006 0.085" rpy="0 0 0"/>
+    <origin xyz="0.011 0.003 0.086" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}drawer_2_face">
@@ -248,7 +248,7 @@
   <joint name="${prefix}drawer_2_left_joint" type="fixed">
     <parent link="${prefix}drawer_2_face"/>
     <child link="${prefix}drawer_2_left"/>
-    <origin xyz="0.293 -0.305 -0.007" rpy="0 0 0"/>
+    <origin xyz="${0.293 - 0.013} -0.305 -0.00435" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}drawer_2_left">
@@ -277,7 +277,7 @@
   <joint name="${prefix}drawer_2_right_joint" type="fixed">
     <parent link="${prefix}drawer_2_face"/>
     <child link="${prefix}drawer_2_right"/>
-    <origin xyz="0.0 -0.305 -0.007" rpy="0 0 0"/>
+    <origin xyz="0.0 -0.305 -0.00435" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}drawer_2_right">
@@ -306,7 +306,7 @@
   <joint name="${prefix}drawer_2_bottom_joint" type="fixed">
     <parent link="${prefix}drawer_2_face"/>
     <child link="${prefix}drawer_2_bottom"/>
-    <origin xyz="0.0 -0.305 -0.007" rpy="0 0 0"/>
+    <origin xyz="0.0 -0.305 -0.00435" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}drawer_2_bottom">

@@ -10,14 +10,22 @@ def generate_launch_description():
         [
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
+<<<<<<<< HEAD:hatch_4040/launch/view.launch.py
+            PathJoinSubstitution([FindPackageShare("hatch_4040"), "urdf", "hatch_4040.urdf.xacro"]),
+========
             PathJoinSubstitution([FindPackageShare("trainer"), "urdf", "bench_seat.urdf.xacro"]),
+>>>>>>>> humble-feature/DEXTIVR-207:trainer/launch/view_bench.launch.py
         ]
     )
 
     robot_description = {"robot_description": robot_description_content}
 
     rviz_config_file = PathJoinSubstitution(
+<<<<<<<< HEAD:hatch_4040/launch/view.launch.py
+        [FindPackageShare("hatch_4040"), "rviz", "visualization.rviz"]
+========
         [FindPackageShare("trainer"), "rviz", "visualization.rviz"]
+>>>>>>>> humble-feature/DEXTIVR-207:trainer/launch/view_bench.launch.py
     )
 
     joint_state_publisher_node = Node(

@@ -41,7 +41,7 @@
     <limit effort="10.0" lower="0.0" upper="3.14" velocity="0.5"/>
     <parent link="${prefix}front_right_face"/>
     <child link="${prefix}cabinet_1"/>
-    <origin xyz="0.017 0.344 0.713" rpy="0 0 0"/>
+    <origin xyz="0.017 ${0.344 + 0.0018} 0.713" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}cabinet_1">
@@ -52,14 +52,14 @@
       <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
     </inertial>
     <visual>
-      <origin xyz="-0.0075 -0.00186 0.0" rpy="0 0 0"/>
+      <origin xyz="${-0.0075 - 0.003175} -0.00366 0.0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/visual/cabinet_door_1.stl"/>
       </geometry>
       <material name="blue"/>
     </visual>
     <collision>
-      <origin xyz="-0.0075 -0.00186 0.0" rpy="0 0 0"/>
+      <origin xyz="${-0.0075 - 0.003175} -0.00366 0.0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/collision/cabinet_door_1.stl"/>
       </geometry>
@@ -132,7 +132,7 @@
     <limit effort="10.0" lower="0.0" upper="3.14" velocity="0.5"/>
     <parent link="${prefix}front_right_face"/>
     <child link="${prefix}cabinet_2"/>
-    <origin xyz="0.017 0.002 0.379" rpy="0 0 0"/>
+    <origin xyz="0.017 -0.0018 0.379" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}cabinet_2">
@@ -143,14 +143,14 @@
       <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
     </inertial>
     <visual>
-      <origin xyz="-0.0075 -0.00186 0.0" rpy="0 0 0"/>
+      <origin xyz="${-0.0075 - 0.003175} 0.00366 0.0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/visual/cabinet_door_2.stl"/>
       </geometry>
       <material name="blue"/>
     </visual>
     <collision>
-      <origin xyz="-0.0075 -0.00186 0.0" rpy="0 0 0"/>
+      <origin xyz="${-0.0075 - 0.003175} 0.00366 0.0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/collision/cabinet_door_2.stl"/>
       </geometry>
@@ -163,7 +163,7 @@
     <limit effort="10.0" lower="0.0" upper="3.14" velocity="0.5"/>
     <parent link="${prefix}front_right_face"/>
     <child link="${prefix}cabinet_3"/>
-    <origin xyz="0.017 0.342 0.007" rpy="0 0 0"/>
+    <origin xyz="0.017 ${0.344 + 0.0018} 0.007" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}cabinet_3">
@@ -174,14 +174,14 @@
       <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
     </inertial>
     <visual>
-      <origin xyz="-0.0075 -0.00186 0.0" rpy="0 0 0"/>
+      <origin xyz="${-0.0075 - 0.003175} -0.00366 0.0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/visual/cabinet_door_3.stl"/>
       </geometry>
       <material name="blue"/>
     </visual>
     <collision>
-      <origin xyz="-0.0075 -0.00186 0.0" rpy="0 0 0"/>
+      <origin xyz="${-0.0075 - 0.003175} -0.00366 0.0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file://$(find trainer)/meshes/collision/cabinet_door_3.stl"/>
       </geometry>
