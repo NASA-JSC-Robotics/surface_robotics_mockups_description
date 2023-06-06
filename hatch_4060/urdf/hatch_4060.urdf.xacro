@@ -8,7 +8,7 @@
   <xacro:property name="internal_handle_2" default="false"/>
 
   <xacro:include filename="$(find hatch_frame)/urdf/hatch_frame.xacro"/>
-  <xacro:include filename="$(find hatch_4060)/urdf/colors.xacro"/>
+  <xacro:include filename="$(find hatch_frame)/urdf/colors.xacro"/>
   <xacro:include filename="$(find hatch_4060)/urdf/hatch_4060.xacro"/>
 
   <link name="world"/>

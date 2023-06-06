@@ -71,7 +71,7 @@
       </collision>
     </link>
 
-    <xacro:include filename="$(find hatch_4060)/urdf/crank_wheel.xacro"/>
+    <xacro:include filename="$(find hatch_frame)/urdf/crank_wheel.xacro"/>
     <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_4060_face">
       <origin xyz="0.0522475 -0.9474 0.4295" rpy="0 ${pi/2} 0"/>
     </xacro:crank_wheel>
@@ -80,7 +80,7 @@
       <origin xyz="-0.1795475 -0.9474 0.4295" rpy="0 -${pi/2} 0"/>
     </xacro:crank_wheel>
 
-    <xacro:include filename="$(find hatch_4060)/urdf/grab_handle.xacro"/>
+    <xacro:include filename="$(find hatch_frame)/urdf/grab_handle.xacro"/>
 
     <xacro:if value="${external_handle_1}">
       <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)external_1_" parent="${prefix}hatch_4060_face">
