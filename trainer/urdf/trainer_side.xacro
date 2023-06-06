@@ -334,9 +334,9 @@
     </collision>
   </link>
 
-  <joint name="${prefix}recessed_latch_handle_joint" type="prismatic">
+  <joint name="${prefix}recessed_latch_handle_joint" type="revolute">
     <axis xyz="-1 0 0"/>
-    <limit effort="10.0" lower="0.0" upper="0.2921" velocity="0.5"/>
+    <limit effort="10.0" lower="0.0" upper="${pi/2}" velocity="0.5"/>
     <parent link="${prefix}recessed_latch_housing"/>
     <child link="${prefix}recessed_latch_handle"/>
     <origin xyz="0.0508 -0.0028 0.00665" rpy="0 0 0"/>

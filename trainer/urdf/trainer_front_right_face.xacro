@@ -161,7 +161,7 @@
   <joint name="${prefix}push_latch_housing_joint" type="fixed">
     <parent link="${prefix}cabinet_2"/>
     <child link="${prefix}push_latch_housing"/>
-    <origin xyz="0.0032 0.2185 0.134" rpy="0 0 0"/>
+    <origin xyz="-0.0075 0.2185 0.134" rpy="0 0 0"/>
   </joint>
 
   <link name="${prefix}push_latch_housing">
@@ -187,9 +187,74 @@
     </collision>
   </link>
 
+
+  <joint name="${prefix}push_latch_button_joint" type="prismatic">
+    <axis xyz="-1 0 0"/>
+    <!--TODO button travel is a complete guess at this point-->
+    <limit effort="10.0" lower="0.0" upper="0.005" velocity="0.5"/>
+    <parent link="${prefix}push_latch_housing"/>
+    <child link="${prefix}push_latch_button"/>
+    <origin xyz="-0.0125 0.0285 0.0045" rpy="0 0 ${pi/8}"/>
+  </joint>
+
+  <link name="${prefix}push_latch_button">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/visual/push_latch_button.stl"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/collision/push_latch_button.stl"/>
+      </geometry>
+      <material name="red"/>
+    </collision>
+  </link>
+
+  <joint name="${prefix}push_latch_handle_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort="10.0" lower="0.0" upper="${pi/3}" velocity="0.5"/>
+    <parent link="${prefix}push_latch_housing"/>
+    <child link="${prefix}push_latch_handle"/>
+    <origin xyz="-0.003 0.079 0.0045" rpy="0 0 0"/>
+  </joint>
+
+  <link name="${prefix}push_latch_handle">
+    <!--TODO set proper inertia-->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/visual/push_latch_handle.stl"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find trainer)/meshes/collision/push_latch_handle.stl"/>
+      </geometry>
+      <material name="red"/>
+    </collision>
+  </link>
+
+
   <joint name="${prefix}cabinet_3_joint" type="revolute">
     <axis xyz="0 0 1"/>
-    <limit effort="10.0" lower="0.0" upper="3.14" velocity="0.5"/>
+    <limit effort="10.0" lower="0.0" upper="${pi}" velocity="0.5"/>
     <parent link="${prefix}front_right_face"/>
     <child link="${prefix}cabinet_3"/>
     <origin xyz="0.017 ${0.344 + 0.0018} 0.007" rpy="0 0 0"/>
