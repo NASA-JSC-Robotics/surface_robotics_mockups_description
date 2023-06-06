@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="hatch_4060" params="
+    name:=''
+    prefix:=''
+    parent:=''
+    *origin
+    external_handle_1:='false'
+    external_handle_2:='false'
+    internal_handle_1:='false'
+    internal_handle_2:='false'">
+
+    <joint name="${prefix}hatch_4060_frame_joint" type="fixed">
+      <parent link="${prefix}${parent}"/>
+      <child link="${prefix}hatch_4060_frame"/>
+      <xacro:insert_block name="origin"/>
+    </joint>
+
+    <link name="${prefix}hatch_4060_frame">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find hatch_4060)/meshes/visual/hatch_4060_frame.stl"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find hatch_4060)/meshes/collision/hatch_4060_frame.stl"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <joint name="${prefix}hatch_4060_frame_face_joint" type="revolute">
+      <axis xyz="0 0 1"/>
+      <limit effort="10.0" lower="0.0" upper="3.14" velocity="0.5"/>
+      <parent link="${prefix}hatch_4060_frame"/>
+      <child link="${prefix}hatch_4060_face"/>
+      <origin xyz="0.0817 1.215 0.0457" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}hatch_4060_face">
+      <!--TODO set proper inertia-->
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find hatch_4060)/meshes/visual/hatch_4060_face_no_handles.stl"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find hatch_4060)/meshes/collision/hatch_4060_face_no_handles.stl"/>
+        </geometry>
+        <material name="red"/>
+      </collision>
+    </link>
+
+    <xacro:include filename="$(find hatch_4060)/urdf/crank_wheel.xacro"/>
+    <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_4060_face">
+      <origin xyz="0.0522475 -0.9474 0.4295" rpy="0 ${pi/2} 0"/>
+    </xacro:crank_wheel>
+
+    <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)internal_" parent="${prefix}hatch_4060_face">
+      <origin xyz="-0.1795475 -0.9474 0.4295" rpy="0 -${pi/2} 0"/>
+    </xacro:crank_wheel>
+
+    <xacro:include filename="$(find hatch_4060)/urdf/grab_handle.xacro"/>
+
+    <xacro:if value="${external_handle_1}">
+      <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)external_1_" parent="${prefix}hatch_4060_face">
+        <origin xyz="-0.0497 -0.9016 0.7357" rpy="0 0 0"/>
+      </xacro:grab_handle>
+    </xacro:if>
+
+    <xacro:if value="${external_handle_2}">
+      <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)external_2_" parent="${prefix}hatch_4060_face">
+        <origin xyz="-0.0497 -1.078 0.6957" rpy="${pi/2} 0 0"/>
+      </xacro:grab_handle>
+    </xacro:if>
+
+    <xacro:if value="${internal_handle_1}">
+      <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)internal_1_" parent="${prefix}hatch_4060_face">
+        <origin xyz="-0.0776 -0.9016 0.7957" rpy="0 ${pi} 0"/>
+      </xacro:grab_handle>
+    </xacro:if>
+
+    <xacro:if value="${internal_handle_2}">
+      <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)internal_2_" parent="${prefix}hatch_4060_face">
+        <origin xyz="-0.0776 -1.0293 0.6957" rpy="${-pi/2} ${pi} 0"/>
+      </xacro:grab_handle>
+    </xacro:if>
+
+  </xacro:macro>
+</robot>
