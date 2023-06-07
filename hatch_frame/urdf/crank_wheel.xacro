@@ -40,7 +40,7 @@
     </link>
 
     <joint name="${prefix}rotary_handle_joint" type="revolute">
-      <axis xyz="0 -1 0"/>
+      <axis xyz="1 0 0"/>
       <!--This is continuously rotatable-->
       <limit effort="10.0" lower="0.0" upper="1.57" velocity="0.5"/>
       <parent link="${prefix}rotary_wheel"/>

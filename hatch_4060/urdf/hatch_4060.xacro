@@ -58,7 +58,7 @@
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4060)/meshes/visual/hatch_4060_face_no_handles.stl"/>
+          <mesh filename="file://$(find hatch_4060)/meshes/visual/hatch_4060_face.stl"/>
         </geometry>
         <material name="gray"/>
       </visual>
