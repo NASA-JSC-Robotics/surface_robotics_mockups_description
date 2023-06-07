@@ -24,7 +24,7 @@
         <!--This transform is for the stl file origin-->
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4040)/meshes/visual/grab_handle.stl"/>
+          <mesh filename="file://$(find hatch_frame)/meshes/visual/grab_handle.stl"/>
         </geometry>
         <material name="gray"/>
       </visual>
@@ -32,7 +32,7 @@
         <!--This transform is for the stl file origin-->
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4040)/meshes/collision/grab_handle.stl"/>
+          <mesh filename="file://$(find hatch_frame)/meshes/collision/grab_handle.stl"/>
         </geometry>
         <material name="red"/>
       </collision>
