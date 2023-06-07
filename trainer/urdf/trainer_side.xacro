@@ -308,7 +308,7 @@
   <joint name="${prefix}recessed_latch_housing_joint" type="fixed">
     <parent link="${prefix}drawer_2_face"/>
     <child link="${prefix}recessed_latch_housing"/>
-    <origin xyz="0.1148 0.004 0.0165" rpy="0 0 0"/>
+    <origin xyz="0.1148 0.003175 0.0165" rpy="0 0 0"/>
   </joint>
  
   <link name="${prefix}recessed_latch_housing">
@@ -339,7 +339,7 @@
     <limit effort="10.0" lower="0.0" upper="${pi/2}" velocity="0.5"/>
     <parent link="${prefix}recessed_latch_housing"/>
     <child link="${prefix}recessed_latch_handle"/>
-    <origin xyz="0.0508 -0.0028 0.00665" rpy="0 0 0"/>
+    <origin xyz="0.0508 -0.001778 0.006477" rpy="0 0 0"/>
   </joint>
  
   <link name="${prefix}recessed_latch_handle">
