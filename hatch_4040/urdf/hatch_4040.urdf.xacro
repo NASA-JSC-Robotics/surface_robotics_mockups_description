@@ -3,8 +3,8 @@
   <xacro:arg name="name" default=""/>
   <xacro:arg name="prefix" default=""/>
 
-  <xacro:include filename="$(find hatch_frame)/urdf/hatch_frame.xacro"/>
-  <xacro:include filename="$(find hatch_frame)/urdf/colors.xacro"/>
+  <xacro:include filename="$(find hatch_accessories)/urdf/hatch_frame.xacro"/>
+  <xacro:include filename="$(find hatch_accessories)/urdf/colors.xacro"/>
   <xacro:include filename="$(find hatch_4040)/urdf/hatch_4040.xacro"/>
 
   <link name="world"/>
