@@ -26,26 +26,26 @@
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4040)/meshes/visual/crank_wheel.stl"/>
+          <mesh filename="file://$(find hatch_accessories)/meshes/visual/crank_wheel.stl"/>
         </geometry>
-        <material name="gray"/>
+        <material name="blue"/>
       </visual>
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4040)/meshes/collision/crank_wheel.stl"/>
+          <mesh filename="file://$(find hatch_accessories)/meshes/collision/crank_wheel.stl"/>
         </geometry>
         <material name="red"/>
       </collision>
     </link>
 
     <joint name="${prefix}rotary_handle_joint" type="revolute">
-      <axis xyz="0 -1 0"/>
+      <axis xyz="1 0 0"/>
       <!--This is continuously rotatable-->
       <limit effort="10.0" lower="0.0" upper="1.57" velocity="0.5"/>
       <parent link="${prefix}rotary_wheel"/>
       <child link="${prefix}rotary_handle"/>
-      <origin xyz="0.053975 0.0 0.0155" rpy="0 0 0"/>
+      <origin xyz="0.0 0.053975 0.0155" rpy="0 0 0"/>
     </joint>
 
     <link name="${prefix}rotary_handle">
@@ -58,14 +58,14 @@
       <visual>
         <origin xyz="0.0 0.0 0.00355" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4040)/meshes/visual/crank_handle.stl"/>
+          <mesh filename="file://$(find hatch_accessories)/meshes/visual/crank_handle.stl"/>
         </geometry>
-        <material name="gray"/>
+        <material name="blue"/>
       </visual>
       <collision>
         <origin xyz="0.0 0.0 0.00355" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4040)/meshes/collision/crank_handle.stl"/>
+          <mesh filename="file://$(find hatch_accessories)/meshes/collision/crank_handle.stl"/>
         </geometry>
         <material name="red"/>
       </collision>

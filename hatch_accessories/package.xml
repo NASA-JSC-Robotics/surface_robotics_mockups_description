@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>4060_hatch</name>
+  <name>hatch_accessories</name>
   <version>0.0.1</version>
   <description>
-    Meshes and URDFs for the 40x60 hatch.
+    Meshes and URDFs for the hatch frame and other common interfaces which should remain the same between hatches.
   </description>
   <maintainer email="andrew.p.sharp@nasa.gov">Andrew Sharp</maintainer>
 

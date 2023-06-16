@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(hatch_frame)
+project(hatch_accessories)
 
 find_package(ament_cmake REQUIRED)
 
