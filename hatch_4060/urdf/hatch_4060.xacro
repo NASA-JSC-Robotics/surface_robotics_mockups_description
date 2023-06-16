@@ -45,7 +45,7 @@
       <limit effort="10.0" lower="0.0" upper="3.14" velocity="0.5"/>
       <parent link="${prefix}hatch_4060_frame"/>
       <child link="${prefix}hatch_4060_face"/>
-      <origin xyz="0.0817 1.215 0.0457" rpy="0 0 0"/>
+      <origin xyz="0.0827 1.21379 0.0457" rpy="0 0 0"/>
     </joint>
 
     <link name="${prefix}hatch_4060_face">
