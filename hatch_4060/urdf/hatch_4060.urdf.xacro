@@ -21,7 +21,7 @@
   <xacro:hatch_4060 name="$(arg name)" prefix="$(arg prefix)" parent="hatch_frame" 
     external_handle_1="${external_handle_1}" external_handle_2="${external_handle_2}" 
     internal_handle_1="${internal_handle_1}" internal_handle_2="${internal_handle_2}">
-    <origin xyz="0.668 0.06 0.7113" rpy="0 0 0"/>
+    <origin xyz="0.669329 0.06 0.7113" rpy="0 0 0"/>
   </xacro:hatch_4060>
 
 </robot>
