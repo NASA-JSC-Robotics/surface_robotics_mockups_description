@@ -46,6 +46,116 @@
     <origin xyz="0.0 0.0 0.0381" rpy="0 0 0"/>
   </joint>
 
+  <!-- Seal section-->
+  <!-- Replace visual and collision components of this link with stl eventually-->
+  <link name="seal">
+    <!-- Right-->
+    <visual>
+      <geometry>
+        <box size="0.0091 0.201 0.005"/>
+      </geometry> 
+      <material name="Cyan">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+      <origin rpy ="0 0 0" xyz ="0.1554 0 0.0025"/>
+    </visual>
+
+    <collision> 
+      <geometry>
+        <box size="0.0091 0.201 0.005"/>
+      </geometry>
+      <origin rpy ="0 0 0" xyz ="0.1554 0 0.0025"/>
+    </collision> 
+
+    <!-- Left -->
+    <visual>
+      <geometry>
+        <box size="0.0091 0.201 0.005"/>
+      </geometry> 
+      <material name="Cyan">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+      <origin rpy ="0 0 0" xyz ="-0.1554 0 0.0025"/>
+    </visual>
+
+    <collision> 
+      <geometry>
+        <box size="0.0091 0.201 0.005"/>
+      </geometry>
+      <origin rpy ="0 0 0" xyz ="-0.1554 0 0.0025"/>
+    </collision> 
+
+    <!-- Top-->
+    <visual>
+      <geometry>
+        <box size="0.302 0.0091 0.005"/>
+      </geometry> 
+      <material name="Cyan">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>  
+      <origin xyz="0 0.1045 0.0025" rpy="0 0 0"/>
+    </visual>
+
+    <collision> 
+      <geometry>
+        <box size="0.302 0.0091 0.005"/>
+      </geometry>
+      <origin xyz="0 0.1045 0.0025" rpy="0 0 0"/>
+    </collision> 
+
+    <!-- Bottom -->
+    <visual>
+      <geometry>
+        <box size="0.302 0.0091 0.005"/>
+      </geometry> 
+      <material name="Cyan">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>  
+      <origin xyz="0 -0.1045 0.0025" rpy="0 0 0"/>
+    </visual>   
+
+    <collision> 
+      <geometry>
+        <box size="0.302 0.0091 0.005"/>
+      </geometry>
+      <origin xyz="0 -0.1045 0.0025" rpy="0 0 0"/>
+    </collision> 
+  </link>
+
+  
+  <joint name="seal_to_face_joint" type="fixed">
+    <parent link="csm_faceplate_cover"/>
+    <child link="seal"/>
+    <!-- Seal does not appear to be perfectly centered - introduce offsets -->
+    <origin xyz="-0.001 -0.0015 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Seal corners to help with cartesian waypoints - keep and modify these once above geometry is replaced with an stl -->
+  <link name="seal_corner_1"/>
+  <joint name="c1_to_seal" type="fixed">
+    <parent link="seal"/>
+    <child link="seal_corner_1"/>
+    <origin rpy ="-1.57 1.57 0" xyz ="-0.1554 0.1005 0.005"/>
+  </joint>
+  <link name="seal_corner_2"/>
+  <joint name="c2_to_seal" type="fixed">
+    <parent link="seal"/>
+    <child link="seal_corner_2"/>
+    <origin rpy ="-1.57 1.57 0" xyz ="0.1554 0.1005 0.005"/>
+  </joint>
+  <link name="seal_corner_3"/>
+  <joint name="c3_to_seal" type="fixed">
+    <parent link="seal"/>
+    <child link="seal_corner_3"/>
+    <origin rpy ="-1.57 1.57 0" xyz ="0.1554 -0.1005 0.005"/>
+  </joint>
+  <link name="seal_corner_4"/>
+  <joint name="c4_to_seal" type="fixed">
+    <parent link="seal"/>
+    <child link="seal_corner_4"/>
+    <origin rpy ="-1.57 1.57 0" xyz ="-0.1554 -0.1005 0.005"/>
+  </joint>
+
   <!-- Velcro section-->
   <link name="velcro"> <!-- need to set all values -->
     <visual>
