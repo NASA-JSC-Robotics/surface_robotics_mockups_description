@@ -75,11 +75,11 @@
     <xacro:include filename="$(find hatch_accessories)/urdf/crank_wheel.xacro"/>
     <!--TODO are the centers located properly?-->
     <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_4060_face">
-      <origin xyz="0.0522475 -0.9474 0.4295" rpy="0 ${pi/2} 0"/>
+      <origin xyz="0.04431 -0.9474 0.4295" rpy="0 ${pi/2} 0"/>
     </xacro:crank_wheel>
 
     <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)internal_" parent="${prefix}hatch_4060_face">
-      <origin xyz="-0.1795475 -0.9474 0.4295" rpy="0 -${pi/2} 0"/>
+      <origin xyz="-0.17161 -0.9474 0.4295" rpy="0 -${pi/2} 0"/>
     </xacro:crank_wheel>
 
     <xacro:include filename="$(find hatch_accessories)/urdf/grab_handle.xacro"/>
