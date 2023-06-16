@@ -98,7 +98,7 @@
 
     <xacro:if value="${internal_handle_1}">
       <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)internal_1_" parent="${prefix}hatch_4060_face">
-        <origin xyz="-0.0776 -0.9016 0.7957" rpy="0 ${pi} 0"/>
+        <origin xyz="-0.07 -0.9016 0.7957" rpy="0 ${pi} 0"/>
       </xacro:grab_handle>
     </xacro:if>
 
