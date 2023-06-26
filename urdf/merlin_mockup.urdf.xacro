@@ -135,19 +135,19 @@
   <joint name="c1_to_seal" type="fixed">
     <parent link="seal"/>
     <child link="seal_corner_1"/>
-    <origin rpy ="-1.57 1.57 0" xyz ="-0.1554 0.1005 0.005"/>
+    <origin rpy ="-1.57 1.57 0" xyz ="-0.1554 0.1105 0.005"/>
   </joint>
   <link name="seal_corner_2"/>
   <joint name="c2_to_seal" type="fixed">
     <parent link="seal"/>
     <child link="seal_corner_2"/>
-    <origin rpy ="-1.57 1.57 0" xyz ="0.1554 0.1005 0.005"/>
+    <origin rpy ="-1.57 1.57 0" xyz ="0.1654 0.1105 0.005"/>
   </joint>
   <link name="seal_corner_3"/>
   <joint name="c3_to_seal" type="fixed">
     <parent link="seal"/>
     <child link="seal_corner_3"/>
-    <origin rpy ="-1.57 1.57 0" xyz ="0.1554 -0.1005 0.005"/>
+    <origin rpy ="-1.57 1.57 0" xyz ="0.1654 -0.1005 0.005"/>
   </joint>
   <link name="seal_corner_4"/>
   <joint name="c4_to_seal" type="fixed">
