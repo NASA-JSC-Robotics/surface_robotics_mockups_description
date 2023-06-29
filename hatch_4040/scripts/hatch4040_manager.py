@@ -23,7 +23,7 @@ class Hatch4040Manager(Node):
 
         # initialize the transform broadcaster
         self._tf_publisher = StaticTransformBroadcaster(self)
-        self.tf_name = 'TODO INTIAL FRAME'
+        self.tf_name = 'TODO_INTIAL_FRAME'
 
         # intialize tf timer and service callback
         tf_timer_period_sec = 0.5 # unit: seconds
@@ -50,11 +50,11 @@ class Hatch4040Manager(Node):
         self.publisher_ = self.create_publisher(JointState, 'hatch4040_joint_states', 10, callback_group = self.pub_cb_group)
         
         # create subscriptions's to revolute/prismatic joints
-        self.hatch_sub = self.create_subscription(Float64, 'hatch_position', self.door_pos_cb, 10, callback_group = self.position_cb_group)
-        self.ext_rot_sub = self.create_subscription(Float64, 'ext_wheel_position', self.left_latch__pos_cb, 10, callback_group = self.position_cb_group)
-        self.ext_rot_h_sub = self.create_subscription(Float64, 'ext_handle_position', self.right_latch_pos_cb, 10, callback_group = self.position_cb_group)
-        self.int_rot_sub = self.create_subscription(Float64, 'int_wheel_position', self.latch_lock_pos_cb, 10, callback_group = self.position_cb_group)
-        self.int_rot_h_sub = self.create_subscription(Float64, 'int_handle_position', self.right_latch_pos_cb, 10, callback_group = self.position_cb_group)
+        self.hatch_sub = self.create_subscription(Float64, 'hatch_position', self.hatch_pos_cb, 10, callback_group = self.position_cb_group)
+        self.ext_rot_sub = self.create_subscription(Float64, 'ext_wheel_position', self.ext_wheel_pos_cb, 10, callback_group = self.position_cb_group)
+        self.ext_rot_h_sub = self.create_subscription(Float64, 'ext_handle_position', self.ext_handle_pos_cb, 10, callback_group = self.position_cb_group)
+        self.int_rot_sub = self.create_subscription(Float64, 'int_wheel_position', self.int_wheel_pos_cb, 10, callback_group = self.position_cb_group)
+        self.int_rot_h_sub = self.create_subscription(Float64, 'int_handle_position', self.int_handle_pos_cb, 10, callback_group = self.position_cb_group)
 
         # initialize the thread lock
         self.lock = threading.Lock() # the lock is used to freeze data inputs while the joint state pubisher callback is operating
@@ -77,13 +77,6 @@ class Hatch4040Manager(Node):
         self.int_wheel_max = 2*math.pi
         self.int_handle_min = 0
         self.int_handle_max = math.pi/2
-        
-        # set two conditions for the initialization of the door (open vs closed)
-        door_initialized_open = self.declare_parameter("door_initialized_open", True) # "door_initialized_open" is the parameter a user can type into the terminal to initialize the door open or closed
-        if self.get_parameter("door_initialized_open").value: # open
-            self.door_position = -math.pi/2
-        else: # closed
-            self.door_position = 0.0
 
         # update the joint states
         self._hatch_joint_states = {'door_to_frame_joint': copy.deepcopy(self.door_position), 'housing_to_right_latch_pull': copy.deepcopy(self.right_latch_position), \
@@ -138,37 +131,37 @@ class Hatch4040Manager(Node):
 
         self.get_logger().debug('This is the hatch joint state message: {}'.format(msg)) # this will fill in the string with formated msg data
 
-    def door_pos_cb(self, msg: Float64):
+    def hatch_pos_cb(self, msg: Float64):
         """ callback for the hatch door position
 
         Args:
             msg (Float64): This message transmits the revolute joint angle (in radians) 
         """
-        self.get_logger().debug('This is the angle of the door joint: {}'.format(msg))
+        self.get_logger().debug('This is the angle of the hatch joint: {}'.format(msg))
         if self.door_min <= msg.data and msg.data  <= self.door_max:
             with self.lock: 
                 self.door_position = msg.data
         else:
             raise Exception("door joint angle out of range")
     
-    def left_latch__pos_cb(self, msg: Float64):
-        """ callback for merlin left latch position
+    def ext_wheel_pos_cb(self, msg: Float64):
+        """ callback for internal handle position
 
         Args:
-            msg (Float64): This message transmists the prismatic joint value (in meters) for the connection between the left latch pull and housing
+            msg (Float64): This message transmits the revolute joint angle (in radians) 
         """
-        self.get_logger().debug('This is the value of the left latch pull joint: {}'.format(msg))
+        self.get_logger().debug('This is the value of the wheel joint: {}'.format(msg))
         if self.l_latch_min <= msg.data and msg.data <= self.l_latch_max:
             with self.lock: 
                 self.left_latch_position = msg.data
         else:
             raise Exception("left latch pull value out of range")
     
-    def right_latch_pos_cb(self, msg: Float64):
-        """ callback for merlin right latch position
+    def ext_handle_pos_cb(self, msg: Float64):
+        """ callback for external handle position
 
         Args:
-            msg (Float64): This message transmists the prismatic joint value (in meters) for the connection between the right latch pull and housing
+            msg (Float64): This message transmits the revolute joint angle (in radians) 
         """
         self.get_logger().debug('This is the value of the right latch pull joint: {}'.format(msg))
         if self.r_latch_min <= msg.data and msg.data <= self.r_latch_max:
@@ -177,11 +170,11 @@ class Hatch4040Manager(Node):
         else:
             raise Exception("right latch pull value out of range")
 
-    def latch_lock_pos_cb(self, msg: Float64):
-        """ callback for latch lock position
+    def int_wheel_pos_cb(self, msg: Float64):
+        """ callback for internal wheel position
 
         Args:
-            msg (Float64): This message transmits the revolute joint angle (in radians) between the latch lock and housing
+            msg (Float64): This message transmits the revolute joint angle (in radians) 
         """
         self.get_logger().debug('This is the angle of the latch lock joint: {}'.format(msg))
         if self.lock_min <= msg.data and msg.data <= self.lock_max:
@@ -190,11 +183,11 @@ class Hatch4040Manager(Node):
         else:
             raise Exception("latch lock joint angle out of range")
         
-    def latch_lock_pos_cb(self, msg: Float64):
-        """ callback for latch lock position
+    def int_handle_pos_cb(self, msg: Float64):
+        """ callback for internal handle position
 
         Args:
-            msg (Float64): This message transmits the revolute joint angle (in radians) between the latch lock and housing
+            msg (Float64): This message transmits the revolute joint angle (in radians) 
         """
         self.get_logger().debug('This is the angle of the latch lock joint: {}'.format(msg))
         if self.lock_min <= msg.data and msg.data <= self.lock_max:
