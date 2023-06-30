@@ -23,14 +23,14 @@
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find trainer)/meshes/visual/side_bottom_face.stl"/>
+          <mesh filename="package://trainer/meshes/visual/side_bottom_face.stl"/>
         </geometry>
         <material name="gray"/>
       </visual>
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
           <geometry>
-            <mesh filename="file://$(find trainer)/meshes/collision/side_bottom_face.stl"/>
+            <mesh filename="package://trainer/meshes/collision/side_bottom_face.stl"/>
           </geometry>
         <material name="red"/>
       </collision>
@@ -52,14 +52,14 @@
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find trainer)/meshes/visual/side_top_face.stl"/>
+          <mesh filename="package://trainer/meshes/visual/side_top_face.stl"/>
         </geometry>
         <material name="gray"/>
       </visual>
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
           <geometry>
-            <mesh filename="file://$(find trainer)/meshes/collision/side_top_face.stl"/>
+            <mesh filename="package://trainer/meshes/collision/side_top_face.stl"/>
           </geometry>
         <material name="red"/>
       </collision>
@@ -83,14 +83,14 @@
     <visual>
       <origin xyz="0.00305 -0.0106 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/visual/cabinet_door_4.stl"/>
+        <mesh filename="package://trainer/meshes/visual/cabinet_door_4.stl"/>
       </geometry>
       <material name="blue"/>
     </visual>
     <collision>
       <origin xyz="0.00305 -0.0106 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/collision/cabinet_door_4.stl"/>
+        <mesh filename="package://trainer/meshes/collision/cabinet_door_4.stl"/>
       </geometry>
       <material name="red"/>
     </collision>
@@ -112,14 +112,14 @@
     <visual>
       <origin xyz="0.00305 0.0 0.00305" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/visual/paddle_latch_housing.stl"/>
+        <mesh filename="package://trainer/meshes/visual/paddle_latch_housing.stl"/>
       </geometry>
       <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.00305 0.0 0.00305" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/collision/paddle_latch_housing.stl"/>
+        <mesh filename="package://trainer/meshes/collision/paddle_latch_housing.stl"/>
       </geometry>
       <material name="red"/>
     </collision>
@@ -143,14 +143,14 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/visual/paddle_latch_handle.stl"/>
+        <mesh filename="package://trainer/meshes/visual/paddle_latch_handle.stl"/>
       </geometry>
       <material name="blue"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/collision/paddle_latch_handle.stl"/>
+        <mesh filename="package://trainer/meshes/collision/paddle_latch_handle.stl"/>
       </geometry>
       <material name="red"/>
     </collision>
@@ -174,14 +174,14 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/visual/drawer_1_face.stl"/>
+        <mesh filename="package://trainer/meshes/visual/drawer_1_face.stl"/>
       </geometry>
       <material name="blue"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/collision/drawer_1_face.stl"/>
+        <mesh filename="package://trainer/meshes/collision/drawer_1_face.stl"/>
       </geometry>
       <material name="red"/>
     </collision>
@@ -292,14 +292,14 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/visual/drawer_2_face.stl"/>
+        <mesh filename="package://trainer/meshes/visual/drawer_2_face.stl"/>
       </geometry>
       <material name="blue"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/collision/drawer_2_face.stl"/>
+        <mesh filename="package://trainer/meshes/collision/drawer_2_face.stl"/>
       </geometry>
       <material name="red"/>
     </collision>
@@ -321,14 +321,14 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/visual/recessed_latch_housing.stl"/>
+        <mesh filename="package://trainer/meshes/visual/recessed_latch_housing.stl"/>
       </geometry>
       <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/collision/recessed_latch_housing.stl"/>
+        <mesh filename="package://trainer/meshes/collision/recessed_latch_housing.stl"/>
       </geometry>
       <material name="red"/>
     </collision>
@@ -352,14 +352,14 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/visual/recessed_latch_handle.stl"/>
+        <mesh filename="package://trainer/meshes/visual/recessed_latch_handle.stl"/>
       </geometry>
       <material name="blue"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/collision/recessed_latch_handle.stl"/>
+        <mesh filename="package://trainer/meshes/collision/recessed_latch_handle.stl"/>
       </geometry>
       <material name="red"/>
     </collision>
