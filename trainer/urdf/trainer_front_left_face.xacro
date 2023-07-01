@@ -24,14 +24,14 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/visual/front_left_face.stl"/>
+        <mesh filename="package://trainer/meshes/visual/front_left_face.stl"/>
       </geometry>
       <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/collision/front_left_face.stl"/>
+        <mesh filename="package://trainer/meshes/collision/front_left_face.stl"/>
       </geometry>
       <material name="red"/>
     </collision>
@@ -53,14 +53,14 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/visual/cubby_1.stl"/>
+        <mesh filename="package://trainer/meshes/visual/cubby_1.stl"/>
       </geometry>
       <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/collision/cubby_1.stl"/>
+        <mesh filename="package://trainer/meshes/collision/cubby_1.stl"/>
       </geometry>
       <material name="red"/>
     </collision>
@@ -82,14 +82,14 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/visual/cubby_2.stl"/>
+        <mesh filename="package://trainer/meshes/visual/cubby_2.stl"/>
       </geometry>
       <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find trainer)/meshes/collision/cubby_2.stl"/>
+        <mesh filename="package://trainer/meshes/collision/cubby_2.stl"/>
       </geometry>
       <material name="red"/>
     </collision>

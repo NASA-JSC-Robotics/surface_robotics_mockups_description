@@ -23,14 +23,14 @@
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4040)/meshes/visual/hatch_4040_frame.stl"/>
+          <mesh filename="package://hatch_4040/meshes/visual/hatch_4040_frame.stl"/>
         </geometry>
         <material name="gray"/>
       </visual>
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4040)/meshes/collision/hatch_4040_frame_no_latches.stl"/>
+          <mesh filename="package://hatch_4040/meshes/collision/hatch_4040_frame_no_latches.stl"/>
         </geometry>
         <material name="red"/>
       </collision>
@@ -54,14 +54,14 @@
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4040)/meshes/visual/hatch_4040_face.stl"/>
+          <mesh filename="package://hatch_4040/meshes/visual/hatch_4040_face.stl"/>
         </geometry>
         <material name="gray"/>
       </visual>
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find hatch_4040)/meshes/collision/hatch_4040_collision.stl"/>
+          <mesh filename="package://hatch_4040/meshes/collision/hatch_4040_collision.stl"/>
         </geometry>
         <material name="red"/>
       </collision>
