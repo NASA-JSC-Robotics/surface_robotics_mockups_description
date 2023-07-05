@@ -17,6 +17,7 @@ def main(args=None):
 
     i = 0
     while rclpy.ok():
+        msg.header.stamp = node.get_clock().now().to_msg()
         msg.name = ["hatch_4040_frame_face_joint", "external_rotary_joint", 
                     "external_rotary_handle_joint", "internal_rotary_joint", "internal_rotary_handle_joint"]
         msg.position = [0.0, 0.0, 0.0, 0.0, 0.0]

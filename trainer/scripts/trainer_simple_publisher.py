@@ -17,6 +17,7 @@ def main(args=None):
 
     i = 0
     while rclpy.ok():
+        msg.header.stamp = node.get_clock().now().to_msg()
         msg.name = [
             "bench_lid_joint",
             "cabinet_1_joint",
