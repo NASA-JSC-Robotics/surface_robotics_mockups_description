@@ -3,11 +3,15 @@ project(trainer)
 
 find_package(ament_cmake REQUIRED)
 
-  install(
-    DIRECTORY launch meshes rviz urdf
-    DESTINATION share/${PROJECT_NAME}
-  )
+install(
+DIRECTORY launch meshes rviz urdf
+DESTINATION share/${PROJECT_NAME}
+)
 
-  ament_export_dependencies(${THIS_PACKAGE_INCLUDE_DEPENDS})
+ament_export_dependencies(${THIS_PACKAGE_INCLUDE_DEPENDS})
 
-  ament_package()
+install(PROGRAMS scripts/trainer_simple_publisher.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+ament_package()
