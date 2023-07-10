@@ -10,7 +10,7 @@ DESTINATION share/${PROJECT_NAME}
 
 ament_export_dependencies(${THIS_PACKAGE_INCLUDE_DEPENDS})
 
-install(PROGRAMS scripts/hatch4040_simple_publisher.py
+install(PROGRAMS scripts/hatch4040_simple_publisher.py scripts/hatch4040_manager.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
