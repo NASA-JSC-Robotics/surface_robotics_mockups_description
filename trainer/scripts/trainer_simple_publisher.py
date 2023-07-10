@@ -33,7 +33,7 @@ def main(args=None):
             "recessed_latch_handle_joint",
         ]
         msg.position = [
-            0.0,
+            1.56,
             0.0,
             0.0,
             0.0,
