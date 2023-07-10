@@ -10,7 +10,7 @@ DESTINATION share/${PROJECT_NAME}
 
 ament_export_dependencies(${THIS_PACKAGE_INCLUDE_DEPENDS})
 
-install(PROGRAMS scripts/trainer_simple_publisher.py
+install(PROGRAMS scripts/trainer_simple_publisher.py scripts/trainer_manager.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

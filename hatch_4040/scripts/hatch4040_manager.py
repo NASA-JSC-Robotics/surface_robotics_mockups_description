@@ -55,7 +55,6 @@ class Hatch4040Manager(Node):
         self._hatch_joint_states = {'hatch_4040_frame_face_joint': copy.deepcopy(self.hatch_position), 'external_rotary_joint': copy.deepcopy(self.ext_wheel_position), \
             'external_rotary_handle_joint': copy.deepcopy(self.ext_handle_position), 'internal_rotary_joint': copy.deepcopy(self.int_wheel_position), 'internal_rotary_handle_joint': copy.deepcopy(self.int_handle_position)}           
 
-
         self.hatch4040_joint_state_cb() # going ahead and starting
 
 
