@@ -71,5 +71,13 @@
       </collision>
     </link>
 
+    <joint name="${prefix}rotary_handle_grasp_joint" type="fixed">
+      <parent link="${prefix}rotary_handle"/>
+      <child link="${prefix}rotary_handle_grasp"/>
+      <origin xyz="0.0 0.0 0.04" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}rotary_handle_grasp"/>
+
   </xacro:macro>
 </robot>
