@@ -138,6 +138,22 @@
       </collision>
     </link>
 
+    <joint name="${prefix}bench_left_cal_joint" type="fixed">
+      <parent link="${prefix}bench_front"/>
+      <child link="${prefix}bench_left_cal_frame"/>
+      <origin xyz="0.045 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}bench_left_cal_frame"/>
+
+    <joint name="${prefix}bench_right_cal_joint" type="fixed">
+      <parent link="${prefix}bench_right"/>
+      <child link="${prefix}bench_right_cal_frame"/>
+      <origin xyz="0.7062 0.05 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}bench_right_cal_frame"/>
+
   </xacro:macro>
 </robot>
 
