@@ -41,10 +41,18 @@
     <joint name="${prefix}grab_center_joint" type="fixed">
       <parent link="${prefix}grab_handle"/>
       <child link="${prefix}grab_center"/>
-      <origin xyz="0.082 -0.0935 0.0" rpy="0 0 0"/>
+      <origin xyz="0.0807 -0.0889 0.0" rpy="0 0 0"/>
     </joint>
 
     <link name="${prefix}grab_center"/>
+
+    <joint name="${prefix}grab_touch_joint" type="fixed">
+      <parent link="${prefix}grab_handle"/>
+      <child link="${prefix}grab_touch"/>
+      <origin xyz="0.0934 -0.0889 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}grab_touch"/>
 
   </xacro:macro>
 </robot>
