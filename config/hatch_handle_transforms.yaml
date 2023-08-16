@@ -1,11 +1,11 @@
-- name: grab_handle_approach
-  tx: 0.1
-  ty: 0.0
+- name: grab_handle_grasp_frame
+  tx: 0.05
+  ty: -0.09
   tz: 0.0
   rx: 0.0
-  ry: 0.0
+  ry: 0.7071067
   rz: 0.0
-  rw: 1.0
+  rw: 0.7071067
   frame_id: external_exterior_grab_handle
 - name: grab_handle_approach2
   tx: 0.0

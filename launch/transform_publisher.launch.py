@@ -1,5 +1,5 @@
 from launch import LaunchDescription
-from mockup_transform_publishers.launch_common import load_transforms
+from clr_trainer_hatch_offsets.launch_common import load_transforms
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.substitutions import LaunchConfiguration
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -40,17 +40,17 @@ def generate_launch_description():
     use_hatch_wheel = LaunchConfiguration("use_hatch_wheel")
 
     bench_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(get_package_share_directory("mockup_transform_publishers"), 'launch','bench_transform_publisher.launch.py')),
+        PythonLaunchDescriptionSource(os.path.join(get_package_share_directory("clr_trainer_hatch_offsets"), 'launch','bench_transform_publisher.launch.py')),
         condition=IfCondition(use_bench)
     )
 
     hatch_handle_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(get_package_share_directory("mockup_transform_publishers"), 'launch','hatch_handle_transform_publisher.launch.py')),
+        PythonLaunchDescriptionSource(os.path.join(get_package_share_directory("clr_trainer_hatch_offsets"), 'launch','hatch_handle_transform_publisher.launch.py')),
         condition=IfCondition(use_hatch_handle)
     )
     
     hatch_wheel_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(get_package_share_directory("mockup_transform_publishers"), 'launch','hatch_wheel_transform_publisher.launch.py')),
+        PythonLaunchDescriptionSource(os.path.join(get_package_share_directory("clr_trainer_hatch_offsets"), 'launch','hatch_wheel_transform_publisher.launch.py')),
         condition=IfCondition(use_hatch_wheel)
     )
 
