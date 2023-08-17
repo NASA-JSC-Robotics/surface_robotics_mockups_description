@@ -16,3 +16,21 @@
   ry: 0.5
   rz: -0.5
   rw: -0.5
+- name: bench_close_pre_approach
+  frame_id: bench_lid
+  tx: 0.737
+  ty: 0.55
+  tz: -0.030
+  rx: 0.5
+  ry: 0.5
+  rz: -0.5
+  rw: -0.5
+- name: bench_close_approach
+  frame_id: bench_lid
+  tx: 0.592
+  ty: 0.55
+  tz: -0.030
+  rx: 0.5
+  ry: 0.5
+  rz: -0.5
+  rw: -0.5
