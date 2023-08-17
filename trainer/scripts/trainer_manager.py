@@ -47,7 +47,7 @@ class TrainerManager(Node):
         self.recessed_latch_handle_position = 0.0
 
         # ranges
-        self.bench_max = math.pi/2
+        self.bench_max = 95.0*math.pi/180.0
         self.cabinet_1_max = math.pi
         self.round_latch_max = math.pi
         self.cabinet_2_max = math.pi
