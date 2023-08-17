@@ -23,13 +23,13 @@
       </visual>
     </link>
 
-    <joint name="hatch_frame_joint" type="fixed">
-      <parent link="hatch_frame"/>
-      <child link="hatch_bottom"/>
+    <joint name="${prefix}hatch_frame_joint" type="fixed">
+      <parent link="${prefix}hatch_frame"/>
+      <child link="${prefix}hatch_bottom"/>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
     </joint>
 
-    <link name="hatch_bottom">
+    <link name="${prefix}hatch_bottom">
       <!--TODO set proper inertia-->
       <inertial>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
@@ -45,13 +45,13 @@
       </collision>
     </link>
 
-    <joint name="hatch_bottom_back" type="fixed">
-      <parent link="hatch_bottom"/>
-      <child link="hatch_back"/>
+    <joint name="${prefix}hatch_bottom_back" type="fixed">
+      <parent link="${prefix}hatch_bottom"/>
+      <child link="${prefix}hatch_back"/>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
     </joint>
 
-    <link name="hatch_back">
+    <link name="${prefix}hatch_back">
       <collision>
         <origin xyz="${0.1/2} ${1.307/2} ${0.610/2}" rpy="0 0 0"/>
         <geometry>
@@ -61,13 +61,13 @@
       </collision>
     </link>
 
-    <joint name="hatch_bottom_front" type="fixed">
-      <parent link="hatch_bottom"/>
-      <child link="hatch_front"/>
+    <joint name="${prefix}hatch_bottom_front" type="fixed">
+      <parent link="${prefix}hatch_bottom"/>
+      <child link="${prefix}hatch_front"/>
       <origin xyz="0.578 0.0 0.0" rpy="0 0 0"/>
     </joint>
 
-    <link name="hatch_front">
+    <link name="${prefix}hatch_front">
       <collision>
         <origin xyz="${0.1/2} ${1.307/2} ${0.610/2}" rpy="0 0 0"/>
         <geometry>
@@ -77,13 +77,21 @@
       </collision>
     </link>
 
-    <joint name="hatch_bottom_left" type="fixed">
-      <parent link="hatch_bottom"/>
-      <child link="hatch_left"/>
+    <joint name="${prefix}hatch_frame_front_bottom_joint" type="fixed">
+      <parent link="${prefix}hatch_frame"/>
+      <child link="${prefix}hatch_frame_front_bottom"/>
+      <origin xyz="0.67 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}hatch_frame_front_bottom"/>
+
+    <joint name="${prefix}hatch_bottom_left" type="fixed">
+      <parent link="${prefix}hatch_bottom"/>
+      <child link="${prefix}hatch_left"/>
       <origin xyz="0.0 -0.01 0.0" rpy="0 0 0"/>
     </joint>
 
-    <link name="hatch_left">
+    <link name="${prefix}hatch_left">
       <collision>
         <origin xyz="${0.675/2} ${0.1/2} ${2.1082/2}" rpy="0 0 0"/>
         <geometry>
@@ -93,13 +101,13 @@
       </collision>
     </link>
 
-    <joint name="hatch_bottom_right" type="fixed">
-      <parent link="hatch_bottom"/>
-      <child link="hatch_right"/>
+    <joint name="${prefix}hatch_bottom_right" type="fixed">
+      <parent link="${prefix}hatch_bottom"/>
+      <child link="${prefix}hatch_right"/>
       <origin xyz="0.0 1.22 0.0" rpy="0 0 0"/>
     </joint>
 
-    <link name="hatch_right">
+    <link name="${prefix}hatch_right">
       <collision>
         <origin xyz="${0.675/2} ${0.1/2} ${2.108/2}" rpy="0 0 0"/>
         <geometry>
@@ -109,13 +117,13 @@
       </collision>
     </link>
 
-    <joint name="hatch_bottom_top" type="fixed">
-      <parent link="hatch_bottom"/>
-      <child link="hatch_top"/>
+    <joint name="${prefix}hatch_bottom_top" type="fixed">
+      <parent link="${prefix}hatch_bottom"/>
+      <child link="${prefix}hatch_top"/>
       <origin xyz="0.589 0.0 1.913" rpy="0 0 0"/>
     </joint>
 
-    <link name="hatch_top">
+    <link name="${prefix}hatch_top">
       <collision>
         <origin xyz="${0.1/2} ${1.307/2} ${0.197/2}" rpy="0 0 0"/>
         <geometry>
@@ -124,6 +132,14 @@
         <material name="red"/>
       </collision>
     </link>
+
+    <joint name="${prefix}hatch_frame_front_top_joint" type="fixed">
+      <parent link="${prefix}hatch_frame"/>
+      <child link="${prefix}hatch_frame_front_top"/>
+      <origin xyz="0.67 0.0 2.111" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}hatch_frame_front_top"/>
 
   </xacro:macro>
 </robot>

@@ -107,7 +107,8 @@
 
     <joint name="${prefix}bench_lid_joint" type="revolute">
       <axis xyz="0 -1 0"/>
-      <limit effort="10.0" lower="0.0" upper="1.57" velocity="0.5"/>
+      <!-- upper is 95 degrees -->
+      <limit effort="10.0" lower="0.0" upper="1.65806" velocity="0.5"/> 
       <parent link="${prefix}bench_back"/>
       <child link="${prefix}bench_lid"/>
       <origin xyz="0.127 0.0 0.0475" rpy="0 0 0"/>
@@ -137,6 +138,22 @@
         <material name="blue"/>
       </collision>
     </link>
+
+    <joint name="${prefix}bench_left_cal_joint" type="fixed">
+      <parent link="${prefix}bench_front"/>
+      <child link="${prefix}bench_left_cal_frame"/>
+      <origin xyz="0.045 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}bench_left_cal_frame"/>
+
+    <joint name="${prefix}bench_right_cal_joint" type="fixed">
+      <parent link="${prefix}bench_right"/>
+      <child link="${prefix}bench_right_cal_frame"/>
+      <origin xyz="0.7062 0.05 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}bench_right_cal_frame"/>
 
   </xacro:macro>
 </robot>
