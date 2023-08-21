@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
 
-  <xacro:macro name="hatch_4040" params="
+  <xacro:macro name="hatch" params="
     name:=''
     prefix:=''
     parent:=''
     *origin">
 
-    <joint name="${prefix}hatch_4040_frame_joint" type="fixed">
+    <joint name="${prefix}hatch_outer_frame_joint" type="fixed">
       <parent link="${prefix}${parent}"/>
-      <child link="${prefix}hatch_4040_frame"/>
+      <child link="${prefix}hatch_outer_frame"/>
       <xacro:insert_block name="origin"/>
     </joint>
 
-    <link name="${prefix}hatch_4040_frame">
+    <link name="${prefix}hatch_outer_frame">
       <!--TODO set proper inertia-->
       <inertial>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
@@ -36,15 +36,15 @@
       </collision>
     </link>
 
-    <joint name="${prefix}hatch_4040_frame_face_joint" type="revolute">
+    <joint name="${prefix}hatch_outer_frame_face_joint" type="revolute">
       <axis xyz="0 0 1"/>
       <limit effort="10.0" lower="0.0" upper="3.14" velocity="0.5"/>
-      <parent link="${prefix}hatch_4040_frame"/>
-      <child link="${prefix}hatch_4040_face"/>
+      <parent link="${prefix}hatch_outer_frame"/>
+      <child link="${prefix}hatch_face"/>
       <origin xyz="0.083 1.215 0.103" rpy="0 0 0"/>
     </joint>
 
-    <link name="${prefix}hatch_4040_face">
+    <link name="${prefix}hatch_face">
       <!--TODO set proper inertia-->
       <inertial>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
@@ -68,7 +68,7 @@
     </link>
 
     <joint name="${prefix}right_cal_1_joint" type="fixed">
-      <parent link="${prefix}hatch_4040_face"/>
+      <parent link="${prefix}hatch_face"/>
       <child link="${prefix}right_cal_1_frame"/>
       <origin xyz="0.0167 0.0 0.0" rpy="0 0 0"/>
     </joint>
@@ -76,7 +76,7 @@
     <link name="${prefix}right_cal_1_frame"/>
 
     <joint name="${prefix}right_cal_2_joint" type="fixed">
-      <parent link="${prefix}hatch_4040_face"/>
+      <parent link="${prefix}hatch_face"/>
       <child link="${prefix}right_cal_2_frame"/>
       <origin xyz="0.0 0.0167 0.0" rpy="0 0 0"/>
     </joint>
@@ -84,20 +84,20 @@
     <link name="${prefix}right_cal_2_frame"/>
 
     <xacro:include filename="$(find hatch_accessories)/urdf/crank_wheel.xacro"/>
-    <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_4040_face">
+    <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_face">
       <origin xyz="0.04431 -0.475371 0.602" rpy="0 ${pi/2} 0"/>
     </xacro:crank_wheel>
 
-    <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)internal_" parent="${prefix}hatch_4040_face">
+    <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)internal_" parent="${prefix}hatch_face">
       <origin xyz="-0.1716 -0.475371 0.602" rpy="0 -${pi/2} 0"/>
     </xacro:crank_wheel>
 
     <xacro:include filename="$(find hatch_accessories)/urdf/grab_handle.xacro"/>
-    <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_4040_face">
+    <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_face">
       <origin xyz="-0.0597 -0.788394 0.3147147" rpy="-0.3926991 0 0"/>
     </xacro:grab_handle>
 
-    <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)internal_" parent="${prefix}hatch_4040_face">
+    <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)internal_" parent="${prefix}hatch_face">
       <origin xyz="-0.0776 -0.851588 0.3093442" rpy="0 ${pi} 0"/>
     </xacro:grab_handle>
 
