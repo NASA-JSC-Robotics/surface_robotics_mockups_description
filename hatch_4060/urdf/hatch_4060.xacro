@@ -40,7 +40,7 @@
       </collision>
     </link>
 
-    <joint name="${prefix}hatch_frame_face_joint" type="revolute">
+    <joint name="${prefix}hatch_outer_frame_face_joint" type="revolute">
       <axis xyz="0 0 1"/>
       <limit effort="10.0" lower="0.0" upper="3.14" velocity="0.5"/>
       <parent link="${prefix}hatch_outer_frame"/>
