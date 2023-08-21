@@ -72,6 +72,22 @@
       </collision>
     </link>
 
+    <joint name="${prefix}right_cal_1_joint" type="fixed">
+      <parent link="${prefix}hatch_4060_face"/>
+      <child link="${prefix}right_cal_1_frame"/>
+      <origin xyz="0.0167 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}right_cal_1_frame"/>
+
+    <joint name="${prefix}right_cal_2_joint" type="fixed">
+      <parent link="${prefix}hatch_4060_face"/>
+      <child link="${prefix}right_cal_2_frame"/>
+      <origin xyz="0.0 0.0167 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}right_cal_2_frame"/>
+
     <xacro:include filename="$(find hatch_accessories)/urdf/crank_wheel.xacro"/>
     <!--TODO are the centers located properly?-->
     <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_4060_face">

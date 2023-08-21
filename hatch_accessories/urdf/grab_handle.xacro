@@ -9,11 +9,11 @@
 
     <joint name="${prefix}grab_handle_joint" type="fixed">
       <parent link="${parent}"/>
-      <child link="${prefix}exterior_grab_handle"/>
+      <child link="${prefix}grab_handle"/>
       <xacro:insert_block name="origin"/>
     </joint>
 
-    <link name="${prefix}exterior_grab_handle">
+    <link name="${prefix}grab_handle">
       <!--TODO set proper inertia-->
       <inertial>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
@@ -37,6 +37,22 @@
         <material name="red"/>
       </collision>
     </link>
+
+    <joint name="${prefix}grab_center_joint" type="fixed">
+      <parent link="${prefix}grab_handle"/>
+      <child link="${prefix}grab_center"/>
+      <origin xyz="0.0807 -0.0889 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}grab_center"/>
+
+    <joint name="${prefix}grab_touch_joint" type="fixed">
+      <parent link="${prefix}grab_handle"/>
+      <child link="${prefix}grab_touch"/>
+      <origin xyz="0.0934 -0.0889 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}grab_touch"/>
 
   </xacro:macro>
 </robot>
