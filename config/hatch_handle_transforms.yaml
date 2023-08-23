@@ -1,4 +1,4 @@
-- name: grab_handle_grasp_frame
+- name: open_handle_grasp
   frame_id: external_grab_handle
   tx: 0.05
   ty: -0.09
@@ -7,7 +7,7 @@
   ry: -0.7071067
   rz: 0.0
   rw: 0.7071067
-- name: grab_handle_approach
+- name: open_handle_approach
   frame_id: external_grab_handle
   tx: 0.25
   ty: -0.09
@@ -16,25 +16,7 @@
   ry: -0.7071067
   rz: 0.0
   rw: 0.7071067
-- name: avoid_door_open_1
-  frame_id: hatch_4040_face
-  tx: 0.190
-  ty: -1.372
-  tz: 0.0
-  rx: 0.0
-  ry: -0.7071067
-  rz: 0.0
-  rw: 0.7071067
-- name: avoid_door_open_2
-  frame_id: hatch_4040_face
-  tx: -0.15
-  ty: -1.372
-  tz: 0.0
-  rx: 0.0
-  ry: -0.7071067
-  rz: 0.0
-  rw: 0.7071067
-- name: avoid_door_open_3
+- name: open_avoid_door
   frame_id: hatch_4040_face
   tx: -0.15
   ty: -1.200
@@ -43,25 +25,7 @@
   ry: -0.5
   rz: -0.5
   rw: 0.5
-- name: avoid_door_open_4
-  frame_id: hatch_4040_face
-  tx: -0.15
-  ty: -1.112
-  tz: 0.0
-  rx: -0.5
-  ry: -0.5
-  rz: -0.5
-  rw: 0.5
-- name: avoid_door_open_5
-  frame_id: hatch_4040_face
-  tx: -0.075
-  ty: -1.112
-  tz: 0.0
-  rx: -0.5
-  ry: -0.5
-  rz: -0.5
-  rw: 0.5
-- name: test_door_open_xd
+- name: open_door_contact
   frame_id: hatch_4040_face
   tx: -0.076
   ty: -1.140
