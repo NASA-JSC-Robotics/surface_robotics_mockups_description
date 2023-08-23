@@ -8,8 +8,8 @@
     *origin
     external_handle_1:='false'
     external_handle_2:='false'
-    internal_handle_1:='false'
-    internal_handle_2:='false'">
+    internal_handle_1:='true'
+    internal_handle_2:='true'">
 
     <joint name="${prefix}hatch_outer_frame_joint" type="fixed">
       <parent link="${prefix}${parent}"/>
