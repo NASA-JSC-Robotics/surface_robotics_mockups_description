@@ -3,8 +3,8 @@
   <xacro:arg name="name" default=""/>
   <xacro:arg name="prefix" default=""/>
   <!--TODO which handles are mounted?-->
-  <xacro:property name="external_handle_1" default="false"/>
-  <xacro:property name="external_handle_2" default="false"/>
+  <xacro:property name="external_handle_1" default="true"/>
+  <xacro:property name="external_handle_2" default="true"/>
   <xacro:property name="internal_handle_1" default="true"/>
   <xacro:property name="internal_handle_2" default="true"/>
 
