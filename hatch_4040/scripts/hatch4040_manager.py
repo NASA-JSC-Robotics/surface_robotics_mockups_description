@@ -63,7 +63,7 @@ class Hatch4040Manager(Node):
         """
         msg = JointState()
         msg.header.stamp = self.get_clock().now().to_msg()
-        msg.name = ['hatch_4040_frame_face_joint', 'external_rotary_joint', 'external_rotary_handle_joint', 'internal_rotary_joint', 'internal_rotary_handle_joint']
+        msg.name = ['hatch_outer_frame_face_joint', 'external_rotary_joint', 'external_rotary_handle_joint', 'internal_rotary_joint', 'internal_rotary_handle_joint']
         with self.lock: 
             msg.position = [self.hatch_position, self.ext_wheel_position, self.ext_handle_position, self.int_wheel_position, self.int_handle_position] # fill with float64 list
             msg.velocity = [0.0, 0.0, 0.0, 0.0, 0.0]
