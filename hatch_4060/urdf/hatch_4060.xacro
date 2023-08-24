@@ -42,7 +42,7 @@
 
     <joint name="${prefix}hatch_4060_frame_face_joint" type="revolute">
       <axis xyz="0 0 1"/>
-      <limit effort="10.0" lower="0.0" upper="3.14" velocity="0.5"/>
+      <limit effort="10.0" lower="0.0" upper="1.65806" velocity="0.5"/> <!-- 95 degrees -->
       <parent link="${prefix}hatch_4060_frame"/>
       <child link="${prefix}hatch_4060_face"/>
       <origin xyz="0.0827 1.21379 0.0457" rpy="0 0 0"/>
