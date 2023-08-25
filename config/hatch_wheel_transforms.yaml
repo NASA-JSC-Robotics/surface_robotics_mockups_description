@@ -1,13 +1,13 @@
-- name: external_rotary_wheel_far_approach
+- name: internal_rotary_wheel_far_approach
   tx: 0.0
   ty: 0.0
-  tz: 0.1
+  tz: 0.2
   rx: 0.0
   ry: 1.0
   rz: 0.0
   rw: 0.0
-  frame_id: external_rotary_wheel
-- name: external_rotary_wheel_approach
+  frame_id: internal_rotary_wheel
+- name: internal_rotary_wheel_approach
   tx: 0.0
   ty: 0.0
   tz: 0.05
@@ -15,8 +15,8 @@
   ry: 1.0
   rz: 0.0
   rw: 0.0
-  frame_id: external_rotary_wheel
-- name: external_rotary_wheel_grasp
+  frame_id: internal_rotary_wheel
+- name: internal_rotary_wheel_grasp
   tx: 0.0
   ty: 0.0
   tz: 0.02
@@ -24,4 +24,4 @@
   ry: 1.0
   rz: 0.0
   rw: 0.0
-  frame_id: external_rotary_wheel
+  frame_id: internal_rotary_wheel
