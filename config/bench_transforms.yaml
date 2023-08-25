@@ -43,3 +43,30 @@
   ry: 0.197
   rz: -0.007
   rw: 0.980
+- name: bench_place_pre_approach
+  frame_id: bench_back
+  tx: 0.45
+  ty: 1.0
+  tz: 0.575
+  rx: 0.707
+  ry: -0.707
+  rz: 0.0
+  rw: 0.0
+- name: bench_place_approach
+  frame_id: bench_back
+  tx: 0.45
+  ty: 0.55
+  tz: 0.575
+  rx: 0.707
+  ry: -0.707
+  rz: 0.0
+  rw: 0.0
+- name: bench_place_location
+  frame_id: bench_back
+  tx: 0.45
+  ty: 0.55
+  tz: 0.05
+  rx: 0.707
+  ry: -0.707
+  rz: 0.0
+  rw: 0.0
