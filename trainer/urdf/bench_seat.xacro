@@ -146,7 +146,7 @@
         <!--0.0075 is the radius of the hinge-->
         <origin xyz="${0.603/2 + 0.0075} ${0.920/2} ${0.065/2 - 0.0075}" rpy="0 0 0"/>
         <geometry>
-          <box size="0.603 0.920 ${0.065/2}"/>
+          <box size="0.603 0.920 0.065"/>
         </geometry>
         <material name="blue"/>
       </collision>
