@@ -2,7 +2,7 @@
   frame_id: hatch_outer_frame
   tx: -0.351
   ty: 0.657
-  tz: -0.541
+  tz: 0.0
   rx: 0.707
   ry: 0.707
   rz: 0.0

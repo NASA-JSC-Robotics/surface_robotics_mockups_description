@@ -76,7 +76,7 @@ def generate_launch_description():
         condition=IfCondition(use_intermediate)
     )
     hatch_internal_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(get_package_share_directory("clr_trainer_hatch_offsets"), 'launch','intermediate_transform_publisher.launch.py')),
+        PythonLaunchDescriptionSource(os.path.join(get_package_share_directory("clr_trainer_hatch_offsets"), 'launch','hatch_internal_transform_publisher.launch.py')),
         condition=IfCondition(use_hatch_internal)
     )
 
