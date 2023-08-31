@@ -34,10 +34,27 @@ def generate_launch_description():
             description="Launches the file that handles the static transform publishers for the hatch grab wheel",
         )
     )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "use_intermediate",
+            default_value="true",
+            description="Launches the file that handles the static transform publishers for the intermediate positions",
+        )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "use_hatch_internal",
+            default_value="true",
+            description="Launches the file that handles the static transform publishers for the hatch internal locations",
+        )
+    )
 
     use_bench = LaunchConfiguration("use_bench")
     use_hatch_handle = LaunchConfiguration("use_hatch_handle")
     use_hatch_wheel = LaunchConfiguration("use_hatch_wheel")
+    use_intermediate = LaunchConfiguration("use_intermediate")
+    use_hatch_internal = LaunchConfiguration("use_hatch_internal")
+
 
     bench_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(get_package_share_directory("clr_trainer_hatch_offsets"), 'launch','bench_transform_publisher.launch.py')),
@@ -54,10 +71,21 @@ def generate_launch_description():
         condition=IfCondition(use_hatch_wheel)
     )
 
+    intermediate_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(get_package_share_directory("clr_trainer_hatch_offsets"), 'launch','intermediate_transform_publisher.launch.py')),
+        condition=IfCondition(use_intermediate)
+    )
+    hatch_internal_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(get_package_share_directory("clr_trainer_hatch_offsets"), 'launch','hatch_internal_transform_publisher.launch.py')),
+        condition=IfCondition(use_hatch_internal)
+    )
+
     launch_files = [
         bench_launch,
         hatch_handle_launch,
         hatch_wheel_launch,
+        hatch_internal_launch,
+        intermediate_launch,
     ]
 
     return LaunchDescription(declared_arguments + launch_files)
