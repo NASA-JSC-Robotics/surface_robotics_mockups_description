@@ -9,7 +9,7 @@
   rw: 0.0
 - name: open_handle_approach
   frame_id: internal_2_grab_handle
-  tx: 0.25
+  tx: 0.12
   ty: -0.09
   tz: 0.0
   rx: 0.7071067
@@ -20,7 +20,7 @@
   frame_id: hatch_face
   tx: -0.15
   ty: -1.200
-  tz: 0.0
+  tz: 0.95
   rx: -0.5
   ry: -0.5
   rz: -0.5
@@ -29,11 +29,29 @@
   frame_id: hatch_face
   tx: -0.076
   ty: -1.140
-  tz: 0.0
+  tz: 0.95
   rx: 0.527
   ry: 0.485
   rz: 0.559
   rw: -0.418
+- name: open_door_2_retreat
+  frame_id: hatch_outer_frame
+  tx: 0.792
+  ty: 0.462
+  tz: 0.981
+  rx: 0.5
+  ry: 0.5
+  rz: 0.5
+  rw: -0.5
+- name: open_door_3_start
+  frame_id: hatch_outer_frame
+  tx: 0.791
+  ty: 0.828
+  tz: 0.981
+  rx: 0.5
+  ry: 0.5
+  rz: 0.5
+  rw: -0.5
 - name: close_handle_grasp
   frame_id: external_2_grab_handle
   tx: 0.05
@@ -45,7 +63,7 @@
   rw: 0.0
 - name: close_handle_approach
   frame_id: external_2_grab_handle
-  tx: 0.25
+  tx: 0.12
   ty: -0.09
   tz: 0.0
   rx: 0.7071067
@@ -54,8 +72,8 @@
   rw: 0.0
 - name: close_avoid_door
   frame_id: hatch_face
-  tx: 0.055
-  ty: -1.200
+  tx: 0.075
+  ty: -1.1
   tz: 0.95
   rx: -0.5
   ry: -0.5
