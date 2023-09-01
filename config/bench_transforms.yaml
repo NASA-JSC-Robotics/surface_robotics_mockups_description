@@ -79,3 +79,12 @@
   ry: 0.707
   rz: 0.0
   rw: 0.0
+- name: bench_open_retreat
+  frame_id: bench_back
+  tx: 0.516
+  ty: 0.417
+  tz: 0.825
+  rx: 0.601
+  ry: 0.634
+  rz: -0.360
+  rw: -0.328
