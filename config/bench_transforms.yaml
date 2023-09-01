@@ -43,6 +43,15 @@
   ry: 0.197
   rz: -0.007
   rw: 0.980
+- name: bench_close_retreat_retreat
+  frame_id: bench_lid
+  tx: 0.1
+  ty: 0.551
+  tz: -0.760
+  rx: 0.04
+  ry: 0.197
+  rz: -0.007
+  rw: 0.980
 - name: bench_place_pre_approach
   frame_id: bench_back
   tx: 0.42
@@ -55,7 +64,7 @@
 - name: bench_place_approach
   frame_id: bench_back
   tx: 0.42
-  ty: 0.55
+  ty: 0.65
   tz: 0.9
   rx: 0.707
   ry: 0.707
@@ -64,7 +73,7 @@
 - name: bench_place_location
   frame_id: bench_back
   tx: 0.42
-  ty: 0.55
+  ty: 0.65
   tz: 0.1
   rx: 0.707
   ry: 0.707
@@ -73,7 +82,7 @@
 - name: bench_place_retreat
   frame_id: bench_back
   tx: 0.42
-  ty: 0.55
+  ty: 0.65
   tz: 0.2
   rx: 0.707
   ry: 0.707
