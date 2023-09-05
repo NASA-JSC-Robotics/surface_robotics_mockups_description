@@ -88,3 +88,12 @@
   ry: 0.485
   rz: 0.559
   rw: -0.418
+- name: close_door_retreat
+  frame_id: hatch_outer_frame
+  tx: 0.318
+  ty: 0.284
+  tz: 1.028
+  rx: -0.273
+  ry: -0.662
+  rz: -0.330
+  rw: 0.615
