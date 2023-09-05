@@ -107,7 +107,7 @@
  
     <xacro:if value="${external_handle_2}">
       <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)external_2_" parent="${prefix}hatch_face">
-        <origin xyz="-0.07 -1.0293 0.6957" rpy="${-pi/2} ${pi} 0"/>
+        <origin xyz="-0.07 -1.0223 0.6957" rpy="${-pi/2} ${pi} 0"/>
       </xacro:grab_handle>
     </xacro:if>
 
