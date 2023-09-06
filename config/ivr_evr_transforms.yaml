@@ -1,8 +1,8 @@
 - name: proto_handle_location
-  frame_id: clr_base
-  tx: 1.97267
-  ty: 0.678823
-  tz: 1.2
+  frame_id: hatch_face
+  tx: -0.153
+  ty: -0.157
+  tz: 0.438
   rx: 0.5
   ry: -0.5
   rz: 0.5
