@@ -73,21 +73,39 @@ class TrainerManager(Node):
         self.drawer_2_min = 0.0
         self.recessed_latch_handle_min = 0.0
 
+
         # update the joint states
-        self._trainer_joint_states = {
-            "bench_lid_joint": copy.deepcopy(self.bench_position), 
-            "cabinet_1_joint": copy.deepcopy(self.cabinet_1_position), 
-            "round_latch_joint": copy.deepcopy(self.round_latch_position), 
-            "cabinet_2_joint": copy.deepcopy(self.cabinet_2_position), 
-            "push_latch_button_joint": copy.deepcopy(self.push_latch_button_position), 
-            "push_latch_handle_joint": copy.deepcopy(self.push_latch_handle_position), 
-            "cabinet_3_joint": copy.deepcopy(self.cabinet_3_position), 
-            "cabinet_4_joint": copy.deepcopy(self.cabinet_4_position), 
-            "paddle_latch_handle_joint": copy.deepcopy(self.paddle_latch_handle_position), 
-            "drawer_1_joint": copy.deepcopy(self.drawer_1_position), 
-            "drawer_2_joint": copy.deepcopy(self.drawer_2_position), 
-            "recessed_latch_handle_joint": copy.deepcopy(self.recessed_latch_handle_position)
-        }
+        if self.get_namespace() != "/":
+            self._trainer_joint_states = {
+                self.get_namespace()[1:] + "/" + "bench_lid_joint": copy.deepcopy(self.bench_position), 
+                self.get_namespace()[1:] + "/" + "cabinet_1_joint": copy.deepcopy(self.cabinet_1_position), 
+                self.get_namespace()[1:] + "/" + "round_latch_joint": copy.deepcopy(self.round_latch_position), 
+                self.get_namespace()[1:] + "/" + "cabinet_2_joint": copy.deepcopy(self.cabinet_2_position), 
+                self.get_namespace()[1:] + "/" + "push_latch_button_joint": copy.deepcopy(self.push_latch_button_position), 
+                self.get_namespace()[1:] + "/" + "push_latch_handle_joint": copy.deepcopy(self.push_latch_handle_position), 
+                self.get_namespace()[1:] + "/" + "cabinet_3_joint": copy.deepcopy(self.cabinet_3_position), 
+                self.get_namespace()[1:] + "/" + "cabinet_4_joint": copy.deepcopy(self.cabinet_4_position), 
+                self.get_namespace()[1:] + "/" + "paddle_latch_handle_joint": copy.deepcopy(self.paddle_latch_handle_position), 
+                self.get_namespace()[1:] + "/" + "drawer_1_joint": copy.deepcopy(self.drawer_1_position), 
+                self.get_namespace()[1:] + "/" + "drawer_2_joint": copy.deepcopy(self.drawer_2_position), 
+                self.get_namespace()[1:] + "/" + "recessed_latch_handle_joint": copy.deepcopy(self.recessed_latch_handle_position)
+            }
+
+        else:
+            self._trainer_joint_states = {
+                "bench_lid_joint": copy.deepcopy(self.bench_position), 
+                "cabinet_1_joint": copy.deepcopy(self.cabinet_1_position), 
+                "round_latch_joint": copy.deepcopy(self.round_latch_position), 
+                "cabinet_2_joint": copy.deepcopy(self.cabinet_2_position), 
+                "push_latch_button_joint": copy.deepcopy(self.push_latch_button_position), 
+                "push_latch_handle_joint": copy.deepcopy(self.push_latch_handle_position), 
+                "cabinet_3_joint": copy.deepcopy(self.cabinet_3_position), 
+                "cabinet_4_joint": copy.deepcopy(self.cabinet_4_position), 
+                "paddle_latch_handle_joint": copy.deepcopy(self.paddle_latch_handle_position), 
+                "drawer_1_joint": copy.deepcopy(self.drawer_1_position), 
+                "drawer_2_joint": copy.deepcopy(self.drawer_2_position), 
+                "recessed_latch_handle_joint": copy.deepcopy(self.recessed_latch_handle_position)
+            }
 
         self.lock = threading.Lock() 
 
@@ -100,20 +118,36 @@ class TrainerManager(Node):
         """
         msg = JointState()
         msg.header.stamp = self.get_clock().now().to_msg()
-        msg.name = [
-            "bench_lid_joint",
-            "cabinet_1_joint",
-            "round_latch_joint",
-            "cabinet_2_joint",
-            "push_latch_button_joint",
-            "push_latch_handle_joint",
-            "cabinet_3_joint",
-            "cabinet_4_joint",
-            "paddle_latch_handle_joint",
-            "drawer_1_joint",
-            "drawer_2_joint",
-            "recessed_latch_handle_joint",
-        ]
+        if self.get_namespace() != "/":
+            msg.name = [
+                self.get_namespace()[1:] + "/" + "bench_lid_joint",
+                self.get_namespace()[1:] + "/" + "cabinet_1_joint",
+                self.get_namespace()[1:] + "/" + "round_latch_joint",
+                self.get_namespace()[1:] + "/" + "cabinet_2_joint",
+                self.get_namespace()[1:] + "/" + "push_latch_button_joint",
+                self.get_namespace()[1:] + "/" + "push_latch_handle_joint",
+                self.get_namespace()[1:] + "/" + "cabinet_3_joint",
+                self.get_namespace()[1:] + "/" + "cabinet_4_joint",
+                self.get_namespace()[1:] + "/" + "paddle_latch_handle_joint",
+                self.get_namespace()[1:] + "/" + "drawer_1_joint",
+                self.get_namespace()[1:] + "/" + "drawer_2_joint",
+                self.get_namespace()[1:] + "/" + "recessed_latch_handle_joint",
+            ]            
+        else:
+            msg.name = [
+                "bench_lid_joint",
+                "cabinet_1_joint",
+                "round_latch_joint",
+                "cabinet_2_joint",
+                "push_latch_button_joint",
+                "push_latch_handle_joint",
+                "cabinet_3_joint",
+                "cabinet_4_joint",
+                "paddle_latch_handle_joint",
+                "drawer_1_joint",
+                "drawer_2_joint",
+                "recessed_latch_handle_joint",
+            ]
         with self.lock: 
             msg.position = [
                 self.bench_position,
@@ -162,7 +196,7 @@ class TrainerManager(Node):
 
         self.publisher_.publish(msg)
 
-        self.get_logger().debug('This is the hatch joint state message: {}'.format(msg)) 
+        self.get_logger().info('This is the hatch joint state message: {}'.format(msg)) 
 
     def bench_cb(self, msg: Float64):
 
