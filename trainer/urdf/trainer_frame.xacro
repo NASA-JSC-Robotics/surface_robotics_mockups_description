@@ -24,13 +24,13 @@
       </visual>
     </link>
 
-    <joint name="trainer_box_joint" type="fixed">
-      <parent link="trainer_frame"/>
-      <child link="trainer_box"/>
+    <joint name="${prefix}trainer_box_joint" type="fixed">
+      <parent link="${prefix}trainer_frame"/>
+      <child link="${prefix}trainer_box"/>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
     </joint>
 
-    <link name="trainer_box">
+    <link name="${prefix}trainer_box">
       <!--TODO set proper inertia-->
       <inertial>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
@@ -46,13 +46,13 @@
       </collision>
     </link>
 
-    <joint name="trainer_top_joint" type="fixed">
-      <parent link="trainer_frame"/>
-      <child link="trainer_top"/>
+    <joint name="${prefix}trainer_top_joint" type="fixed">
+      <parent link="${prefix}trainer_frame"/>
+      <child link="${prefix}trainer_top"/>
       <origin xyz="0.0 0.0 1.52" rpy="0 0 0"/>
     </joint>
 
-    <link name="trainer_top">
+    <link name="${prefix}trainer_top">
       <collision>
         <origin xyz="${1.27/2} ${0.896/2} ${0.1/2}" rpy="0 0 0"/>
         <geometry>
@@ -62,13 +62,13 @@
       </collision>
     </link>
 
-    <joint name="trainer_plane_left_joint" type="fixed">
-      <parent link="trainer_frame"/>
-      <child link="trainer_plane_left"/>
+    <joint name="${prefix}trainer_plane_left_joint" type="fixed">
+      <parent link="${prefix}trainer_frame"/>
+      <child link="${prefix}trainer_plane_left"/>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
     </joint>
 
-    <link name="trainer_plane_left">
+    <link name="${prefix}trainer_plane_left">
       <collision>
         <origin xyz="${1.27/2} ${0.1/2} ${1.60/2}" rpy="0 0 0"/>
         <geometry>
@@ -78,13 +78,13 @@
       </collision>
     </link>
 
-    <joint name="trainer_plane_middle_joint" type="fixed">
-      <parent link="trainer_frame"/>
-      <child link="trainer_plane_middle"/>
+    <joint name="${prefix}trainer_plane_middle_joint" type="fixed">
+      <parent link="${prefix}trainer_frame"/>
+      <child link="${prefix}trainer_plane_middle"/>
       <origin xyz="0.0 0.42 0.0" rpy="0 0 0"/>
     </joint>
 
-    <link name="trainer_plane_middle">
+    <link name="${prefix}trainer_plane_middle">
       <collision>
         <origin xyz="${1.27/2} ${0.05/2} ${1.60/2}" rpy="0 0 0"/>
         <geometry>
@@ -94,13 +94,13 @@
       </collision>
     </link>
 
-    <joint name="trainer_plane_right_1_joint" type="fixed">
-      <parent link="trainer_frame"/>
-      <child link="trainer_plane_right_1"/>
+    <joint name="${prefix}trainer_plane_right_1_joint" type="fixed">
+      <parent link="${prefix}trainer_frame"/>
+      <child link="${prefix}trainer_plane_right_1"/>
       <origin xyz="0.0 0.8 0.0" rpy="0 0 0"/>
     </joint>
 
-    <link name="trainer_plane_right_1">
+    <link name="${prefix}trainer_plane_right_1">
       <collision>
         <origin xyz="${0.810/2} ${0.1/2} ${1.60/2}" rpy="0 0 0"/>
         <geometry>
@@ -110,13 +110,13 @@
       </collision>
     </link>
 
-    <joint name="trainer_plane_right_2_joint" type="fixed">
-      <parent link="trainer_frame"/>
-      <child link="trainer_plane_right_2"/>
+    <joint name="${prefix}trainer_plane_right_2_joint" type="fixed">
+      <parent link="${prefix}trainer_frame"/>
+      <child link="${prefix}trainer_plane_right_2"/>
       <origin xyz="1.124 0.81 0.0" rpy="0 0 0"/>
     </joint>
 
-    <link name="trainer_plane_right_2">
+    <link name="${prefix}trainer_plane_right_2">
       <collision>
         <origin xyz="${0.14/2} ${0.1/2} ${1.60/2}" rpy="0 0 0"/>
         <geometry>
