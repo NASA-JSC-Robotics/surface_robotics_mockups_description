@@ -16,7 +16,7 @@ class TrainerManager(Node):
         super().__init__('trainer_manager')
 
         # create the joint state publisher
-        self.publisher_ = self.create_publisher(JointState, 'joint_states', 10)
+        self.publisher_ = self.create_publisher(JointState, '/joint_states', 10)
 
         # create subscriptions's to revolute/prismatic joints
         self.bench_sub = self.create_subscription(Float64, 'bench_position', self.bench_cb, 10)
