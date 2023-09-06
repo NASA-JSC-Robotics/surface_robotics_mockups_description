@@ -196,7 +196,7 @@ class TrainerManager(Node):
 
         self.publisher_.publish(msg)
 
-        self.get_logger().info('This is the hatch joint state message: {}'.format(msg)) 
+        self.get_logger().debug('This is the hatch joint state message: {}'.format(msg)) 
 
     def bench_cb(self, msg: Float64):
 
