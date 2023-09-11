@@ -7,3 +7,21 @@
   ry: -0.5
   rz: 0.5
   rw: -0.5
+- name: external_3_handle_grasp
+  frame_id: external_3_grab_handle
+  tx: 0.05
+  ty: -0.15
+  tz: 0.0
+  rx: 0.7071067
+  ry: 0.0
+  rz: -0.7071067
+  rw: 0.0
+- name: external_3_handle_approach
+  frame_id: external_3_grab_handle
+  tx: 0.12
+  ty: -0.15
+  tz: 0.0
+  rx: 0.7071067
+  ry: 0.0
+  rz: -0.7071067
+  rw: 0.0
