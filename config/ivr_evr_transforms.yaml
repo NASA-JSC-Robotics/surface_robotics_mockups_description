@@ -7,7 +7,6 @@
   ry: -0.5
   rz: 0.5
   rw: -0.5
-<<<<<<< HEAD
 - name: hatch_hinge_handle_grasp
   frame_id: hatch_face
   tx: -0.147
@@ -26,7 +25,6 @@
   ry: 0.5
   rz: -0.5
   rw: 0.5
-=======
 - name: external_3_handle_grasp
   frame_id: external_3_grab_handle
   tx: 0.05
@@ -45,4 +43,3 @@
   ry: 0.0
   rz: -0.7071067
   rw: 0.0
->>>>>>> 933506dd577efe3a66d98ab31f831061bae30170
