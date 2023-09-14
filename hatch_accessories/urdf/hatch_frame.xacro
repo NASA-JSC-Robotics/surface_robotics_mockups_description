@@ -53,9 +53,9 @@
 
     <link name="${prefix}hatch_back">
       <collision>
-        <origin xyz="${0.1/2} ${1.307/2} ${0.610/2}" rpy="0 0 0"/>
+        <origin xyz="${0.1/2} ${1.307/2} ${0.4953/2}" rpy="0 0 0"/>
         <geometry>
-          <box size="0.1 1.307 0.610"/>
+          <box size="0.1 1.307 0.4953"/>
         </geometry>
         <material name="red"/>
       </collision>
@@ -69,9 +69,9 @@
 
     <link name="${prefix}hatch_front">
       <collision>
-        <origin xyz="${0.1/2} ${1.307/2} ${0.610/2}" rpy="0 0 0"/>
+        <origin xyz="${0.1/2} ${1.307/2} ${0.4953/2}" rpy="0 0 0"/>
         <geometry>
-          <box size="0.1 1.307 0.610"/>
+          <box size="0.1 1.307 0.4953"/>
         </geometry>
         <material name="red"/>
       </collision>
@@ -109,9 +109,9 @@
 
     <link name="${prefix}hatch_right">
       <collision>
-        <origin xyz="${0.675/2} ${0.1/2} ${2.108/2}" rpy="0 0 0"/>
+        <origin xyz="${0.675/2} ${0.1/2} ${0.4953/2}" rpy="0 0 0"/>
         <geometry>
-          <box size="0.675 0.1 2.1082"/>
+          <box size="0.675 0.1 0.4953"/>
         </geometry>
         <material name="red"/>
       </collision>
