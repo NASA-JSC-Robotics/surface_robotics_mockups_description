@@ -115,6 +115,13 @@
         </geometry>
         <material name="red"/>
       </collision>
+      <collision>
+        <origin xyz="${1.307/2 - 0.1/4} ${0.1/2} ${2.1082/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.1 0.1 2.1082"/>
+        </geometry>
+        <material name="red"/>
+      </collision>      
     </link>
 
     <joint name="${prefix}hatch_bottom_top" type="fixed">
