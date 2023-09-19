@@ -17,7 +17,8 @@
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://hatch_accessories/meshes/visual/ivr_hatch_frame.stl"/>
+          <!-- <mesh filename="package://hatch_accessories/meshes/visual/ivr_hatch_frame.stl"/> -->
+          <mesh filename="package://hatch_accessories/meshes/visual/ivr_hatch_frame_no_left.stl"/>
         </geometry>
         <material name="gray"/>
       </visual>
