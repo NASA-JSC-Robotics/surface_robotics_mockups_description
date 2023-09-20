@@ -5,6 +5,7 @@
   <!--TODO which handles are mounted?-->
   <xacro:property name="external_handle_1" default="true"/>
   <xacro:property name="external_handle_2" default="true"/>
+  <xacro:property name="external_handle_3" default="true"/>
   <xacro:property name="internal_handle_1" default="true"/>
   <xacro:property name="internal_handle_2" default="true"/>
 
@@ -19,7 +20,7 @@
   </xacro:hatch_frame>
 
   <xacro:hatch name="$(arg name)" prefix="$(arg prefix)" parent="hatch_frame" 
-    external_handle_1="${external_handle_1}" external_handle_2="${external_handle_2}" 
+    external_handle_1="${external_handle_1}" external_handle_2="${external_handle_2}" external_handle_3="${external_handle_3}" 
     internal_handle_1="${internal_handle_1}" internal_handle_2="${internal_handle_2}">
     <origin xyz="0.669329 0.06 0.7113" rpy="0 0 0"/>
   </xacro:hatch>
