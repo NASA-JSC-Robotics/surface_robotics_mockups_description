@@ -43,6 +43,15 @@
   ry: 0.0
   rz: -0.7071067
   rw: 0.0
+- name: external_3_handle_finger_grasp
+  frame_id: external_3_grab_handle
+  tx: 0.08
+  ty: -0.15
+  tz: 0.0
+  rx: 0.7071067
+  ry: 0.0
+  rz: -0.7071067
+  rw: 0.0
 - name: external_1_handle_grasp
   frame_id: external_1_grab_handle
   tx: 0.05
@@ -54,7 +63,7 @@
   rw: 0.0
 - name: external_1_handle_approach
   frame_id: external_1_grab_handle
-  tx: 0.12
+  tx: 0.20
   ty: -0.05
   tz: 0.0
   rx: 0.7071067
