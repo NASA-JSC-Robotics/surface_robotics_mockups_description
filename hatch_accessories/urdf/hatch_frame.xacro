@@ -149,5 +149,30 @@
 
     <link name="${prefix}hatch_frame_front_top"/>
 
+    <!--This is for when there is a bench at the level of the bottom of the hatch opening.-->
+    <!-- TODO add if statement -->
+    <joint name="${prefix}hatch_frame_bench_joint" type="fixed">
+      <parent link="${prefix}hatch_frame"/>
+      <child link="${prefix}hatch_bench"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}hatch_bench">
+      <visual>
+        <origin xyz="${0.675/2} ${1.307/2} ${0.4953/2 + 0.01}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.675 1.307 0.4953"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <collision>
+        <origin xyz="${0.675/2} ${1.307/2} ${0.4953/2 + 0.01}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.675 1.307 0.4953"/>
+        </geometry>
+        <material name="gray"/>
+      </collision>
+    </link>
+
   </xacro:macro>
 </robot>
