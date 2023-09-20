@@ -61,3 +61,30 @@
   ry: 0.0
   rz: -0.7071067
   rw: 0.0
+- name: evr_intermediate_place_approach
+  frame_id: second_trainer/bench_back
+  tx: 0.36
+  ty: 0.263
+  tz: 0.958
+  rx: 1.0
+  ry: 0.0
+  rz: 0.0
+  rw: 0.0
+- name: evr_intermediate_place_location
+  frame_id: second_trainer/bench_back
+  tx: 0.36
+  ty: 0.263
+  tz: 0.90
+  rx: 1.0
+  ry: 0.0
+  rz: 0.0
+  rw: 0.0
+- name: evr_intermediate_place_retreat
+  frame_id: second_trainer/bench_back
+  tx: 0.55
+  ty: 0.275
+  tz: 0.968
+  rx: 0.998
+  ry: -0.018
+  rz: -0.055
+  rw: 0.005
