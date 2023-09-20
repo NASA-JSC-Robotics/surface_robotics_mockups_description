@@ -8,14 +8,14 @@
   rz: 0.5
   rw: -0.5
 - name: hatch_hinge_handle_grasp
-  frame_id: hatch_face
-  tx: -0.147
-  ty: -0.125
-  tz: 0.620
-  rx: -0.5
-  ry: 0.5
-  rz: -0.5
-  rw: 0.5
+  frame_id: external_3_grab_handle
+  tx: 0.07
+  ty: -0.15
+  tz: 0.0
+  rx: 0.7071067
+  ry: 0.0
+  rz: -0.7071067
+  rw: 0.0
 - name: hatch_hinge_handle_approach
   frame_id: hatch_face
   tx: -0.227
