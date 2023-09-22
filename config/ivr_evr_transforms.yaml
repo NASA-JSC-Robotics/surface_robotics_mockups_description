@@ -91,7 +91,7 @@
 - name: evr_intermediate_place_retreat
   frame_id: second_trainer/bench_back
   tx: 0.55
-  ty: 0.275
+  ty: 0.385
   tz: 0.968
   rx: 0.998
   ry: -0.018
