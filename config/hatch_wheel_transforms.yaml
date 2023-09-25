@@ -88,3 +88,21 @@
   rz: 0.0
   rw: 0.0
   frame_id: external_rotary_handle_grasp
+- name: external_rotary_handle_unfold_grasp
+  tx: 0.0
+  ty: 0.0
+  tz: 0.0
+  rx: 0.0
+  ry: -0.7071068
+  rz: 0.7071068
+  rw: 0.0
+  frame_id: external_rotary_handle_grasp
+- name: external_rotary_handle_unfold_approach
+  tx: 0.0
+  ty: 0.5
+  tz: 0.0
+  rx: 0.0
+  ry: -0.7071068
+  rz: 0.7071068
+  rw: 0.0
+  frame_id: external_rotary_handle_grasp
