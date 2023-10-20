@@ -18,22 +18,22 @@
   rw: 0.0
 - name: open_avoid_door
   frame_id: hatch_face
-  tx: -0.15
-  ty: -1.200
-  tz: 0.0
-  rx: -0.5
-  ry: -0.5
-  rz: -0.5
-  rw: 0.5
+  tx: -0.096
+  ty: -0.943
+  tz: 0.926
+  rx: -0.653
+  ry: 0.699
+  rz: 0.234
+  rw: -0.172
 - name: open_door_contact
   frame_id: hatch_face
-  tx: -0.076
-  ty: -1.140
-  tz: 0.0
-  rx: 0.527
-  ry: 0.485
-  rz: 0.559
-  rw: -0.418
+  tx: -0.103
+  ty: -0.934
+  tz: 0.777
+  rx: -0.685
+  ry: 0.707
+  rz: 0.142
+  rw: -0.105
 - name: open_door_2_retreat
   frame_id: hatch_outer_frame
   tx: 0.792
