@@ -1,6 +1,6 @@
 - name: open_handle_grasp
   frame_id: internal_grab_handle
-  tx: 0.05
+  tx: 0.055
   ty: -0.09
   tz: 0.0
   rx: 0.7071067
@@ -18,13 +18,13 @@
   rw: 0.0
 - name: open_avoid_door
   frame_id: hatch_face
-  tx: -0.15
-  ty: -1.200
-  tz: 0.0
-  rx: -0.5
-  ry: -0.5
-  rz: -0.5
-  rw: 0.5
+  tx: -0.096
+  ty: -0.943
+  tz: 0.926
+  rx: -0.653
+  ry: 0.699
+  rz: 0.234
+  rw: -0.172
 - name: open_door_contact
   frame_id: hatch_face
   tx: -0.076
@@ -53,7 +53,7 @@
   rz: 0.5
   rw: -0.5
 - name: close_handle_grasp
-  frame_id: external_2_grab_handle
+  frame_id: external_grab_handle
   tx: 0.05
   ty: -0.09
   tz: 0.0
@@ -62,7 +62,7 @@
   rz: -0.7071067
   rw: 0.0
 - name: close_handle_approach
-  frame_id: external_2_grab_handle
+  frame_id: external_grab_handle
   tx: 0.12
   ty: -0.09
   tz: 0.0
@@ -250,48 +250,3 @@
   ry: 0.5
   rz: -0.5
   rw: 0.5
-- name: external_3_handle_grasp
-  frame_id: external_3_grab_handle
-  tx: 0.05
-  ty: -0.15
-  tz: 0.0
-  rx: 0.7071067
-  ry: 0.0
-  rz: -0.7071067
-  rw: 0.0
-- name: external_3_handle_approach
-  frame_id: external_3_grab_handle
-  tx: 0.12
-  ty: -0.15
-  tz: 0.0
-  rx: 0.7071067
-  ry: 0.0
-  rz: -0.7071067
-  rw: 0.0
-- name: external_3_handle_finger_grasp
-  frame_id: external_3_grab_handle
-  tx: 0.08
-  ty: -0.15
-  tz: 0.0
-  rx: 0.7071067
-  ry: 0.0
-  rz: -0.7071067
-  rw: 0.0
-- name: external_1_handle_grasp
-  frame_id: external_1_grab_handle
-  tx: 0.05
-  ty: -0.05
-  tz: 0.0
-  rx: 0.7071067
-  ry: 0.0
-  rz: -0.7071067
-  rw: 0.0
-- name: external_1_handle_approach
-  frame_id: external_1_grab_handle
-  tx: 0.20
-  ty: -0.05
-  tz: 0.0
-  rx: 0.7071067
-  ry: 0.0
-  rz: -0.7071067
-  rw: 0.0
