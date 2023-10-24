@@ -97,8 +97,6 @@
   ry: -0.662
   rz: -0.330
   rw: 0.615
-
-# from hatch_internal
 - name: hatch_interior_place_approach
   frame_id: hatch_outer_frame
   tx: -0.351
@@ -117,8 +115,6 @@
   ry: 0.707
   rz: 0.0
   rw: 0.0
-
-# from hatch wheel
 - name: external_rotary_wheel_far_approach
   tx: 0.0
   ty: 0.0
@@ -227,77 +223,3 @@
   rz: 0.7071068
   rw: 0.0
   frame_id: external_rotary_handle_grasp
-
-# from evrivr
-- name: proto_handle_location
-  frame_id: hatch_face
-  tx: -0.153
-  ty: -0.157
-  tz: 0.438
-  rx: 0.5
-  ry: -0.5
-  rz: 0.5
-  rw: -0.5
-- name: hatch_hinge_handle_grasp
-  frame_id: hatch_face
-  tx: -0.147
-  ty: -0.125
-  tz: 0.620
-  rx: -0.5
-  ry: 0.5
-  rz: -0.5
-  rw: 0.5
-- name: hatch_hinge_handle_approach
-  frame_id: hatch_face
-  tx: -0.227
-  ty: -0.127
-  tz: 0.620
-  rx: -0.5
-  ry: 0.5
-  rz: -0.5
-  rw: 0.5
-- name: external_3_handle_grasp
-  frame_id: external_3_grab_handle
-  tx: 0.05
-  ty: -0.15
-  tz: 0.0
-  rx: 0.7071067
-  ry: 0.0
-  rz: -0.7071067
-  rw: 0.0
-- name: external_3_handle_approach
-  frame_id: external_3_grab_handle
-  tx: 0.12
-  ty: -0.15
-  tz: 0.0
-  rx: 0.7071067
-  ry: 0.0
-  rz: -0.7071067
-  rw: 0.0
-- name: external_3_handle_finger_grasp
-  frame_id: external_3_grab_handle
-  tx: 0.08
-  ty: -0.15
-  tz: 0.0
-  rx: 0.7071067
-  ry: 0.0
-  rz: -0.7071067
-  rw: 0.0
-- name: external_1_handle_grasp
-  frame_id: external_1_grab_handle
-  tx: 0.05
-  ty: -0.05
-  tz: 0.0
-  rx: 0.7071067
-  ry: 0.0
-  rz: -0.7071067
-  rw: 0.0
-- name: external_1_handle_approach
-  frame_id: external_1_grab_handle
-  tx: 0.20
-  ty: -0.05
-  tz: 0.0
-  rx: 0.7071067
-  ry: 0.0
-  rz: -0.7071067
-  rw: 0.0
