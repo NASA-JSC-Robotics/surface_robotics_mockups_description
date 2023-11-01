@@ -9,7 +9,7 @@
   rw: -0.5
 - name: bench_approach
   frame_id: bench_lid
-  tx: 0.592
+  tx: 0.595
   ty: 0.55
   tz: -0.030
   rx: 0.5
