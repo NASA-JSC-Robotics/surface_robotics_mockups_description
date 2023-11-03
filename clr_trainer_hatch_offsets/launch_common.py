@@ -17,7 +17,7 @@ def load_yaml(package_name, file_path):
         print("Was not able to load the yaml file at " + absolute_file_path)
         return None
 
-def load_transforms(package_name, file_path):
+def load_transforms(package_name, file_path, prefix=''):
     tf_yaml = load_yaml(package_name, file_path)
     nodes = []
     if tf_yaml == None:
@@ -34,8 +34,8 @@ def load_transforms(package_name, file_path):
                        "--qy", str(tf["ry"]),
                        "--qz", str(tf["rz"]),
                        "--qw", str(tf["rw"]),
-                       "--frame-id", tf["frame_id"],
-                       "--child-frame-id", tf["name"]]
+                       "--frame-id", prefix + tf["frame_id"],
+                       "--child-frame-id", prefix + tf["name"]]
         )        
         nodes.append(new_node)
 
