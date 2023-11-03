@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
 
-  <xacro:macro name="hatch" params="
+  <xacro:macro name="hatch_4060" params="
     name:=''
     prefix:=''
     parent:=''
@@ -14,7 +14,7 @@
 
 
     <joint name="${prefix}hatch_inner_frame_joint" type="fixed">
-      <parent link="${prefix}${parent}"/>
+      <parent link="${parent}"/>
       <child link="${prefix}hatch_inner_frame"/>
       <origin xyz="0.584329 1.245 0.7113" rpy="0 0 ${pi}"/>
     </joint>
@@ -43,7 +43,7 @@
     </link>
 
     <joint name="${prefix}hatch_outer_frame_joint" type="fixed">
-      <parent link="${prefix}${parent}"/>
+      <parent link="${parent}"/>
       <child link="${prefix}hatch_outer_frame"/>
       <xacro:insert_block name="origin"/>
     </joint>
@@ -121,41 +121,41 @@
  
     <xacro:include filename="$(find hatch_accessories)/urdf/crank_wheel.xacro"/>
     <!--TODO are the centers located properly?-->
-    <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)external_" parent="${prefix}hatch_face">
+    <xacro:crank_wheel name="$(arg name)" prefix="${prefix}external_" parent="${prefix}hatch_face">
       <origin xyz="-0.17161 -0.9474 0.4325" rpy="0 -${pi/2} 0"/>
     </xacro:crank_wheel>
-    <xacro:crank_wheel name="$(arg name)" prefix="$(arg prefix)internal_" parent="${prefix}hatch_face">
+    <xacro:crank_wheel name="$(arg name)" prefix="${prefix}internal_" parent="${prefix}hatch_face">
       <origin xyz="0.04431 -0.9474 0.4265" rpy="0 ${pi/2} 0"/>
     </xacro:crank_wheel>
  
     <xacro:include filename="$(find hatch_accessories)/urdf/grab_handle.xacro"/>
     <!--TODO which handles are mounted?-->
     <xacro:if value="${external_handle_1}">
-      <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)external_1_" parent="${prefix}hatch_face">
+      <xacro:grab_handle name="$(arg name)" prefix="${prefix}external_1_" parent="${prefix}hatch_face">
         <origin xyz="-0.07 -0.9016 ${0.7971+0.005}" rpy="0 ${pi} 0"/>
       </xacro:grab_handle>
     </xacro:if>
  
     <xacro:if value="${external_handle_2}">
-      <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)external_2_" parent="${prefix}hatch_face">
+      <xacro:grab_handle name="$(arg name)" prefix="${prefix}external_2_" parent="${prefix}hatch_face">
         <origin xyz="-0.07 ${-1.0223-0.005} ${0.6957 - 0.007}" rpy="${-pi/2} ${pi} 0"/>
       </xacro:grab_handle>
     </xacro:if>
 
     <xacro:if value="${external_handle_3}">
-      <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)external_3_" parent="${prefix}hatch_face">
-        <origin xyz="${-0.07-0.005} ${-0.145+0.0195 - 0.004} 0.6957" rpy="${-pi/2} ${pi} 0"/>
+      <xacro:grab_handle name="$(arg name)" prefix="${prefix}external_3_" parent="${prefix}hatch_face">
+        <origin xyz="${-0.07} ${-0.145+0.0195 - 0.004} 0.6957" rpy="${-pi/2} ${pi} 0"/>
       </xacro:grab_handle>
     </xacro:if>
 
     <xacro:if value="${internal_handle_1}">
-      <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)internal_1_" parent="${prefix}hatch_face">
+      <xacro:grab_handle name="$(arg name)" prefix="${prefix}internal_1_" parent="${prefix}hatch_face">
         <origin xyz="-0.058 -0.9016 0.7971" rpy="0 0 0"/>
       </xacro:grab_handle>
     </xacro:if>
 
     <xacro:if value="${internal_handle_2}">
-      <xacro:grab_handle name="$(arg name)" prefix="$(arg prefix)internal_2_" parent="${prefix}hatch_face">
+      <xacro:grab_handle name="$(arg name)" prefix="${prefix}internal_2_" parent="${prefix}hatch_face">
         <origin xyz="-0.058 -1.078 0.6957" rpy="${pi/2} 0 0"/>
       </xacro:grab_handle>
     </xacro:if>

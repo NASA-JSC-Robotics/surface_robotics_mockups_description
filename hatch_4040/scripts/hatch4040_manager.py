@@ -15,16 +15,19 @@ class Hatch4040Manager(Node):
     def __init__(self):
         super().__init__('hatch4040_manager')
 
+        # set deafult parameter of prefix to empty
+        self.declare_parameter('prefix', '')
+        self.prefix = self.get_parameter('prefix').get_parameter_value().string_value
 
         # create the joint state publisher
         self.publisher_ = self.create_publisher(JointState, 'joint_states', 10)
         
         # create subscriptions's to revolute/prismatic joints
-        self.hatch_sub = self.create_subscription(Float64, 'hatch_position', self.hatch_pos_cb, 10)
-        self.ext_rot_sub = self.create_subscription(Float64, 'ext_wheel_position', self.ext_wheel_pos_cb, 10)
-        self.ext_rot_h_sub = self.create_subscription(Float64, 'ext_handle_position', self.ext_handle_pos_cb, 10)
-        self.int_rot_sub = self.create_subscription(Float64, 'int_wheel_position', self.int_wheel_pos_cb, 10)
-        self.int_rot_h_sub = self.create_subscription(Float64, 'int_handle_position', self.int_handle_pos_cb, 10)
+        self.hatch_sub = self.create_subscription(Float64, self.prefix + 'hatch_position', self.hatch_pos_cb, 10)
+        self.ext_rot_sub = self.create_subscription(Float64, self.prefix + 'ext_wheel_position', self.ext_wheel_pos_cb, 10)
+        self.ext_rot_h_sub = self.create_subscription(Float64, self.prefix + 'ext_handle_position', self.ext_handle_pos_cb, 10)
+        self.int_rot_sub = self.create_subscription(Float64, self.prefix + 'int_wheel_position', self.int_wheel_pos_cb, 10)
+        self.int_rot_h_sub = self.create_subscription(Float64, self.prefix + 'int_handle_position', self.int_handle_pos_cb, 10)
 
         # create the timer for joint state publisher callback
         timer_period_sec = 0.5 # unit: seconds
@@ -41,7 +44,7 @@ class Hatch4040Manager(Node):
 
         # ranges for all joints
         self.hatch_min = 0
-        self.hatch_max = math.pi
+        self.hatch_max = math.radians(95.0)
         self.ext_wheel_min = 0
         self.ext_wheel_max = 2*math.pi
         self.ext_handle_min = 0
@@ -52,8 +55,8 @@ class Hatch4040Manager(Node):
         self.int_handle_max = math.pi/2
 
         # update the joint states
-        self._hatch_joint_states = {'hatch_4040_frame_face_joint': copy.deepcopy(self.hatch_position), 'external_rotary_joint': copy.deepcopy(self.ext_wheel_position), \
-            'external_rotary_handle_joint': copy.deepcopy(self.ext_handle_position), 'internal_rotary_joint': copy.deepcopy(self.int_wheel_position), 'internal_rotary_handle_joint': copy.deepcopy(self.int_handle_position)}           
+        self._hatch_joint_states = {self.prefix + 'hatch_outer_frame_face_joint': copy.deepcopy(self.hatch_position), self.prefix + 'external_rotary_joint': copy.deepcopy(self.ext_wheel_position), \
+            self.prefix + 'external_rotary_handle_joint': copy.deepcopy(self.ext_handle_position), self.prefix + 'internal_rotary_joint': copy.deepcopy(self.int_wheel_position), self.prefix + 'internal_rotary_handle_joint': copy.deepcopy(self.int_handle_position)}           
 
         self.hatch4040_joint_state_cb() # going ahead and starting
 
@@ -63,7 +66,7 @@ class Hatch4040Manager(Node):
         """
         msg = JointState()
         msg.header.stamp = self.get_clock().now().to_msg()
-        msg.name = ['hatch_outer_frame_face_joint', 'external_rotary_joint', 'external_rotary_handle_joint', 'internal_rotary_joint', 'internal_rotary_handle_joint']
+        msg.name = [self.prefix + 'hatch_outer_frame_face_joint', self.prefix + 'external_rotary_joint', self.prefix + 'external_rotary_handle_joint', self.prefix + 'internal_rotary_joint', self.prefix + 'internal_rotary_handle_joint']
         with self.lock: 
             msg.position = [self.hatch_position, self.ext_wheel_position, self.ext_handle_position, self.int_wheel_position, self.int_handle_position] # fill with float64 list
             msg.velocity = [0.0, 0.0, 0.0, 0.0, 0.0]
