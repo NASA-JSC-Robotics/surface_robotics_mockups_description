@@ -216,12 +216,12 @@
   frame_id: external_rotary_handle_grasp
 - name: external_rotary_handle_unfold_approach
   tx: 0.0
-  ty: 0.3
-  tz: 0.0
+  ty: 0.0
+  tz: -0.5
   rx: 0.0
   ry: 0.0
   rz: 0.0
-  rw: 0.0
+  rw: 1.0
   frame_id: external_rotary_handle_unfold_grasp
 - name: proto_handle_location
   frame_id: hatch_face
