@@ -199,7 +199,7 @@
 - name: external_rotary_handle_grasp_far
   tx: 0.0
   ty: 0.0
-  tz: 1.0
+  tz: 0.1
   rx: -0.7071068
   ry: 0.7071068
   rz: 0.0
@@ -208,7 +208,7 @@
 - name: external_rotary_handle_unfold_grasp
   tx: 0.0
   ty: 0.0
-  tz: 0.0
+  tz: 0.02
   rx: 0.0
   ry: -0.7071068
   rz: 0.7071068
