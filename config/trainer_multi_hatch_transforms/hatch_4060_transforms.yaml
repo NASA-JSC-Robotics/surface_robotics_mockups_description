@@ -313,6 +313,15 @@
   ry: 0.0
   rz: -0.7071067
   rw: 0.0
+- name: external_1_handle_admit_close
+  frame_id: external_1_grab_handle
+  tx: 0.065
+  ty: -0.05
+  tz: 0.0
+  rx: 0.7071067
+  ry: 0.0
+  rz: -0.7071067
+  rw: 0.0
 - name: external_1_handle_perceive
   frame_id: external_1_grab_handle
   tx: 0.30
