@@ -2,7 +2,16 @@
   frame_id: bench_lid
   tx: 0.737
   ty: 0.55
-  tz: -0.030
+  tz: -0.045
+  rx: 0.5
+  ry: 0.5
+  rz: -0.5
+  rw: -0.5
+- name: bench_perceive
+  frame_id: bench_lid
+  tx: 0.787
+  ty: 0.55
+  tz: -0.045
   rx: 0.5
   ry: 0.5
   rz: -0.5
