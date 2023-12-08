@@ -25,6 +25,15 @@
   ry: 0.5
   rz: -0.5
   rw: -0.5
+- name: bench_close_perceive
+  frame_id: bench_lid
+  tx: 0.511
+  ty: 0.538
+  tz: -0.070
+  rx: 0.041
+  ry: 0.007
+  rz: 0.713
+  rw: 0.700
 - name: bench_close_approach
   frame_id: bench_lid
   tx: 0.598
