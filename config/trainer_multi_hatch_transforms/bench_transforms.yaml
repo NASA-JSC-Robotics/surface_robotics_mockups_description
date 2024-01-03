@@ -52,6 +52,15 @@
   ry: -0.551
   rz: 0.023
   rw: 0.833
+- name: bench_close_safe_pre_approach
+  frame_id: bench_lid
+  tx: 0.665
+  ty: 0.557
+  tz: -0.069
+  rx: 0.031
+  ry: -0.553
+  rz: 0.025
+  rw: 0.832
 - name: bench_close_retreat
   frame_id: bench_lid
   tx: -0.04
