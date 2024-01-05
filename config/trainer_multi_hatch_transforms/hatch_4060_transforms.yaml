@@ -226,7 +226,7 @@
 - name: external_rotary_handle_fold_grasp
   tx: 0.0
   ty: 0.0
-  tz: 0.025
+  tz: -0.015
   rx: 1.0
   ry: 0.0
   rz: 0.0
