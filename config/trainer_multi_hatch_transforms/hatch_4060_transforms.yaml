@@ -297,7 +297,7 @@
   rw: 0.0
 - name: external_3_handle_perceive
   frame_id: external_3_grab_handle
-  tx: 0.30
+  tx: 0.35
   ty: -0.12
   tz: 0.0
   rx: 0.5
@@ -361,7 +361,7 @@
 - name: external_1_handle_perceive
   frame_id: external_1_grab_handle
   tx: 0.30
-  ty: -0.05
+  ty: 0.00
   tz: 0.0
   rx: 0.7071067
   ry: 0.0
