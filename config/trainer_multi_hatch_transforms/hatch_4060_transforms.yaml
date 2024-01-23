@@ -199,7 +199,7 @@
 - name: external_rotary_handle_grasp_far
   tx: 0.0
   ty: 0.0
-  tz: 1.0
+  tz: 0.1
   rx: -0.7071068
   ry: 0.7071068
   rz: 0.0
@@ -208,7 +208,7 @@
 - name: external_rotary_handle_unfold_grasp
   tx: 0.0
   ty: 0.0
-  tz: 0.0
+  tz: 0.02
   rx: 0.0
   ry: -0.7071068
   rz: 0.7071068
@@ -216,13 +216,49 @@
   frame_id: external_rotary_handle_grasp
 - name: external_rotary_handle_unfold_approach
   tx: 0.0
-  ty: 0.5
-  tz: 0.0
+  ty: 0.0
+  tz: -0.5
   rx: 0.0
-  ry: -0.7071068
-  rz: 0.7071068
+  ry: 0.0
+  rz: 0.0
+  rw: 1.0
+  frame_id: external_rotary_handle_unfold_grasp
+- name: external_rotary_handle_fold_grasp
+  tx: 0.0
+  ty: 0.0
+  tz: -0.015
+  rx: 1.0
+  ry: 0.0
+  rz: 0.0
   rw: 0.0
   frame_id: external_rotary_handle_grasp
+- name: external_rotary_handle_fold_pull
+  tx: 0.0
+  ty: 0.0
+  tz: -0.013
+  rx: 0.0
+  ry: 0.0
+  rz: 0.0
+  rw: 1.0
+  frame_id: external_rotary_handle_fold_grasp
+- name: external_rotary_handle_fold_push
+  tx: -0.000
+  ty: 0.036
+  tz: 0.095
+  rx: 1.0 
+  ry: 0.0
+  rz: 0.0
+  rw: 0.0
+  frame_id: external_rotary_wheel
+- name: external_rotary_handle_fold_finish
+  tx: 0.0
+  ty: 0.0
+  tz: 0.065
+  rx: 0.0
+  ry: 0.0
+  rz: 0.0
+  rw: 1.0
+  frame_id: external_rotary_handle_fold_push
 - name: proto_handle_location
   frame_id: hatch_face
   tx: -0.153
@@ -268,9 +304,45 @@
   ry: 0.0
   rz: -0.7071067
   rw: 0.0
+- name: blind_push_contact_inner
+  frame_id: external_3_grab_handle
+  tx: 0.00
+  ty: -0.28
+  tz: -0.04
+  rx: 0.7071067
+  ry: 0.0
+  rz: -0.7071067
+  rw: 0.0
+- name: blind_push_approach_inner
+  frame_id: external_3_grab_handle
+  tx: 0.11
+  ty: -0.28
+  tz: -0.04
+  rx: 0.7071067
+  ry: 0.0
+  rz: -0.7071067
+  rw: 0.0
 - name: external_3_handle_finger_grasp
   frame_id: external_3_grab_handle
   tx: 0.08
+  ty: -0.15
+  tz: 0.0
+  rx: 0.7071067
+  ry: 0.0
+  rz: -0.7071067
+  rw: 0.0
+- name: external_3_handle_perceive
+  frame_id: external_3_grab_handle
+  tx: 0.35
+  ty: -0.12
+  tz: 0.0
+  rx: 0.5
+  ry: -0.5
+  rz: -0.5
+  rw: 0.5
+- name: external_3_handle_retreat
+  frame_id: external_3_grab_handle
+  tx: 0.18
   ty: -0.15
   tz: 0.0
   rx: 0.7071067
@@ -290,6 +362,42 @@
   frame_id: external_1_grab_handle
   tx: 0.20
   ty: -0.05
+  tz: 0.0
+  rx: 0.7071067
+  ry: 0.0
+  rz: -0.7071067
+  rw: 0.0
+- name: blind_push_contact_outer
+  frame_id: external_1_grab_handle
+  tx: 0.05
+  ty: -0.05
+  tz: -0.05
+  rx: 0.7071067
+  ry: 0.0
+  rz: -0.7071067
+  rw: 0.0
+- name: blind_push_approach_outer
+  frame_id: external_1_grab_handle
+  tx: 0.20
+  ty: -0.05
+  tz: -0.05
+  rx: 0.7071067
+  ry: 0.0
+  rz: -0.7071067
+  rw: 0.0
+- name: external_1_handle_admit_close
+  frame_id: external_1_grab_handle
+  tx: 0.065
+  ty: -0.05
+  tz: 0.0
+  rx: 0.7071067
+  ry: 0.0
+  rz: -0.7071067
+  rw: 0.0
+- name: external_1_handle_perceive
+  frame_id: external_1_grab_handle
+  tx: 0.30
+  ty: 0.00
   tz: 0.0
   rx: 0.7071067
   ry: 0.0

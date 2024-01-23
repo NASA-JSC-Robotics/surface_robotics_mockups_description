@@ -2,7 +2,16 @@
   frame_id: bench_lid
   tx: 0.737
   ty: 0.55
-  tz: -0.030
+  tz: -0.045
+  rx: 0.5
+  ry: 0.5
+  rz: -0.5
+  rw: -0.5
+- name: bench_perceive
+  frame_id: bench_lid
+  tx: 0.787
+  ty: 0.55
+  tz: -0.045
   rx: 0.5
   ry: 0.5
   rz: -0.5
@@ -16,6 +25,15 @@
   ry: 0.5
   rz: -0.5
   rw: -0.5
+- name: bench_close_perceive
+  frame_id: bench_lid
+  tx: 0.511
+  ty: 0.538
+  tz: -0.070
+  rx: 0.041
+  ry: 0.007
+  rz: 0.713
+  rw: 0.700
 - name: bench_close_approach
   frame_id: bench_lid
   tx: 0.598
@@ -34,6 +52,15 @@
   ry: -0.551
   rz: 0.023
   rw: 0.833
+- name: bench_close_safe_pre_approach
+  frame_id: bench_lid
+  tx: 0.665
+  ty: 0.557
+  tz: -0.069
+  rx: 0.031
+  ry: -0.553
+  rz: 0.025
+  rw: 0.832
 - name: bench_close_retreat
   frame_id: bench_lid
   tx: -0.04
