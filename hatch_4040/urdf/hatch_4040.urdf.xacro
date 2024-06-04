@@ -13,8 +13,8 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:hatch_frame>
 
-  <xacro:hatch name="$(arg name)" prefix="$(arg prefix)" parent="hatch_frame">
+  <xacro:hatch_4040 name="$(arg name)" prefix="$(arg prefix)" parent="hatch_frame">
     <origin xyz="0.668 0.06 0.657" rpy="0 0 0"/>
-  </xacro:hatch>
+  </xacro:hatch_4040>
 
 </robot>
