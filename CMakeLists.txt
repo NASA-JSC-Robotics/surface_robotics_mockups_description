@@ -8,8 +8,9 @@ install(DIRECTORY config launch
   DESTINATION share/${PROJECT_NAME}
 )
 
-# Install Python modules
-ament_python_install_package(${PROJECT_NAME})
-ament_python_install_module(${PROJECT_NAME}/launch_common.py)
+install(PROGRAMS
+  scripts/multi_transform_static_publisher.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 ament_package()
