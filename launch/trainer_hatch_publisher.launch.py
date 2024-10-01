@@ -11,7 +11,7 @@ def generate_launch_description():
     site_config_path = "trainer_hatch_transforms/"
 
     nodes_to_launch.append(Node(
-        package="clr_trainer_hatch_offsets",
+        package="drt_ros2_launch_common",
         executable="multi_transform_static_publisher.py",
         name="bench_transforms",
         arguments=["clr_trainer_hatch_offsets",
@@ -20,7 +20,7 @@ def generate_launch_description():
     ))
 
     nodes_to_launch.append(Node(
-        package="clr_trainer_hatch_offsets",
+        package="drt_ros2_launch_common",
         executable="multi_transform_static_publisher.py",
         name="hatch_4040_transforms",
         arguments=["clr_trainer_hatch_offsets",
@@ -29,7 +29,7 @@ def generate_launch_description():
     ))
 
     nodes_to_launch.append(Node(
-        package="clr_trainer_hatch_offsets",
+        package="drt_ros2_launch_common",
         executable="multi_transform_static_publisher.py",
         name="hatch_4060_transforms",
         arguments=["clr_trainer_hatch_offsets",
@@ -38,7 +38,7 @@ def generate_launch_description():
     ))
 
     nodes_to_launch.append(Node(
-        package="clr_trainer_hatch_offsets",
+        package="drt_ros2_launch_common",
         executable="multi_transform_static_publisher.py",
         name="intermediate_transforms",
         arguments=["clr_trainer_hatch_offsets",
