@@ -44,15 +44,15 @@ class Hatch4040Manager(Node):
 
         # ranges for all joints
         self.hatch_min = 0
-        self.hatch_max = math.radians(95.0)
+        self.hatch_max = round(math.radians(95.0),5)
         self.ext_wheel_min = 0
-        self.ext_wheel_max = 2*math.pi
+        self.ext_wheel_max = round(2*math.pi,5)
         self.ext_handle_min = 0
-        self.ext_handle_max = math.pi/2
+        self.ext_handle_max = round(math.pi/2,5)
         self.int_wheel_min = 0
-        self.int_wheel_max = 2*math.pi
+        self.int_wheel_max = round(2*math.pi,5)
         self.int_handle_min = 0
-        self.int_handle_max = math.pi/2
+        self.int_handle_max = round(math.pi/2,5)
 
         # update the joint states
         self._hatch_joint_states = {self.prefix + 'hatch_outer_frame_face_joint': copy.deepcopy(self.hatch_position), self.prefix + 'external_rotary_joint': copy.deepcopy(self.ext_wheel_position), \

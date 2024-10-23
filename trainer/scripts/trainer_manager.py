@@ -47,18 +47,18 @@ class TrainerManager(Node):
         self.recessed_latch_handle_position = 0.0
 
         # ranges
-        self.bench_max = 95.0*math.pi/180.0
-        self.cabinet_1_max = math.pi
-        self.round_latch_max = math.pi
-        self.cabinet_2_max = math.pi
-        self.push_latch_button_max = 0.005
-        self.push_latch_handle_max = math.pi/3
-        self.cabinet_3_max = math.pi
-        self.cabinet_4_max = math.pi
-        self.paddle_latch_handle_max = 0.785375
-        self.drawer_1_max = 0.305
-        self.drawer_2_max = 0.2921
-        self.recessed_latch_handle_max = math.pi/2
+        self.bench_max = round(95.0*math.pi/180.0, 5)
+        self.cabinet_1_max = round(math.pi, 5)
+        self.round_latch_max = round(math.pi, 5)
+        self.cabinet_2_max = round(math.pi, 5)
+        self.push_latch_button_max = round(0.005, 5)
+        self.push_latch_handle_max = round(math.pi/3, 5)
+        self.cabinet_3_max = round(math.pi, 5)
+        self.cabinet_4_max = round(math.pi, 5)
+        self.paddle_latch_handle_max = round(0.785375, 5)
+        self.drawer_1_max = round(0.305, 5)
+        self.drawer_2_max = round(0.2921, 5)
+        self.recessed_latch_handle_max = round(math.pi/2, 5)
 
         self.bench_min = 0.0
         self.cabinet_1_min = 0.0
