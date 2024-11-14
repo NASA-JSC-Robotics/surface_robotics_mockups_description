@@ -349,6 +349,15 @@
   ry: -0.5
   rz: -0.5
   rw: 0.5
+- name: external_3_handle_perceive_low_angle
+  frame_id: external_3_grab_handle
+  tx: 0.29
+  ty: -0.12
+  tz: -0.05
+  rx: -0.5
+  ry: -0.5
+  rz: 0.5
+  rw: 0.5
 - name: external_3_handle_retreat
   frame_id: external_3_grab_handle
   tx: 0.18
