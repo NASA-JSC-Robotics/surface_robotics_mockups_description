@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="merlin_mockup">
+
+  <xacro:macro name="merlin_mockup" params="
+    prefix:=''
+    parent:=''
+    *origin">
+
+  <joint name="${prefix}merlin_freezer_joint" type="fixed">
+    <parent link="${parent}"/>
+    <child link="${prefix}wood_frame"/>
+    <xacro:insert_block name="origin"/>
+  </joint>
+
+  <link name="${prefix}wood_frame">
+    <visual>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/aso_locker_cavity_only.stl" scale="0.02527 0.02527 0.02527"/>
+      </geometry>
+      <material name="Gray">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+    <collision> 
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/aso_locker_cavity_only.stl" scale="0.02527 0.02527 0.02527"/>
+      </geometry>
+    </collision>    
+  </link>
+
+  <link name="${prefix}csm_faceplate_cover">
+    <visual>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_faceplate_cover.stl"/>
+      </geometry>
+      <material name="Gray">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+    <collision> 
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_faceplate_cover.stl"/>
+      </geometry>
+    </collision>    
+  </link>
+
+  <joint name="${prefix}faceplate_cover_joint" type="fixed">
+    <parent link="wood_frame"/>
+    <child link="csm_faceplate_cover"/>
+    <origin xyz="0.0 0.013 0.0" rpy="${pi/2} 0 ${pi}"/>
+  </joint>
+
+  <link name="${prefix}door_face">
+  </link>
+
+  <joint name="${prefix}door_face" type="fixed">
+    <parent link="csm_faceplate_cover"/>
+    <child link="door_face"/>
+    <origin xyz="0.0 0.0 0.0381" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Seal section-->
+  <!-- Replace visual and collision components of this link with stl eventually-->
+  <link name="${prefix}seal">
+    <!-- Right-->
+    <visual>
+      <geometry>
+        <box size="0.0091 0.201 0.005"/>
+      </geometry> 
+      <material name="Cyan">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+      <origin rpy ="0 0 0" xyz ="0.1554 0 0.0025"/>
+    </visual>
+
+    <collision> 
+      <geometry>
+        <box size="0.0091 0.201 0.005"/>
+      </geometry>
+      <origin rpy ="0 0 0" xyz ="0.1554 0 0.0025"/>
+    </collision> 
+
+    <!-- Left -->
+    <visual>
+      <geometry>
+        <box size="0.0091 0.201 0.005"/>
+      </geometry> 
+      <material name="Cyan">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+      <origin rpy ="0 0 0" xyz ="-0.1554 0 0.0025"/>
+    </visual>
+
+    <collision> 
+      <geometry>
+        <box size="0.0091 0.201 0.005"/>
+      </geometry>
+      <origin rpy ="0 0 0" xyz ="-0.1554 0 0.0025"/>
+    </collision> 
+
+    <!-- Top-->
+    <visual>
+      <geometry>
+        <box size="0.302 0.0091 0.005"/>
+      </geometry> 
+      <material name="Cyan">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>  
+      <origin xyz="0 0.1045 0.0025" rpy="0 0 0"/>
+    </visual>
+
+    <collision> 
+      <geometry>
+        <box size="0.302 0.0091 0.005"/>
+      </geometry>
+      <origin xyz="0 0.1045 0.0025" rpy="0 0 0"/>
+    </collision> 
+
+    <!-- Bottom -->
+    <visual>
+      <geometry>
+        <box size="0.302 0.0091 0.005"/>
+      </geometry> 
+      <material name="Cyan">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>  
+      <origin xyz="0 -0.1045 0.0025" rpy="0 0 0"/>
+    </visual>   
+
+    <collision> 
+      <geometry>
+        <box size="0.302 0.0091 0.005"/>
+      </geometry>
+      <origin xyz="0 -0.1045 0.0025" rpy="0 0 0"/>
+    </collision> 
+  </link>
+
+  
+  <joint name="${prefix}seal_to_face_joint" type="fixed">
+    <parent link="csm_faceplate_cover"/>
+    <child link="seal"/>
+    <!-- Seal does not appear to be perfectly centered - introduce offsets -->
+    <origin xyz="-0.001 -0.0015 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Seal corners to help with cartesian waypoints - keep and modify these once above geometry is replaced with an stl -->
+  <link name="${prefix}seal_corner_1"/>
+  <joint name="${prefix}c1_to_seal" type="fixed">
+    <parent link="seal"/>
+    <child link="seal_corner_1"/>
+    <origin rpy ="-1.57 1.57 0" xyz ="-0.1554 0.1105 0.005"/>
+  </joint>
+  <link name="${prefix}seal_corner_2"/>
+  <joint name="${prefix}c2_to_seal" type="fixed">
+    <parent link="seal"/>
+    <child link="seal_corner_2"/>
+    <origin rpy ="-1.57 1.57 0" xyz ="0.1654 0.1105 0.005"/>
+  </joint>
+  <link name="${prefix}seal_corner_3"/>
+  <joint name="${prefix}c3_to_seal" type="fixed">
+    <parent link="seal"/>
+    <child link="seal_corner_3"/>
+    <origin rpy ="-1.57 1.57 0" xyz ="0.1654 -0.1005 0.005"/>
+  </joint>
+  <link name="${prefix}seal_corner_4"/>
+  <joint name="${prefix}c4_to_seal" type="fixed">
+    <parent link="seal"/>
+    <child link="seal_corner_4"/>
+    <origin rpy ="-1.57 1.57 0" xyz ="-0.1554 -0.1005 0.005"/>
+  </joint>
+
+  <!-- Velcro section-->
+  <link name="${prefix}velcro"> <!-- need to set all values -->
+    <visual>
+      <geometry>
+        <box size="0.11 0.001 0.05"/>
+      </geometry>
+      <material name="Cyan">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>      
+    </visual>
+
+    <collision> 
+      <geometry>
+        <box size="0.11 0.001 0.05"/>
+      </geometry>
+    </collision>    
+  </link>
+
+  <joint name="${prefix}velcro_to_frame_joint" type="fixed">
+    <parent link="wood_frame"/>
+    <child link="velcro"/>
+    <origin xyz="-0.17535 0.015 0.2345" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Door section-->
+  <link name="${prefix}door">
+    <visual>
+      <origin xyz="0 0 0.110" rpy="${pi/2} 0 ${pi}"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_outer_door.stl"/>
+      </geometry>
+      <material name="Gray">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.110" rpy="${pi/2} 0 ${pi}"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_outer_door.stl"/>
+      </geometry>
+    </collision>    
+  </link>
+
+  <joint name="${prefix}door_to_frame_joint" type="revolute">
+    <parent link="wood_frame"/>
+    <child link="door"/>
+    <origin xyz="0 0.0255 -0.113" rpy="0 0 0"/>
+    <axis xyz="1 0 0" />
+    <limit effort="10" velocity="10" lower="-${pi/2}" upper="0"/>
+  </joint>
+
+
+  <!-- Latch housing section-->
+  <link name="${prefix}latch_housing">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 ${pi} 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_housing.stl"/>
+      </geometry>
+      <material name="Gray">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="${prefix}door_to_latch" type="fixed">
+    <parent link="door"/>
+    <child link="latch_housing"/>
+    <origin xyz="0 0.0 0.233" rpy="0 0 0"/>
+  </joint>
+
+
+  <!-- Latch cover section-->
+  <link name="${prefix}latch_cover">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_cover.stl"/>
+      </geometry>
+      <material name="Gray">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="${prefix}housing_to_cover" type="fixed">
+    <parent link="latch_housing"/>
+    <child link="latch_cover"/>
+    <origin xyz="0 0.012 0.0" rpy="0 0 0"/>
+  </joint>
+
+
+  <!-- Right latch pull section-->
+  <link name="${prefix}right_latch_pull">
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi} -${pi/2} -${pi/2}"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_pull.stl"/>
+      </geometry>
+      <material name="Gray">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>  
+  </link>
+
+  <joint name="${prefix}housing_to_right_latch_pull" type="prismatic">
+    <parent link="latch_housing"/>
+    <child link="right_latch_pull"/>
+    <origin xyz="0.0258 0.01 -0.004" rpy="0 0 0"/>
+    <axis xyz="1 0 0" />
+    <limit effort="10" velocity="10" lower="-0.0084" upper="0"/>
+  </joint>
+
+
+  <!-- Left latch pull section-->
+  <link name="${prefix}left_latch_pull">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 ${pi/2} -${pi/2}"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_pull.stl"/>
+      </geometry>
+      <material name="Gray">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="${prefix}housing_to_left_latch_pull" type="prismatic">
+    <parent link="latch_housing"/>
+    <child link="left_latch_pull"/>
+    <origin xyz="-0.0258 0.01 -0.004" rpy="0 0 0"/>
+    <axis xyz="1 0 0" />
+    <limit effort="10" velocity="10" lower="0" upper="0.0084"/>
+  </joint>
+
+
+  <!-- Latch lock section-->
+  <link name="${prefix}latch_lock">
+    <visual>
+      <origin xyz="0 0.0012 -0.0084" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_lock.stl"/>
+      </geometry>
+      <material name="Gray">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>  
+  </link>
+
+  <joint name="${prefix}housing_to_latch_lock" type="revolute">
+    <parent link="latch_housing"/>
+    <child link="latch_lock"/>
+    <origin xyz="0 0.019 0.007" rpy="0 0 0"/>
+    <axis xyz="1 0 0" />
+    <limit effort="10" velocity="10" lower="0" upper="${pi/2}"/>
+  </joint>
+
+  </xacro:macro>
+
+</robot>
