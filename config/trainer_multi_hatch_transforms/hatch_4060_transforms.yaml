@@ -119,10 +119,10 @@
   tx: 0.0
   ty: 0.0
   tz: 0.2
-  rx: 0.0
-  ry: 1.0
-  rz: 0.0
-  rw: 0.0
+  rx: 1
+  ry: 0
+  rz: 0
+  rw: 0
   frame_id: external_rotary_wheel
 - name: external_rotary_wheel_approach
   tx: 0.0
@@ -137,8 +137,8 @@
   tx: 0.0
   ty: 0.0
   tz: 0.02
-  rx: 0.0
-  ry: 1.0
+  rx: 1
+  ry: 0
   rz: 0.0
   rw: 0.0
   frame_id: external_rotary_wheel
