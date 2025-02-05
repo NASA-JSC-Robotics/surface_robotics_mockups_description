@@ -124,6 +124,15 @@
   rz: 0
   rw: 0
   frame_id: external_rotary_wheel
+- name: external_rotary_wheel_perceive
+  tx: 0.024
+  ty: -0.058
+  tz: 0.2
+  rx: 0.998
+  ry: 0
+  rz: 0
+  rw: -0.056
+  frame_id: external_rotary_wheel
 - name: external_rotary_wheel_approach
   tx: 0.0
   ty: 0.0
