@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro" name="hatch_4060">
-  <xacro:arg name="name" default=""/>
   <xacro:arg name="prefix" default=""/>
   <!--TODO which handles are mounted?-->
   <xacro:property name="external_handle_1" default="true"/>
@@ -15,11 +14,11 @@
 
   <link name="world"/>
 
-  <xacro:hatch_frame name="$(arg name)" prefix="$(arg prefix)" parent="world">
+  <xacro:hatch_frame prefix="$(arg prefix)" parent="world">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:hatch_frame>
 
-  <xacro:hatch_4060 name="$(arg name)" prefix="$(arg prefix)" parent="hatch_frame" 
+  <xacro:hatch_4060 prefix="$(arg prefix)" parent="hatch_frame" 
     external_handle_1="${external_handle_1}" external_handle_2="${external_handle_2}" external_handle_3="${external_handle_3}" 
     internal_handle_1="${internal_handle_1}" internal_handle_2="${internal_handle_2}">
     <origin xyz="0.669329 0.06 0.7113" rpy="0 0 0"/>

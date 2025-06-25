@@ -2,7 +2,6 @@
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
 
   <xacro:macro name="side_face" params="
-    name:=''
     prefix:=''
     parent:=''
     *origin">

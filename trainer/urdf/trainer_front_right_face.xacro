@@ -2,7 +2,6 @@
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
 
   <xacro:macro name="trainer_front_right_face" params="
-    name:=''
     prefix:=''
     parent:=''
     *origin">
