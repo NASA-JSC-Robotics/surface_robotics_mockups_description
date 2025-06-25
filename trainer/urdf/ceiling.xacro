@@ -2,7 +2,6 @@
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
 
   <xacro:macro name="ceiling" params="
-    name:=''
     prefix:=''
     parent:=''
     *origin">

@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro" name="trainer_frame">
-  <xacro:arg name="name" default=""/>
   <xacro:arg name="prefix" default=""/>
 
   <xacro:include filename="$(find trainer)/urdf/colors.xacro"/>

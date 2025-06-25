@@ -2,7 +2,6 @@
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
 
   <xacro:macro name="grab_handle" params="
-    name:=''
     prefix:=''
     parent:=''
     *origin">

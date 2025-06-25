@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro" name="hatch_4040">
-  <xacro:arg name="name" default=""/>
   <xacro:arg name="prefix" default=""/>
 
   <xacro:include filename="$(find hatch_accessories)/urdf/hatch_frame.xacro"/>
@@ -9,11 +8,11 @@
 
   <link name="world"/>
 
-  <xacro:hatch_frame name="$(arg name)" prefix="$(arg prefix)" parent="world">
+  <xacro:hatch_frame prefix="$(arg prefix)" parent="world">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:hatch_frame>
 
-  <xacro:hatch_4040 name="$(arg name)" prefix="$(arg prefix)" parent="hatch_frame">
+  <xacro:hatch_4040 prefix="$(arg prefix)" parent="hatch_frame">
     <origin xyz="0.668 0.06 0.657" rpy="0 0 0"/>
   </xacro:hatch_4040>
 
