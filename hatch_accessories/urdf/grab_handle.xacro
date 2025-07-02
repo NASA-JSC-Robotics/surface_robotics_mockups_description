@@ -16,8 +16,8 @@
       <!--TODO set proper inertia-->
       <inertial>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-        <mass value="0.1"/>
-        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+        <mass value="0.1558987"/>
+        <inertia ixx="0.002074537" ixy="0.0008954785" ixz="0.000000003872256" iyy="0.0007511526" iyz="0.00000005844821" izz="0.002813307"/>
       </inertial>
       <visual>
         <!--This transform is for the stl file origin-->

@@ -22,8 +22,8 @@
       <!--TODO set proper inertia-->
       <inertial>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-        <mass value="0.1"/>
-        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+        <mass value="7.381808"/>
+        <inertia ixx="8.9911" ixy="-0.050621" ixz="-0.0463501" iyy="4.691664" iyz="-2.297576" izz="4.302649"/>
       </inertial>
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -51,8 +51,8 @@
       <!--TODO set proper inertia-->
       <inertial>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-        <mass value="0.1"/>
-        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+        <mass value="7.381808"/>
+        <inertia ixx="8.9911" ixy="-0.050621" ixz="-0.0463501" iyy="4.691664" iyz="-2.297576" izz="4.302649"/>
       </inertial>
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -82,8 +82,8 @@
       <!--TODO set proper inertia-->
       <inertial>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-        <mass value="0.1"/>
-        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+        <mass value="18.65315"/>
+        <inertia ixx="18.18118" ixy="-0.6720069" ixz="0.550698" iyy="8.971415" iyz="5.96422" izz="9.347331"/>
       </inertial>
       <!--TODO check the orientation of the hinges, up or down-->
       <visual>
