@@ -21,9 +21,9 @@
     <link name="${prefix}hatch_inner_frame">
       <!--TODO set proper inertia-->
       <inertial>
-        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <origin xyz="0.01151002 0.5753364 0.5459604" rpy="0 0 0"/>
         <mass value="7.381808"/>
-        <inertia ixx="8.9911" ixy="-0.050621" ixz="-0.0463501" iyy="4.691664" iyz="-2.297576" izz="4.302649"/>
+        <inertia ixx="4.347317" ixy="-0.001737663" ixz="0.00003731045" iyy="2.49037" iyz="0.02113006" izz="1.858204"/>
       </inertial>
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -50,9 +50,9 @@
     <link name="${prefix}hatch_outer_frame">
       <!--TODO set proper inertia-->
       <inertial>
-        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <origin xyz="0.01151002 0.5753364 0.5459604" rpy="0 0 0"/>
         <mass value="7.381808"/>
-        <inertia ixx="8.9911" ixy="-0.050621" ixz="-0.0463501" iyy="4.691664" iyz="-2.297576" izz="4.302649"/>
+        <inertia ixx="4.347317" ixy="-0.001737663" ixz="0.00003731045" iyy="2.49037" iyz="0.02113006" izz="1.858204"/>
       </inertial>
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -81,9 +81,9 @@
     <link name="${prefix}hatch_face">
       <!--TODO set proper inertia-->
       <inertial>
-        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <origin xyz="-0.05635759 -0.6185068 0.5223265" rpy="0 0 0"/>
         <mass value="18.65315"/>
-        <inertia ixx="18.18118" ixy="-0.6720069" ixz="0.550698" iyy="8.971415" iyz="5.96422" izz="9.347331"/>
+        <inertia ixx="5.956354" ixy="-0.02180356" ixz="0.001603986" iyy="3.823124" iyz="-0.06191432" izz="2.152308"/>
       </inertial>
       <!--TODO check the orientation of the hinges, up or down-->
       <visual>
