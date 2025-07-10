@@ -232,6 +232,12 @@
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
     </visual>
+    <collision>
+       <origin xyz="0 0 0" rpy="0 ${pi} 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_housing.stl"/>
+      </geometry>
+    </collision>
   </link>
 
   <joint name="${prefix}door_to_latch" type="fixed">
@@ -252,6 +258,12 @@
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_cover.stl"/>
+      </geometry>
+    </collision>
   </link>
 
   <joint name="${prefix}housing_to_cover" type="fixed">
@@ -271,7 +283,13 @@
       <material name="Gray">
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
-    </visual>  
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi} -${pi/2} -${pi/2}"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_pull.stl"/>
+      </geometry>
+    </collision>
   </link>
 
   <joint name="${prefix}housing_to_right_latch_pull" type="prismatic">
@@ -294,6 +312,12 @@
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 ${pi/2} -${pi/2}"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_pull.stl"/>
+      </geometry>
+    </collision>
   </link>
 
   <joint name="${prefix}housing_to_left_latch_pull" type="prismatic">
@@ -315,7 +339,13 @@
       <material name="Gray">
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
-    </visual>  
+    </visual>
+    <collision>
+      <origin xyz="0 0.0012 -0.0084" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://merlin_mockup_description/meshes/visual/csm_latch_lock.stl"/>
+      </geometry>
+    </collision>
   </link>
 
   <joint name="${prefix}housing_to_latch_lock" type="revolute">
