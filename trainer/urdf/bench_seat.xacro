@@ -144,9 +144,9 @@
       </visual>
       <collision>
         <!--0.0075 is the radius of the hinge-->
-        <origin xyz="${0.603/2 + 0.0075} ${0.920/2} ${0.065/2 - 0.0075}" rpy="0 0 0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <box size="0.603 0.920 0.065"/>
+          <mesh filename="package://trainer/meshes/visual/bench_lid.stl"/>
         </geometry>
         <material name="blue"/>
       </collision>
