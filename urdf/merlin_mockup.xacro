@@ -62,6 +62,11 @@
   <!-- Seal section-->
   <!-- Replace visual and collision components of this link with stl eventually-->
   <link name="${prefix}seal">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
     <!-- Right-->
     <visual>
       <geometry>
@@ -195,6 +200,11 @@
 
   <!-- Door section-->
   <link name="${prefix}door">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
     <visual>
       <origin xyz="0 0 0.110" rpy="${pi/2} 0 ${pi}"/>
       <geometry>
@@ -223,6 +233,11 @@
 
   <!-- Latch housing section-->
   <link name="${prefix}latch_housing">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 ${pi} 0"/>
       <geometry>
@@ -249,6 +264,11 @@
 
   <!-- Latch cover section-->
   <link name="${prefix}latch_cover">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -275,6 +295,11 @@
 
   <!-- Right latch pull section-->
   <link name="${prefix}right_latch_pull">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="${pi} -${pi/2} -${pi/2}"/>
       <geometry>
@@ -303,6 +328,11 @@
 
   <!-- Left latch pull section-->
   <link name="${prefix}left_latch_pull">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 ${pi/2} -${pi/2}"/>
       <geometry>
@@ -331,6 +361,11 @@
 
   <!-- Latch lock section-->
   <link name="${prefix}latch_lock">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
     <visual>
       <origin xyz="0 0.0012 -0.0084" rpy="0 0 0"/>
       <geometry>
