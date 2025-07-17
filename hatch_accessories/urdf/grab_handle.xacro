@@ -15,9 +15,9 @@
     <link name="${prefix}grab_handle">
       <!--TODO set proper inertia-->
       <inertial>
-        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-        <mass value="0.0"/>
-        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        <origin xyz="0.06460542 -0.08890724 0.0" rpy="0 0 0"/>
+        <mass value="0.1558987"/>
+        <inertia ixx="0.0008422355" ixy="0.00000001340204" ixz="0.000000002477554" iyy="0.0001004532" iyz="0.00000006036754" izz="0.0009303066"/>
       </inertial>
       <visual>
         <!--This transform is for the stl file origin-->

@@ -15,9 +15,9 @@
     <link name="${prefix}bench_back">
       <!--TODO set proper inertia-->
       <inertial>
-        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-        <mass value="0.0"/>
-        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        <origin xyz="0.064 0.448 0.02" rpy="0 0 0"/>
+        <mass value="12.32218"/>
+        <inertia ixx="0.8241741" ixy="0.0" ixz="0.0" iyy="0.01820499" iyz="0.0" izz="0.8390932"/>
       </inertial>
       <visual>
         <origin xyz="${0.127/2} ${0.895/2} ${0.04/2}" rpy="0 0 0"/>
@@ -42,6 +42,11 @@
     </joint>
 
     <link name="${prefix}bench_left">
+      <inertial>
+        <origin xyz="0.354 0.02 0.02" rpy="0 0 0"/>
+        <mass value="3.070111"/>
+        <inertia ixx="0.0008186962" ixy="0.0" ixz="0.0" iyy="0.128654" iyz="0.0" izz="0.128654"/>
+      </inertial>
       <visual>
         <origin xyz="${0.708/2} ${0.04/2} ${0.04/2}" rpy="0 0 0"/>
         <geometry>
@@ -65,6 +70,11 @@
     </joint>
 
     <link name="${prefix}bench_right">
+      <inertial>
+        <origin xyz="0.354 0.02 0.02" rpy="0 0 0"/>
+        <mass value="3.070111"/>
+        <inertia ixx="0.0008186962" ixy="0.0" ixz="0.0" iyy="0.128654" iyz="0.0" izz="0.128654"/>
+      </inertial>
       <visual>
         <origin xyz="${0.708/2} ${0.05/2} ${0.04/2}" rpy="0 0 0"/>
         <geometry>
@@ -88,6 +98,11 @@
     </joint>
 
     <link name="${prefix}bench_front">
+       <inertial>
+        <origin xyz="0.02 0.448 0.02" rpy="0 0 0"/>
+        <mass value="3.881002"/>
+        <inertia ixx="0.2595824" ixy="0.0" ixz="0.0" iyy="0.001034934" iyz="0.0" izz="0.2595824"/>
+      </inertial>
       <visual>
         <origin xyz="${0.05/2} ${0.895/2} ${0.04/2}" rpy="0 0 0"/>
         <geometry>
@@ -116,23 +131,22 @@
     <link name="${prefix}bench_lid">
       <!--TODO set proper inertia-->
       <inertial>
-        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-        <mass value="0.0"/>
-        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        <origin xyz="0.2652256 0.46 0.03190335" rpy="0 0 0"/>
+        <mass value="9.07185"/>
+        <inertia ixx="0.643167" ixy="0.0" ixz="0.002867943" iyy="0.2210995" iyz="0.0" izz="0.8576681"/>
       </inertial>
       <visual>
-        <!--0.0075 is the radius of the hinge-->
-        <origin xyz="${0.603/2 + 0.0075} ${0.920/2} ${0.065/2 - 0.0075}" rpy="0 0 0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <box size="0.603 0.920 0.065"/>
+          <mesh filename="package://trainer/meshes/visual/bench_lid.stl"/>
         </geometry>
         <material name="blue"/>
       </visual>
       <collision>
         <!--0.0075 is the radius of the hinge-->
-        <origin xyz="${0.603/2 + 0.0075} ${0.920/2} ${0.065/2 - 0.0075}" rpy="0 0 0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <box size="0.603 0.920 ${0.065/2}"/>
+          <mesh filename="package://trainer/meshes/visual/bench_lid.stl"/>
         </geometry>
         <material name="blue"/>
       </collision>
