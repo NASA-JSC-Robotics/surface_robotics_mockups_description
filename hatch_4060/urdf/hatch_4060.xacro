@@ -89,14 +89,14 @@
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://hatch_4060/meshes/visual/hatch_4060_face.stl"/>
+          <mesh filename="package://hatch_4060/meshes/visual/simplified_hatch_4060_face.stl"/>
         </geometry>
         <material name="gray"/>
       </visual>
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://hatch_4060/meshes/collision/hatch_4060_collision.stl"/>
+          <mesh filename="package://hatch_4060/meshes/collision/simplified_hatch_4060_face.stl"/>
         </geometry>
         <material name="red"/>
       </collision>
@@ -161,3 +161,4 @@
 
   </xacro:macro>
 </robot>
+
