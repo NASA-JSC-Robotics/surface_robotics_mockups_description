@@ -70,6 +70,7 @@
     <parent link="${prefix}side_top_face"/>
     <child link="${prefix}cabinet_4"/>
     <origin xyz="-0.0018 0.017 0.484" rpy="0 0 0"/>
+    <dynamics friction="3.0" damping="3.0"/>
   </joint>
 
   <link name="${prefix}cabinet_4">
@@ -130,6 +131,7 @@
     <parent link="${prefix}paddle_latch_housing"/>
     <child link="${prefix}paddle_latch_handle"/>
     <origin xyz="0.06693 -0.003531 0.0107" rpy="0 0 0"/>
+    <dynamics friction="3.0" damping="3.0"/>
   </joint>
 
   <link name="${prefix}paddle_latch_handle">
@@ -161,6 +163,7 @@
     <parent link="${prefix}side_top_face"/>
     <child link="${prefix}drawer_1_face"/>
     <origin xyz="0.011 0.003 0.283" rpy="0 0 0"/>
+    <dynamics friction="3.0" damping="3.0"/>
   </joint>
 
   <link name="${prefix}drawer_1_face">
@@ -279,6 +282,7 @@
     <parent link="${prefix}side_top_face"/>
     <child link="${prefix}drawer_2_face"/>
     <origin xyz="0.011 0.003 0.086" rpy="0 0 0"/>
+    <dynamics friction="3.0" damping="3.0"/>
   </joint>
 
   <link name="${prefix}drawer_2_face">
@@ -339,6 +343,7 @@
     <parent link="${prefix}recessed_latch_housing"/>
     <child link="${prefix}recessed_latch_handle"/>
     <origin xyz="0.0508 -0.001778 0.006477" rpy="0 0 0"/>
+    <dynamics friction="3.0" damping="3.0"/>
   </joint>
  
   <link name="${prefix}recessed_latch_handle">

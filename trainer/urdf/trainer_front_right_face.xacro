@@ -41,6 +41,7 @@
     <parent link="${prefix}front_right_face"/>
     <child link="${prefix}cabinet_1"/>
     <origin xyz="0.017 ${0.344 + 0.0018} 0.713" rpy="0 0 0"/>
+    <dynamics friction="3.0" damping="3.0"/>
   </joint>
 
   <link name="${prefix}cabinet_1">
@@ -101,6 +102,7 @@
     <parent link="${prefix}round_latch_housing"/>
     <child link="${prefix}round_latch_handle"/>
     <origin xyz="0.0 -0.0212 -0.0035" rpy="0 0 0"/>
+    <dynamics friction="3.0" damping="3.0"/>
   </joint>
 
   <link name="${prefix}round_latch_handle">
@@ -132,6 +134,7 @@
     <parent link="${prefix}front_right_face"/>
     <child link="${prefix}cabinet_2"/>
     <origin xyz="0.017 -0.0018 0.379" rpy="0 0 0"/>
+    <dynamics friction="3.0" damping="3.0"/>
   </joint>
 
   <link name="${prefix}cabinet_2">
@@ -194,6 +197,7 @@
     <parent link="${prefix}push_latch_housing"/>
     <child link="${prefix}push_latch_button"/>
     <origin xyz="-0.0125 0.0285 0.0045" rpy="0 0 ${pi/8}"/>
+    <dynamics friction="3.0" damping="3.0"/>
   </joint>
 
   <link name="${prefix}push_latch_button">
@@ -225,6 +229,7 @@
     <parent link="${prefix}push_latch_housing"/>
     <child link="${prefix}push_latch_handle"/>
     <origin xyz="-0.003 0.079 0.0045" rpy="0 0 0"/>
+    <dynamics friction="3.0" damping="3.0"/>
   </joint>
 
   <link name="${prefix}push_latch_handle">
@@ -257,6 +262,7 @@
     <parent link="${prefix}front_right_face"/>
     <child link="${prefix}cabinet_3"/>
     <origin xyz="0.017 ${0.344 + 0.0018} 0.007" rpy="0 0 0"/>
+    <dynamics friction="3.0" damping="3.0"/>
   </joint>
 
   <link name="${prefix}cabinet_3">

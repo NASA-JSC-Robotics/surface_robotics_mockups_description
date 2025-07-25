@@ -13,6 +13,7 @@
       <parent link="${parent}"/>
       <child link="${prefix}rotary_wheel"/>
       <xacro:insert_block name="origin"/>
+      <dynamics friction="3.0" damping="3.0"/>
     </joint>
 
     <link name="${prefix}rotary_wheel">
@@ -45,6 +46,7 @@
       <parent link="${prefix}rotary_wheel"/>
       <child link="${prefix}rotary_handle"/>
       <origin xyz="0.0 0.053975 0.0155" rpy="0 0 0"/>
+      <dynamics friction="3.0" damping="3.0"/>
     </joint>
 
     <link name="${prefix}rotary_handle">

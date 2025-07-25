@@ -76,6 +76,7 @@
       <parent link="${prefix}hatch_outer_frame"/>
       <child link="${prefix}hatch_face"/>
       <origin xyz="0.0827 1.21379 0.0457" rpy="0 0 0"/>
+      <dynamics friction="3.0" damping="3.0"/>
     </joint>
  
     <link name="${prefix}hatch_face">
