@@ -430,3 +430,12 @@
   ry: 0.0
   rz: -0.7071067
   rw: 0.0
+- name: external_1_handle_perceive_far
+  frame_id: external_1_grab_handle
+  tx: 0.40
+  ty: 0.00
+  tz: 0.0
+  rx: 0.7071067
+  ry: 0.0
+  rz: -0.7071067
+  rw: 0.0
