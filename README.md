@@ -37,3 +37,9 @@ ros2 launch trainer view.launch.py
 ```
 
 ![Task Trainer](./trainer/task_trainer.png)
+
+## CTB
+
+Simplified model of a cargo transfer bag (CTB).
+
+![CTB](./ctb/ctb.png)
