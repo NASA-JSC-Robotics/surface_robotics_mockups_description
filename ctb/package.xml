@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>ctb</name>
+  <version>1.0.0</version>
+  <description>
+    Meshes and standalone URDF for the CTB.
+  </description>
+
+  <maintainer email="emma.zemler@nasa.gov">Emma Zemler</maintainer>
+
+  <license>Apache License, Version 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>urdf</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
