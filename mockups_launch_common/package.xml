@@ -7,8 +7,9 @@
      A package to publish static transform publishers for the surface robotics mockups
   </description>
   <maintainer email="nathan.b.dunkelberger@nasa.gov">Nathan Dunkelberger</maintainer>
+  <maintainer email="emma.zemler@nasa.gov">Emma Zemler</maintainer>
 
-  <license>NASA-1.3</license>
+  <license>Apache License, Version 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   <buildtool_depend>ament_cmake_python</buildtool_depend>
