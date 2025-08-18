@@ -4,14 +4,16 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float64
 from sensor_msgs.msg import JointState
-import copy, math, threading
+import copy
+import math
+import threading
 
 
 class TrainerManager(Node):
     def __init__(self):
         super().__init__("trainer_manager")
 
-        # set deafult parameter of prefix to empty
+        # set default parameter of prefix to empty
         self.declare_parameter("prefix", "")
         self.prefix = self.get_parameter("prefix").get_parameter_value().string_value
 

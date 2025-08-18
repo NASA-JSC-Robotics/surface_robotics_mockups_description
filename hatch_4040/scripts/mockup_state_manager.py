@@ -4,7 +4,8 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float64
 from sensor_msgs.msg import JointState
-import copy, threading
+import copy
+import threading
 
 
 # Class that stores the information for each mockup config
@@ -32,7 +33,8 @@ class MockupStateManager(Node):
 
         subscriptions = []
         for index, mockup_config in enumerate(self.mockup_configs):
-            # this was a bit funky for copying in index, see https://github.com/ros2/rclpy/issues/629#issuecomment-1542151499 for reference
+            # this was a bit funky for copying in index
+            # see https://github.com/ros2/rclpy/issues/629#issuecomment-1542151499 for reference
             subscriptions.append(
                 self.create_subscription(
                     Float64,
@@ -101,7 +103,7 @@ class MockupStateManager(Node):
 
         self.get_logger().debug(
             f"This is the hatch joint state message: {msg}"
-        )  # this will fill in the string with formated msg data
+        )  # this will fill in the string with formatted msg data
 
     def position_cb(self, msg: Float64, index):
         """callback for the position setting

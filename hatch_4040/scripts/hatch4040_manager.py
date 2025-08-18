@@ -1,22 +1,19 @@
 #!/usr/bin/env python3
 
-import sys
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String
 from std_msgs.msg import Float64
 from sensor_msgs.msg import JointState
-from rclpy.callback_groups import MutuallyExclusiveCallbackGroup
-from geometry_msgs.msg import PoseStamped, TransformStamped, Quaternion
-from tf2_ros import TransformBroadcaster, StaticTransformBroadcaster
-import copy, math, threading
+import copy
+import math
+import threading
 
 
 class Hatch4040Manager(Node):
     def __init__(self):
         super().__init__("hatch4040_manager")
 
-        # set deafult parameter of prefix to empty
+        # set default parameter of prefix to empty
         self.declare_parameter("prefix", "")
         self.prefix = self.get_parameter("prefix").get_parameter_value().string_value
 
@@ -103,7 +100,7 @@ class Hatch4040Manager(Node):
 
         self.get_logger().debug(
             f"This is the hatch joint state message: {msg}"
-        )  # this will fill in the string with formated msg data
+        )  # this will fill in the string with formatted msg data
 
     def hatch_pos_cb(self, msg: Float64):
         """callback for the hatch door position
@@ -187,7 +184,7 @@ class Hatch4040Manager(Node):
         Args:
             msg (Float64): This message transmits the revolute joint angle (in radians)
         """
-        self.get_logger().debug(f"This is the angle of the inernal handle joint: {msg}")
+        self.get_logger().debug(f"This is the angle of the internal handle joint: {msg}")
         if self.int_handle_min <= msg.data and msg.data <= self.int_handle_max:
             with self.lock:
                 self.int_handle_position = msg.data

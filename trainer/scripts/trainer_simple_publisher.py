@@ -16,7 +16,6 @@ def main(args=None):
 
     msg = JointState()
 
-    i = 0
     while rclpy.ok():
         msg.header.stamp = node.get_clock().now().to_msg()
         msg.name = [
