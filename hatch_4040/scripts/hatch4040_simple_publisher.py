@@ -6,20 +6,26 @@ import rclpy
 
 from sensor_msgs.msg import JointState
 
+
 def main(args=None):
     rclpy.init(args=args)
 
-    node = rclpy.create_node('hatch4040_publisher')
+    node = rclpy.create_node("hatch4040_publisher")
 
-    publisher = node.create_publisher(JointState, 'joint_states', 10)
+    publisher = node.create_publisher(JointState, "joint_states", 10)
 
     msg = JointState()
 
     i = 0
     while rclpy.ok():
         msg.header.stamp = node.get_clock().now().to_msg()
-        msg.name = ["hatch_4040_frame_face_joint", "external_rotary_joint", 
-                    "external_rotary_handle_joint", "internal_rotary_joint", "internal_rotary_handle_joint"]
+        msg.name = [
+            "hatch_4040_frame_face_joint",
+            "external_rotary_joint",
+            "external_rotary_handle_joint",
+            "internal_rotary_joint",
+            "internal_rotary_handle_joint",
+        ]
         msg.position = [0.0, 0.0, 0.0, 0.0, 0.0]
         msg.velocity = [0.0, 0.0, 0.0, 0.0, 0.0]
         msg.effort = [0.0, 0.0, 0.0, 0.0, 0.0]
@@ -33,5 +39,5 @@ def main(args=None):
     rclpy.shutdown()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -10,42 +10,56 @@ def generate_launch_description():
 
     site_config_path = "trainer_multi_hatch_transforms"
 
-    nodes_to_launch.append(Node(
-        package="mockups_launch_common",
-        executable="multi_transform_static_publisher.py",
-        name="bench_transforms",
-        arguments=["mockups_offsets",
-                   os.path.join("config", site_config_path, "bench_transforms.yaml"),
-                   ]
-    ))
+    nodes_to_launch.append(
+        Node(
+            package="mockups_launch_common",
+            executable="multi_transform_static_publisher.py",
+            name="bench_transforms",
+            arguments=[
+                "mockups_offsets",
+                os.path.join("config", site_config_path, "bench_transforms.yaml"),
+            ],
+        )
+    )
 
-    nodes_to_launch.append(Node(
-        package="mockups_launch_common",
-        executable="multi_transform_static_publisher.py",
-        name="smol_hatch_4040_transforms",
-        arguments=["mockups_offsets",
-                   os.path.join("config", site_config_path, "hatch_4040_transforms.yaml"),
-                   "--prefix", "smol/",
-                   ]
-    ))
+    nodes_to_launch.append(
+        Node(
+            package="mockups_launch_common",
+            executable="multi_transform_static_publisher.py",
+            name="smol_hatch_4040_transforms",
+            arguments=[
+                "mockups_offsets",
+                os.path.join("config", site_config_path, "hatch_4040_transforms.yaml"),
+                "--prefix",
+                "smol/",
+            ],
+        )
+    )
 
-    nodes_to_launch.append(Node(
-        package="mockups_launch_common",
-        executable="multi_transform_static_publisher.py",
-        name="lorge_hatch_4060_transforms",
-        arguments=["mockups_offsets",
-                   os.path.join("config", site_config_path, "hatch_4060_transforms.yaml"),
-                   "--prefix", "lorge/",
-                   ]
-    ))
+    nodes_to_launch.append(
+        Node(
+            package="mockups_launch_common",
+            executable="multi_transform_static_publisher.py",
+            name="lorge_hatch_4060_transforms",
+            arguments=[
+                "mockups_offsets",
+                os.path.join("config", site_config_path, "hatch_4060_transforms.yaml"),
+                "--prefix",
+                "lorge/",
+            ],
+        )
+    )
 
-    nodes_to_launch.append(Node(
-        package="mockups_launch_common",
-        executable="multi_transform_static_publisher.py",
-        name="intermediate_transforms",
-        arguments=["mockups_offsets",
-                   os.path.join("config", site_config_path, "intermediate_transforms.yaml"),
-                   ]
-    ))
+    nodes_to_launch.append(
+        Node(
+            package="mockups_launch_common",
+            executable="multi_transform_static_publisher.py",
+            name="intermediate_transforms",
+            arguments=[
+                "mockups_offsets",
+                os.path.join("config", site_config_path, "intermediate_transforms.yaml"),
+            ],
+        )
+    )
 
     return LaunchDescription(nodes_to_launch)

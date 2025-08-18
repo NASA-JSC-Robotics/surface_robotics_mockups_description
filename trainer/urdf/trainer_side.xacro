@@ -101,7 +101,7 @@
     <child link="${prefix}paddle_latch_housing"/>
     <origin xyz="0.2043 -0.007 0.1313" rpy="0 0 0"/>
   </joint>
- 
+
   <link name="${prefix}paddle_latch_housing">
     <!--TODO set proper inertia-->
     <inertial>
@@ -194,7 +194,7 @@
     <child link="${prefix}drawer_1_left"/>
     <origin xyz="${0.293 - 0.013} -0.305 -0.00435" rpy="0 0 0"/>
   </joint>
- 
+
   <link name="${prefix}drawer_1_left">
     <!--TODO set proper inertia-->
     <inertial>
@@ -313,7 +313,7 @@
     <child link="${prefix}recessed_latch_housing"/>
     <origin xyz="0.1148 0.003175 0.0165" rpy="0 0 0"/>
   </joint>
- 
+
   <link name="${prefix}recessed_latch_housing">
     <!--TODO set proper inertia-->
     <inertial>
@@ -345,7 +345,7 @@
     <origin xyz="0.0508 -0.001778 0.006477" rpy="0 0 0"/>
     <dynamics friction="3.0" damping="3.0"/>
   </joint>
- 
+
   <link name="${prefix}recessed_latch_handle">
     <!--TODO set proper inertia-->
     <inertial>

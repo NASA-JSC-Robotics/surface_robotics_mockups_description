@@ -122,7 +122,7 @@
     <joint name="${prefix}bench_lid_joint" type="revolute">
       <axis xyz="0 -1 0"/>
       <!-- upper is 95 degrees -->
-      <limit effort="10.0" lower="0.0" upper="1.65806" velocity="0.5"/> 
+      <limit effort="10.0" lower="0.0" upper="1.65806" velocity="0.5"/>
       <parent link="${prefix}bench_back"/>
       <child link="${prefix}bench_lid"/>
       <origin xyz="0.127 0.0 0.0475" rpy="0 0 0"/>
@@ -171,4 +171,3 @@
 
   </xacro:macro>
 </robot>
-

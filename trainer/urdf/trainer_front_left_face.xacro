@@ -6,7 +6,7 @@
     parent:=''
     *origin
     shelf:='true'">
-  
+
   <joint name="${prefix}trainer_front_left_face_joint" type="fixed">
     <parent link="${parent}"/>
     <child link="${prefix}front_left_face"/>

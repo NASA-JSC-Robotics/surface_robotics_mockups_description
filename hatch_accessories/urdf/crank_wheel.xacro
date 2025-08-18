@@ -5,7 +5,7 @@
     prefix:=''
     parent:=''
     *origin">
-  
+
     <joint name="${prefix}rotary_joint" type="revolute">
       <axis xyz="0 0 1"/>
       <!--This is continuously rotatable-->

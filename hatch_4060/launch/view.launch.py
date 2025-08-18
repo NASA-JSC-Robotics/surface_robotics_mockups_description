@@ -22,6 +22,7 @@ from launch.substitutions import Command, FindExecutable, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
+
 def generate_launch_description():
     declared_arguments = []
 
@@ -35,9 +36,7 @@ def generate_launch_description():
 
     robot_description = {"robot_description": robot_description_content}
 
-    rviz_config_file = PathJoinSubstitution(
-        [FindPackageShare("hatch_4060"), "rviz", "visualization.rviz"]
-    )
+    rviz_config_file = PathJoinSubstitution([FindPackageShare("hatch_4060"), "rviz", "visualization.rviz"])
 
     joint_state_publisher_node = Node(
         package="joint_state_publisher_gui",
@@ -47,7 +46,7 @@ def generate_launch_description():
         package="robot_state_publisher",
         executable="robot_state_publisher",
         output="both",
-        parameters=[robot_description]
+        parameters=[robot_description],
     )
     rviz_node = Node(
         package="rviz2",

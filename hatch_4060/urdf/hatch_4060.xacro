@@ -69,7 +69,7 @@
         <material name="red"/>
       </collision>
     </link>
- 
+
     <joint name="${prefix}hatch_outer_frame_face_joint" type="revolute">
       <axis xyz="0 0 1"/>
       <limit effort="10.0" lower="0.0" upper="1.65806" velocity="0.5"/> <!-- 95 degrees -->
@@ -78,7 +78,7 @@
       <origin xyz="0.0827 1.21379 0.0457" rpy="0 0 0"/>
       <dynamics friction="3.0" damping="3.0"/>
     </joint>
- 
+
     <link name="${prefix}hatch_face">
       <!--TODO set proper inertia-->
       <inertial>
@@ -102,23 +102,23 @@
         <material name="red"/>
       </collision>
     </link>
- 
+
     <joint name="${prefix}right_cal_1_joint" type="fixed">
       <parent link="${prefix}hatch_face"/>
       <child link="${prefix}right_cal_1_frame"/>
       <origin xyz="0.0167 0.0 0.0" rpy="0 0 0"/>
     </joint>
- 
+
     <link name="${prefix}right_cal_1_frame"/>
- 
+
     <joint name="${prefix}right_cal_2_joint" type="fixed">
       <parent link="${prefix}hatch_face"/>
       <child link="${prefix}right_cal_2_frame"/>
       <origin xyz="0.0 0.0167 0.0" rpy="0 0 0"/>
     </joint>
- 
+
     <link name="${prefix}right_cal_2_frame"/>
- 
+
     <xacro:include filename="$(find hatch_accessories)/urdf/crank_wheel.xacro"/>
     <!--TODO are the centers located properly?-->
     <xacro:crank_wheel prefix="${prefix}external_" parent="${prefix}hatch_face">
@@ -127,7 +127,7 @@
     <xacro:crank_wheel prefix="${prefix}internal_" parent="${prefix}hatch_face">
       <origin xyz="0.04431 -0.9474 0.4265" rpy="0 ${pi/2} 0"/>
     </xacro:crank_wheel>
- 
+
     <xacro:include filename="$(find hatch_accessories)/urdf/grab_handle.xacro"/>
     <!--TODO which handles are mounted?-->
     <xacro:if value="${external_handle_1}">
@@ -135,7 +135,7 @@
         <origin xyz="-0.07 -0.9016 ${0.7971+0.005}" rpy="0 ${pi} 0"/>
       </xacro:grab_handle>
     </xacro:if>
- 
+
     <xacro:if value="${external_handle_2}">
       <xacro:grab_handle prefix="${prefix}external_2_" parent="${prefix}hatch_face">
         <origin xyz="-0.07 ${-1.0223-0.005} ${0.6957 - 0.007}" rpy="${-pi/2} ${pi} 0"/>
@@ -162,4 +162,3 @@
 
   </xacro:macro>
 </robot>
-

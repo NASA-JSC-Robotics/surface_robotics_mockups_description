@@ -14,8 +14,8 @@ If you want to add any frames, add your new frames to the yaml files in the conf
   tx: 1.0 # translation x
   ty: 0.0 # translation y
   tz: 0.0 # translation z
-  rx: 0.0 # quaternion x 
+  rx: 0.0 # quaternion x
   ry: 0.0 # quaternion y
-  rz: 0.0 # quaternion z 
+  rz: 0.0 # quaternion z
   rw: 1.0 # quaternion w
 ```
