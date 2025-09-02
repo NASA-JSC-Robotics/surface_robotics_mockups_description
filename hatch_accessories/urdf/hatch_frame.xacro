@@ -121,7 +121,7 @@
           <box size="0.1 0.1 2.1082"/>
         </geometry>
         <material name="red"/>
-      </collision>      
+      </collision>
     </link>
 
     <joint name="${prefix}hatch_bottom_top" type="fixed">

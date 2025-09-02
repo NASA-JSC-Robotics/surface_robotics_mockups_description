@@ -6,16 +6,16 @@ import rclpy
 
 from sensor_msgs.msg import JointState
 
+
 def main(args=None):
     rclpy.init(args=args)
 
-    node = rclpy.create_node('trainer_publisher')
+    node = rclpy.create_node("trainer_publisher")
 
-    publisher = node.create_publisher(JointState, 'joint_states', 10)
+    publisher = node.create_publisher(JointState, "joint_states", 10)
 
     msg = JointState()
 
-    i = 0
     while rclpy.ok():
         msg.header.stamp = node.get_clock().now().to_msg()
         msg.name = [
@@ -32,47 +32,11 @@ def main(args=None):
             "drawer_2_joint",
             "recessed_latch_handle_joint",
         ]
-        msg.position = [
-            1.56,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.00015707963267948965]
-        
-        msg.velocity = [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0]
+        msg.position = [1.56, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.00015707963267948965]
 
-        msg.effort = [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0]
+        msg.velocity = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+        msg.effort = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
         publisher.publish(msg)
         sleep(0.5)  # seconds
@@ -84,6 +48,5 @@ def main(args=None):
     rclpy.shutdown()
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -8,7 +8,7 @@
   <xacro:include filename="$(find trainer)/urdf/colors.xacro"/>
 
   <link name="world"/>
-  
+
   <xacro:include filename="$(find trainer)/urdf/trainer_frame.xacro"/>
   <xacro:trainer_frame prefix="$(arg prefix)" parent="world">
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -25,7 +25,7 @@
       <origin xyz="0.0 0.0 1.6002" rpy="0 0 0"/>
     </xacro:ceiling>
   </xacro:if>
-  
+
   <xacro:include filename="$(find trainer)/urdf/trainer_front_left_face.xacro"/>
   <xacro:trainer_front_left_face prefix="$(arg prefix)" parent="trainer_frame" shelf="${shelf}">
     <origin xyz="1.25 0.08 0.457" rpy="0 0 0"/>

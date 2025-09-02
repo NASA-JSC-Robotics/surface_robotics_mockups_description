@@ -5,7 +5,7 @@
     prefix:=''
     parent:=''
     *origin">
-  
+
   <joint name="${prefix}trainer_front_right_face_joint" type="fixed">
     <parent link="${parent}"/>
     <child link="${prefix}front_right_face"/>
