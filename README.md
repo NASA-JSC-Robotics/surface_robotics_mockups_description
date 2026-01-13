@@ -44,7 +44,7 @@ Simplified model of a cargo transfer bag (CTB).
 
 ![CTB](./ctb/ctb.png)
 
-### Citation
+## Citation
 
 This project falls under the purview of the iMETRO project. If you use this in your own work, please cite the following paper:
 
