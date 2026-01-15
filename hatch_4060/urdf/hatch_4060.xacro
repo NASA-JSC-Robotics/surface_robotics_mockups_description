@@ -12,6 +12,9 @@
     internal_handle_2:='false'
     latch:='false'">
 
+    <material name="hidden">
+      <color rgba="1 1 1 0"/>
+    </material>
 
     <joint name="${prefix}hatch_inner_frame_joint" type="fixed">
       <parent link="${parent}"/>
@@ -107,7 +110,7 @@
     <!-- sim latch -->
     <xacro:if value="${latch}">
       <joint name="${prefix}hatch_outer_frame_to_latch_spring_anchor" type="fixed">
-        <origin xyz="${1.844*0.0254+0.022} ${-0.688*0.0254+0.0017} ${23.688*0.0254}" rpy="0 0 0"/>
+        <origin xyz="${1.844*0.0254+0.022} ${-0.688*0.0254+0.0017} ${29.688*0.0254}" rpy="0 0 0"/>
         <parent link="${prefix}hatch_outer_frame"/>
         <child link="${prefix}hatch_latch_spring_anchor"/>
       </joint>
@@ -131,6 +134,7 @@
           <geometry>
             <sphere radius="${0.5*0.0254}"/>
           </geometry>
+          <material name="hidden"/>
         </visual>
         <collision>
           <geometry>
@@ -142,7 +146,7 @@
       <joint name="${prefix}hatch_face_to_latch" type="fixed">
         <parent link="${prefix}hatch_face"/>
         <child link="${prefix}hatch_latch"/>
-        <origin xyz="${-1.34483*0.0254} ${-48.3955*0.0254} ${20.2293*0.0254}" rpy="0 0 0"/>
+        <origin xyz="${-1.34483*0.0254} ${-48.3955*0.0254} ${26.2293*0.0254}" rpy="0 0 0"/>
       </joint>
 
       <link name="${prefix}hatch_latch">
@@ -154,6 +158,7 @@
           <geometry>
             <sphere radius="${0.5*0.0254}"/>
           </geometry>
+          <material name="hidden"/>
         </visual>
         <collision>
           <geometry>
