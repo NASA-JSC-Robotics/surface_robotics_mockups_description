@@ -81,3 +81,4 @@ repos:
     rev: v2.3.0
     hooks:
       - id: codespell
+        args: ["--ignore-words-list", "hande, Hart"]
