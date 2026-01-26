@@ -12,7 +12,8 @@ ros2 launch merlin_mockup_description view_merlin_mockup.launch.py
 
 ## Citation
 
-This project falls under the purview of the iMETRO project. If you use this in your own work, please cite the following paper:
+This project falls under the purview of the iMETRO project. 
+If you use this in your own work, please cite the following paper:
 
 ```bibtex
 @INPROCEEDINGS{imetro-facility-2025,
