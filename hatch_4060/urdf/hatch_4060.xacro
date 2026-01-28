@@ -9,8 +9,12 @@
     external_handle_2:='false'
     external_handle_3:='false'
     internal_handle_1:='false'
-    internal_handle_2:='false'">
+    internal_handle_2:='false'
+    latch:='false'">
 
+    <material name="hidden">
+      <color rgba="1 1 1 0"/>
+    </material>
 
     <joint name="${prefix}hatch_inner_frame_joint" type="fixed">
       <parent link="${parent}"/>
@@ -102,6 +106,67 @@
         <material name="red"/>
       </collision>
     </link>
+
+    <!-- sim latch -->
+    <xacro:if value="${latch}">
+      <joint name="${prefix}hatch_outer_frame_to_latch_spring_anchor" type="fixed">
+        <origin xyz="${1.844*0.0254+0.022} ${-0.688*0.0254+0.0017} ${29.688*0.0254}" rpy="0 0 0"/>
+        <parent link="${prefix}hatch_outer_frame"/>
+        <child link="${prefix}hatch_latch_spring_anchor"/>
+      </joint>
+
+      <link name="${prefix}hatch_latch_spring_anchor"/>
+
+      <joint name="${prefix}latch_spring" type="prismatic">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="${prefix}hatch_latch_spring_anchor"/>
+        <child link="${prefix}hatch_latch_catch"/>
+        <axis xyz="0 0 -1"/>
+        <limit lower="0.0" upper="0.035" effort="1000" velocity="500.0"/>
+      </joint>
+
+      <link name="${prefix}hatch_latch_catch">
+        <inertial>
+          <mass value="0.0671"/>
+          <inertia ixx="4.345e-6" ixy="0.0" ixz="0.0" iyy="4.345e-6" iyz="0.0" izz="4.345e-6"/>
+        </inertial>
+        <visual>
+          <geometry>
+            <sphere radius="0.03"/>
+          </geometry>
+          <material name="hidden"/>
+        </visual>
+        <collision>
+          <geometry>
+            <sphere radius="0.03"/>
+          </geometry>
+        </collision>
+      </link>
+
+      <joint name="${prefix}hatch_face_to_latch" type="fixed">
+        <parent link="${prefix}hatch_face"/>
+        <child link="${prefix}hatch_latch"/>
+        <origin xyz="${-1.34483*0.0254} ${-48.3955*0.0254} ${26.2293*0.0254}" rpy="0 0 0"/>
+      </joint>
+
+      <link name="${prefix}hatch_latch">
+        <inertial>
+          <mass value="0.0671"/>
+          <inertia ixx="4.345e-6" ixy="0.0" ixz="0.0" iyy="4.345e-6" iyz="0.0" izz="4.345e-6"/>
+        </inertial>
+        <visual>
+          <geometry>
+            <sphere radius="0.0127"/>
+          </geometry>
+          <material name="hidden"/>
+        </visual>
+        <collision>
+          <geometry>
+            <sphere radius="0.0127"/>
+          </geometry>
+        </collision>
+      </link>
+    </xacro:if>
 
     <joint name="${prefix}right_cal_1_joint" type="fixed">
       <parent link="${prefix}hatch_face"/>
