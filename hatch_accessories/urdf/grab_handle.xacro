@@ -20,15 +20,15 @@
         <inertia ixx="0.0008422355" ixy="0.00000001340204" ixz="0.000000002477554" iyy="0.0001004532" iyz="0.00000006036754" izz="0.0009303066"/>
       </inertial>
       <visual>
-        <!--This transform is for the stl file origin-->
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://hatch_accessories/meshes/visual/grab_handle.stl"/>
+          <mesh filename="package://hatch_accessories/meshes/visual/imetro_hatch_handle.dae"/>
         </geometry>
-        <material name="blue"/>
+        <material name="${prefix}grab_handle_texture">
+          <texture filename="package://hatch_accessories/meshes/visual/grab_handle_texture.png"/>
+        </material>
       </visual>
       <collision>
-        <!--This transform is for the stl file origin-->
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
           <mesh filename="package://hatch_accessories/meshes/collision/grab_handle.stl"/>
