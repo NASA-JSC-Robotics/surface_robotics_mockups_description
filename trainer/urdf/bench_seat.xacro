@@ -133,7 +133,7 @@
       <!--TODO set proper inertia-->
       <inertial>
         <origin xyz="0.2652256 0.46 0.03190335" rpy="0 0 0"/>
-        <mass value="9.07185"/>
+        <mass value="11.5"/>
         <inertia ixx="0.643167" ixy="0.0" ixz="0.002867943" iyy="0.2210995" iyz="0.0" izz="0.8576681"/>
       </inertial>
       <visual>
