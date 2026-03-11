@@ -14,7 +14,7 @@
 
     <link name="${prefix}ctb">
       <inertial>
-        <mass value="2.0"/>
+        <mass value="1.8"/>
         <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
       </inertial>
       <!-- body -->
