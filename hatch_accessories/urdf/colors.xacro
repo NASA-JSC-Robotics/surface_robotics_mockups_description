@@ -17,4 +17,8 @@
     <color rgba="0.85 0.85 0.85 1"/>
   </material>
 
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
 </robot>

@@ -139,7 +139,7 @@
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://trainer/meshes/visual/imetro_bench_lid.dae"/>
+          <mesh filename="package://trainer/meshes/visual/bench_lid.dae"/>
         </geometry>
         <material name="${prefix}bench_lid_texture">
           <texture filename="package://trainer/meshes/visual/bench_lid_texture.png"/>
