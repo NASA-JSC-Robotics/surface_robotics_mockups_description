@@ -107,6 +107,25 @@
       </collision>
     </link>
 
+    <joint name="${prefix}apriltag_joint" type="fixed">
+      <parent link="${prefix}hatch_face"/>
+      <child link="${prefix}apriltag"/>
+      <origin xyz="-0.07 -1.0 1.1" rpy="0 0 0"/>
+    </joint>
+
+    <!-- apriltag -->
+    <link name="${prefix}apriltag">
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://hatch_4060/meshes/visual/apriltag.dae"/>
+        </geometry>
+        <material name="${prefix}apriltag_texture">
+          <texture filename="package://hatch_4060/meshes/visual/apriltag_hatch.png"/>
+        </material>
+      </visual>
+    </link>
+
     <!-- sim latch -->
     <xacro:if value="${latch}">
       <joint name="${prefix}hatch_outer_frame_to_latch_spring_anchor" type="fixed">
