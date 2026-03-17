@@ -139,9 +139,11 @@
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://trainer/meshes/visual/bench_lid.stl"/>
+          <mesh filename="package://trainer/meshes/visual/bench_lid.dae"/>
         </geometry>
-        <material name="blue"/>
+        <material name="${prefix}bench_lid_texture">
+          <texture filename="package://trainer/meshes/visual/bench_lid_texture.png"/>
+        </material>
       </visual>
       <collision>
         <!--0.0075 is the radius of the hinge-->
