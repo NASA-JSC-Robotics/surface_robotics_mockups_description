@@ -44,6 +44,12 @@ Simplified model of a cargo transfer bag (CTB).
 
 ![CTB](./ctb/ctb.png)
 
+## MERLIN
+
+Models of NASA's MERLIN freezers used for cold storage.
+
+![MERLIN](./merlin_mockup_description/docs/merlin_freezer.png)
+
 ## Citation
 
 This project falls under the purview of the iMETRO project.
