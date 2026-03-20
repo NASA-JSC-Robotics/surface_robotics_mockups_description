@@ -8,4 +8,4 @@ To view the description build the package in an appropriate colcon workspace, th
 ros2 launch merlin_mockup_description view_merlin_mockup.launch.py
 ```
 
-![MERLIN Feezer](./docs/merlin_freezer.png)
+![MERLIN Freezer](./docs/merlin_freezer.png)

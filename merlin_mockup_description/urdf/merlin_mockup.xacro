@@ -21,11 +21,11 @@
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
     </visual>
-    <collision> 
+    <collision>
       <geometry>
         <mesh filename="package://merlin_mockup_description/meshes/visual/aso_locker_cavity_only.stl" scale="0.02527 0.02527 0.02527"/>
       </geometry>
-    </collision>    
+    </collision>
   </link>
 
   <link name="${prefix}csm_faceplate_cover">
@@ -37,11 +37,11 @@
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
     </visual>
-    <collision> 
+    <collision>
       <geometry>
         <mesh filename="package://merlin_mockup_description/meshes/visual/csm_faceplate_cover.stl"/>
       </geometry>
-    </collision>    
+    </collision>
   </link>
 
   <joint name="${prefix}faceplate_cover_joint" type="fixed">
@@ -71,76 +71,76 @@
     <visual>
       <geometry>
         <box size="0.0091 0.201 0.005"/>
-      </geometry> 
+      </geometry>
       <material name="Cyan">
         <color rgba="0.0 0.0 0.0 1.0"/>
       </material>
       <origin rpy ="0 0 0" xyz ="0.1554 0 0.0025"/>
     </visual>
 
-    <collision> 
+    <collision>
       <geometry>
         <box size="0.0091 0.201 0.005"/>
       </geometry>
       <origin rpy ="0 0 0" xyz ="0.1554 0 0.0025"/>
-    </collision> 
+    </collision>
 
     <!-- Left -->
     <visual>
       <geometry>
         <box size="0.0091 0.201 0.005"/>
-      </geometry> 
+      </geometry>
       <material name="Cyan">
         <color rgba="0.0 0.0 0.0 1.0"/>
       </material>
       <origin rpy ="0 0 0" xyz ="-0.1554 0 0.0025"/>
     </visual>
 
-    <collision> 
+    <collision>
       <geometry>
         <box size="0.0091 0.201 0.005"/>
       </geometry>
       <origin rpy ="0 0 0" xyz ="-0.1554 0 0.0025"/>
-    </collision> 
+    </collision>
 
     <!-- Top-->
     <visual>
       <geometry>
         <box size="0.302 0.0091 0.005"/>
-      </geometry> 
+      </geometry>
       <material name="Cyan">
         <color rgba="0.0 0.0 0.0 1.0"/>
-      </material>  
+      </material>
       <origin xyz="0 0.1045 0.0025" rpy="0 0 0"/>
     </visual>
 
-    <collision> 
+    <collision>
       <geometry>
         <box size="0.302 0.0091 0.005"/>
       </geometry>
       <origin xyz="0 0.1045 0.0025" rpy="0 0 0"/>
-    </collision> 
+    </collision>
 
     <!-- Bottom -->
     <visual>
       <geometry>
         <box size="0.302 0.0091 0.005"/>
-      </geometry> 
+      </geometry>
       <material name="Cyan">
         <color rgba="0.0 0.0 0.0 1.0"/>
-      </material>  
+      </material>
       <origin xyz="0 -0.1045 0.0025" rpy="0 0 0"/>
-    </visual>   
+    </visual>
 
-    <collision> 
+    <collision>
       <geometry>
         <box size="0.302 0.0091 0.005"/>
       </geometry>
       <origin xyz="0 -0.1045 0.0025" rpy="0 0 0"/>
-    </collision> 
+    </collision>
   </link>
 
-  
+
   <joint name="${prefix}seal_to_face_joint" type="fixed">
     <parent link="csm_faceplate_cover"/>
     <child link="seal"/>
@@ -182,14 +182,14 @@
       </geometry>
       <material name="Cyan">
         <color rgba="0.0 0.0 0.0 1.0"/>
-      </material>      
+      </material>
     </visual>
 
-    <collision> 
+    <collision>
       <geometry>
         <box size="0.11 0.001 0.05"/>
       </geometry>
-    </collision>    
+    </collision>
   </link>
 
   <joint name="${prefix}velcro_to_frame_joint" type="fixed">
@@ -219,7 +219,7 @@
       <geometry>
         <mesh filename="package://merlin_mockup_description/meshes/visual/csm_outer_door.stl"/>
       </geometry>
-    </collision>    
+    </collision>
   </link>
 
   <joint name="${prefix}door_to_frame_joint" type="revolute">

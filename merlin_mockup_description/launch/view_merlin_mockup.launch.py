@@ -24,19 +24,20 @@ from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from launch.conditions import IfCondition
 
+
 def generate_launch_description():
     declared_arguments = []
     declared_arguments.append(
         DeclareLaunchArgument(
             "example_arg",
-            default_value='false',
+            default_value="false",
             description="example arg to show how to do this",
         )
     )
     declared_arguments.append(
         DeclareLaunchArgument(
             "rviz",
-            default_value='true',
+            default_value="true",
             description="launch rviz",
         )
     )
@@ -51,14 +52,12 @@ def generate_launch_description():
             " ",
             "example_arg:=",
             example_arg,
-            " "
+            " ",
         ]
     )
     robot_description = {"robot_description": robot_description_content}
 
-    rviz_config_file = PathJoinSubstitution(
-        [FindPackageShare("merlin_mockup_description"), "rviz", "view_robot.rviz"]
-    )
+    rviz_config_file = PathJoinSubstitution([FindPackageShare("merlin_mockup_description"), "rviz", "view_robot.rviz"])
 
     joint_state_publisher_node = Node(
         package="joint_state_publisher_gui",
@@ -69,9 +68,7 @@ def generate_launch_description():
         package="robot_state_publisher",
         executable="robot_state_publisher",
         output="both",
-        parameters=[
-            robot_description,
-            {'frame_prefix': 'merlin_mockup/'}],
+        parameters=[robot_description, {"frame_prefix": "merlin_mockup/"}],
     )
 
     rviz_node = Node(
@@ -80,7 +77,7 @@ def generate_launch_description():
         name="rviz2",
         output="log",
         arguments=["-d", rviz_config_file],
-        condition=IfCondition(rviz)
+        condition=IfCondition(rviz),
     )
 
     nodes_to_start = [
