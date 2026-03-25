@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="merlin_mockup">
+
+  <link name="world" />
+
+  <xacro:include filename="$(find merlin_mockup_description)/urdf/merlin_mockup.xacro"/>
+  <xacro:merlin_mockup prefix="" parent="world">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:merlin_mockup>
+
+</robot>
