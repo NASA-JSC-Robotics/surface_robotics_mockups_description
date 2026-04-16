@@ -26,11 +26,11 @@
         <flexcomp name="top_handle"
           type="grid"
           dim="2"
-          count="10 2 1" mass=".1" spacing="0.05 0.025 0.005" radius="0.002"
+          count="10 2 1" mass=".1" spacing="0.05 0.025 1" radius="0.002"
           rgba="1.00000 1.000 0.769 1.0000">
           <edge equality="true"  solref="0.01" />
-          <contact condim="3" solref="0.01"/>
-          <elasticity young="4e9" poisson="0.3" thickness="0.01"/>
+          <contact condim="4" solref="0.01"/>
+          <elasticity young="4e9" poisson="0.4" thickness="0.01"/>
         </flexcomp>
       </body>
     </body>
