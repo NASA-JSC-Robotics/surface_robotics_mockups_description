@@ -36,7 +36,7 @@
     </body>
   </worldbody>
       <equality>
-        
+
         <weld body1="cpc_body" body2="top_handle_0" relpose="0.165 0.25 -0.025 0 0 0 1"/>
         <weld body1="cpc_body" body2="top_handle_1" relpose="0.165 0.25  0.025 0 0 0 1"/>
         <weld body1="cpc_body" body2="top_handle_18" relpose="-0.165 0.25 -0.025 0 0 0 1"/>
