@@ -1,0 +1,46 @@
+<mujoco model="cpc">
+  <include file="scene.xml" />
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0" />
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh" />
+    </default>
+  </default>
+  <asset>
+    <material name="cpc_material" specular="0.05" shininess="0"
+      rgba="0.00000 0.302 9.475 0.5000" />
+    <mesh name="cpc_body" file="assets/cpc_body.obj" />
+  </asset>
+  <worldbody>
+    <body name="cpc" pos="0 0 0.5" >
+      <joint type="free" />
+      <body name="cpc_body" pos="0 0 0">
+        <inertial mass="1.0" pos="0 0 0" diaginertia="0.001 0.001 0.001"></inertial>
+        <geom material="cpc_material" mesh="cpc_body" class="visual" />
+        <geom mesh="cpc_body" class="collision" mass="1" pos="0 0 0" />S
+      </body>
+      <!---->
+      <body name="ctc_top_handle" pos="0 0.296 0" quat=" 0 0 0.7071068 0.7071068">
+        <flexcomp name="top_handle"
+          type="grid"
+          dim="2"
+          count="10 2 1" mass=".1" spacing="0.05 0.025 1" radius="0.002"
+          rgba="1.00000 1.000 0.769 1.0000">
+          <edge equality="true"  solref="0.01" />
+          <contact condim="4" solref="0.01"/>
+          <elasticity young="4e9" poisson="0.4" thickness="0.01"/>
+        </flexcomp>
+      </body>
+    </body>
+  </worldbody>
+      <equality>
+
+        <weld body1="cpc_body" body2="top_handle_0" relpose="0.165 0.25 -0.025 0 0 0 1"/>
+        <weld body1="cpc_body" body2="top_handle_1" relpose="0.165 0.25  0.025 0 0 0 1"/>
+        <weld body1="cpc_body" body2="top_handle_18" relpose="-0.165 0.25 -0.025 0 0 0 1"/>
+        <weld body1="cpc_body" body2="top_handle_19" relpose="-0.165 0.25  0.025 0 0 0 1"/>
+
+      </equality>
+</mujoco>
