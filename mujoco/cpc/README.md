@@ -7,6 +7,8 @@ As I learned more about how the flexcomps work, I was able to get the behavior I
 
 ## *Flexcomp Attributes*
 
+The MuJoCo documentation for the flexcomp type are located [here](https://mujoco.readthedocs.io/en/3.2.6/XMLreference.html#body-flexcomp), but further explanation for this application is shown below.
+
 ### *type*
 
 A two dimensional grid was selected because everything else failed.
@@ -16,14 +18,15 @@ It was easier to iterate and test using the *grid* type than to edit the mesh fi
 ### *dim*
 
 At first I thought this should be 3 dimensional, but there is no "flex" in the third dimension, so it wasn't necessary.
-From a collision standpoint the *radius" parameter gives the strap volume.
+From a collision standpoint the *radius* parameter gives the strap volume.
 Using the third dimension resulted in unnecessarily complex collision computation and made the strap stretch in a weird way.
 *Stretching may or may not be related to the existence of the third dimension and more to do with how I modeled it*
 
 ### *count*, and *spacing*
 
 Count and spacing determine the size of the object.
-Count determines how many vertices will be in each dimension. Count*Spacing gives the length in each dimension.
+Count determines how many vertices will be in each dimension.
+Count*Spacing gives the length in each dimension.
 More vertices means more flexibility, since it only bends on a an "edge".
 If we want the strap to flex in the short dimension, we need to make count 3 (and shrink spacing) so that there is an edge down the center of the strap to bend around.
 I preferred the motion without the strap bending.
@@ -37,10 +40,9 @@ I set it to 0.002 for a 4mm thick strap.
 
 ### *rgba*
 
-Selected from the CPC baseball card.
 We should set it to whatever we want.
 
-### *edge*
+## *edge*
 
 ### *equality*
 
