@@ -53,5 +53,50 @@
       </visual>
     </link>
 
+    <!-- Handles -->
+    <xacro:include filename="$(find hatch_accessories)/urdf/grab_handle.xacro"/>
+
+    <!-- Inside Handles -->
+    <!-- Inside Exterior Horizontal Handle -->
+    <xacro:grab_handle prefix="${prefix}IEH_" parent="${prefix}hatch_face">
+      <origin xyz="-0.0450 -1.7391 -0.7900" rpy="0 0 0"/>
+    </xacro:grab_handle>
+
+    <!-- Inside Exterior Vertical Handle -->
+    <xacro:grab_handle prefix="${prefix}IEV_" parent="${prefix}hatch_face">
+      <origin xyz="-0.0450 -1.9169 -0.8504" rpy="1.5707963 0 0"/>
+    </xacro:grab_handle>
+
+    <!-- Inside Interior Horizontal Handle -->
+    <xacro:grab_handle prefix="${prefix}IIH_" parent="${prefix}hatch_face">
+      <origin xyz="-0.0450 -0.7391 -0.7900" rpy="0 0 0"/>
+    </xacro:grab_handle>
+
+    <!-- Inside Interior Vertical Handle -->
+    <xacro:grab_handle prefix="${prefix}IIV_" parent="${prefix}hatch_face">
+      <origin xyz="-0.0450 -0.9169 -0.8504" rpy="1.5707963 0 0"/>
+    </xacro:grab_handle>
+
+    <!-- Outside Handles -->
+    <!-- Outside Exterior Horizontal Handle -->
+    <xacro:grab_handle prefix="${prefix}OEH_" parent="${prefix}hatch_face">
+      <origin xyz="-0.0700 -1.9169 -0.7900" rpy="0 0 3.1415927"/>
+    </xacro:grab_handle>
+
+    <!-- Outside Exterior Vertical Handle -->
+    <xacro:grab_handle prefix="${prefix}OEV_" parent="${prefix}hatch_face">
+      <origin xyz="-0.0700 -1.9169 -1.0282" rpy="-1.5707963 0 3.1415927"/>
+    </xacro:grab_handle>
+
+    <!-- Outside Interior Horizontal Handle -->
+    <xacro:grab_handle prefix="${prefix}OIH_" parent="${prefix}hatch_face">
+      <origin xyz="-0.0700 -0.9169 -0.7900" rpy="0 0 3.1415927"/>
+    </xacro:grab_handle>
+
+    <!-- Outside Interior Vertical Handle -->
+    <xacro:grab_handle prefix="${prefix}OIV_" parent="${prefix}hatch_face">
+      <origin xyz="-0.0700 -0.9169 -1.0282" rpy="-1.5707963 0 3.1415927"/>
+    </xacro:grab_handle>
+
   </xacro:macro>
 </robot>
