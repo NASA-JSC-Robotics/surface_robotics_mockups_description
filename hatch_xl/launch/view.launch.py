@@ -18,19 +18,32 @@
 # under the License.
 
 from launch import LaunchDescription
-from launch.substitutions import Command, FindExecutable, PathJoinSubstitution
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
     declared_arguments = []
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "simple_frame",
+            default_value="false",
+            description="If 'true', replaces complex mesh frame with a simple square frame",
+        )
+    )
+
+    simple_frame = LaunchConfiguration("simple_frame")
 
     robot_description_content = Command(
         [
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution([FindPackageShare("hatch_xl"), "urdf", "hatch_xl.urdf.xacro"]),
+            " ",
+            "simple_frame:=",
+            simple_frame,
         ]
     )
 

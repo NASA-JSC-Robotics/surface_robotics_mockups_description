@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro" name="hatch_xl">
   <xacro:arg name="prefix" default=""/>
+  <xacro:arg name="simple_frame" default="false"/>
 
   <xacro:include filename="$(find hatch_accessories)/urdf/colors.xacro"/>
   <xacro:include filename="$(find hatch_xl)/urdf/hatch_xl.xacro"/>
 
   <link name="world"/>
 
-  <xacro:hatch_xl prefix="$(arg prefix)" parent="world">
+  <xacro:hatch_xl prefix="$(arg prefix)" parent="world" simple_frame="$(arg simple_frame)">
     <origin xyz="0 0 0.437116" rpy="0 3.141592 0"/>
   </xacro:hatch_xl>
 

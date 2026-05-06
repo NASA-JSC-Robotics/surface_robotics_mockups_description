@@ -4,7 +4,10 @@
   <xacro:macro name="hatch_xl" params="
     prefix:=''
     parent:=''
-    *origin">
+    simple_frame:='false'
+    *material
+    *origin
+    ">
 
     <joint name="${prefix}hatch_outer_frame_joint" type="fixed">
       <parent link="${parent}"/>
@@ -19,14 +22,39 @@
         <mass value="7.381808"/>
         <inertia ixx="4.347317" ixy="-0.001737663" ixz="0.00003731045" iyy="2.49037" iyz="0.02113006" izz="1.858204"/>
       </inertial>
-      <visual>
-        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="package://hatch_xl/meshes/visual/mc_hatch_xl_frame_mirror.stl"/>
-        </geometry>
-        <material name="gray"/>
-      </visual>
+      <xacro:unless value='${simple_frame}'>
+        <visual>
+          <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="package://hatch_xl/meshes/visual/mc_hatch_xl_frame_mirror.stl"/>
+          </geometry>
+          <material name="gray"/>
+        </visual>
+        <collision>
+          <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="package://hatch_xl/meshes/visual/mc_hatch_xl_frame_mirror.stl"/>
+          </geometry>
+        </collision>
+      </xacro:unless>
+      <xacro:if value='${simple_frame}'>
+        <visual>
+          <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="package://hatch_xl/meshes/visual/mc_hatch_xl_frame_simple_mirror.stl"/>
+          </geometry>
+          <xacro:insert_block name="material"/>
+        </visual>
+        <collision>
+          <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="package://hatch_xl/meshes/visual/mc_hatch_xl_frame_simple_mirror.stl"/>
+          </geometry>
+        </collision>
+      </xacro:if>
     </link>
+
+
 
     <joint name="${prefix}hatch_outer_frame_face_joint" type="revolute">
       <axis xyz="0 0 1"/>
