@@ -53,7 +53,7 @@
   <link name="${prefix}door_face">
   </link>
 
-  <joint name="${prefix}door_face" type="fixed">
+  <joint name="${prefix}door_face_joint" type="fixed">
     <parent link="csm_faceplate_cover"/>
     <child link="door_face"/>
     <origin xyz="0.0 0.0 0.0381" rpy="0 0 0"/>
