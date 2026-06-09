@@ -6,6 +6,9 @@
     parent:=''
     *origin">
 
+    <xacro:include filename="$(find mockups_launch_common)/urdf/mockups_launch_common_colors.xacro"/>
+
+
     <joint name="${prefix}ctb_joint" type="floating">
       <parent link="${parent}"/>
       <child link="${prefix}ctb"/>
@@ -23,18 +26,14 @@
         <geometry>
           <mesh filename="package://ctb/meshes/ctb_body.stl" scale="0.0254 0.0254 0.0254"/>
         </geometry>
-        <material name="ctb_grey">
-            <color rgba="1.0 1.0 1.0 1.0"/>
-        </material>
+        <xacro:color-white prefix="ctb_"/>
       </visual>
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="1.57 0 0"/>
         <geometry>
           <mesh filename="package://ctb/meshes/ctb_body.stl"/>
         </geometry>
-        <material name="ctb_grey">
-            <color rgba="1.0 1.0 1.0 1.0"/>
-        </material>
+        <xacro:color-white prefix="ctb_"/>
       </collision>
       <!-- handle -->
       <visual>
@@ -42,18 +41,14 @@
         <geometry>
           <mesh filename="package://ctb/meshes/ctb_handle.stl" scale="0.0254 0.0254 0.0254"/>
         </geometry>
-        <material name="red">
-              <color rgba="1.0 0.0 0.0 1.0"/>
-        </material>
+        <xacro:color-red prefix="ctb_"/>
       </visual>
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
           <mesh filename="package://ctb/meshes/ctb_handle.stl"/>
         </geometry>
-        <material name="red">
-              <color rgba="1.0 0.0 0.0 1.0"/>
-        </material>
+        <xacro:color-red prefix="ctb_"/>
       </collision>
     </link>
   </xacro:macro>

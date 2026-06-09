@@ -7,6 +7,8 @@
     parent:=''
     *origin">
 
+    <xacro:include filename="$(find mockups_launch_common)/urdf/mockups_launch_common_colors.xacro"/>
+
     <joint name="${prefix}express_rack_joint" type="fixed">
       <parent link="${parent}"/>
       <child link="${prefix}express_rack"/>
@@ -25,7 +27,7 @@
         <geometry>
           <mesh filename="package://express_rack/meshes/express_rack_mesh.stl" scale="0.0254 0.0254 0.0254"/>
         </geometry>
-        <material name="gray"/>
+        <xacro:color-aluminum-gray prefix="express_rack_"/>
       </visual>
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>

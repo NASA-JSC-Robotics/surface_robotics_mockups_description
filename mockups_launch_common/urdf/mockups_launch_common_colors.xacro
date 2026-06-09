@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="https://wiki.ros.org/xacro" name="mc_colors">
+
+  <xacro:macro name="color-white" params="prefix=''">
+    <material name="${prefix}white">
+      <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
+  </xacro:macro>
+
+  <xacro:macro name="color-red" params="prefix=''">
+    <material name="${prefix}red">
+      <color rgba="1.0 0.0 0.0 1.0"/>
+    </material>
+  </xacro:macro>
+
+  <xacro:macro name="color-aluminum-gray" params="prefix=''">
+    <material name="${prefix}red">
+      <color rgba="0.94 0.94 0.94 1.0"/>
+    </material>
+  </xacro:macro>
+
+</robot>
