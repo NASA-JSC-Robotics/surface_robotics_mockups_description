@@ -2,17 +2,18 @@
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
 
   <xacro:macro name="ctb" params="
+    name:='ctb'
     prefix:=''
     parent:=''
     *origin">
 
-    <joint name="${prefix}ctb_joint" type="floating">
+    <joint name="${prefix}${name}_joint" type="floating">
       <parent link="${parent}"/>
-      <child link="${prefix}ctb"/>
+      <child link="${prefix}${name}"/>
       <xacro:insert_block name="origin"/>
     </joint>
 
-    <link name="${prefix}ctb">
+    <link name="${prefix}${name}">
       <inertial>
         <mass value="1.8"/>
         <inertia ixx="0.0505" ixy="0.0" ixz="0.0" iyy="0.0326" iyz="0.0" izz="0.0675"/>
