@@ -101,4 +101,18 @@
     </xacro:grab_handle>
 
   </xacro:macro>
+
+  <xacro:macro name="hatch_4040_mj_processed_inputs">
+    <decompose_mesh mesh_name="hatch_4040_frame" threshold="0.05"/>
+    <decompose_mesh mesh_name="hatch_4040_face" threshold="0.025"/>
+  </xacro:macro>
+
+  <xacro:macro name="hatch_4040_mj_raw_inputs" params="
+    prefix=''
+  ">
+    <contact>
+      <exclude body1="${prefix}hatch_outer_frame" body2="${prefix}hatch_face"/>
+    </contact>
+  </xacro:macro>
+
 </robot>
