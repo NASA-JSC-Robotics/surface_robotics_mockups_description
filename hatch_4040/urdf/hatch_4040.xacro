@@ -105,8 +105,8 @@
   <xacro:macro name="hatch_4040_mj_processed_inputs">
     <xacro:include filename="$(find hatch_accessories)/urdf/grab_handle.xacro"/>
     <xacro:grab_handle_mj_processed_inputs/>
-    <decompose_mesh mesh_name="hatch_4040_frame" threshold="0.05"/>
-    <decompose_mesh mesh_name="hatch_4040_face" threshold="0.025"/>
+    <decompose_mesh mesh_name="hatch_4040_frame" threshold="0.01"/>
+    <decompose_mesh mesh_name="hatch_4040_face" threshold="0.01"/>
   </xacro:macro>
 
   <xacro:macro name="hatch_4040_mj_raw_inputs" params="

@@ -56,6 +56,6 @@
   </xacro:macro>
 
   <xacro:macro name="grab_handle_mj_processed_inputs">
-    <decompose_mesh mesh_name="imetro_hatch_handle.dae"/>
+    <decompose_mesh mesh_name="imetro_hatch_handle"/>
   </xacro:macro>
 </robot>
