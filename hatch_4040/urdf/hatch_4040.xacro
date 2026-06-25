@@ -111,10 +111,11 @@
 
   <xacro:macro name="hatch_4040_mj_raw_inputs" params="
     prefix=''
+    contact_exclude_body1='world'
   ">
     <contact>
       <!-- We'll need to parameterize body1 here if we ever mount the hatch to something non-stationary -->
-      <exclude body1="world" body2="${prefix}hatch_face"/>
+      <exclude body1="${contact_exclude_body1}" body2="${prefix}hatch_face"/>
     </contact>
   </xacro:macro>
 
