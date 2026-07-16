@@ -97,6 +97,10 @@
       <origin xyz="-0.0776 -0.851588 0.3093442" rpy="0 ${pi} 0"/>
     </xacro:grab_handle>
 
+    <xacro:grab_handle prefix="${prefix}external_hinge_" parent="${prefix}hatch_face">
+      <origin xyz="-0.0776 -0.251588 0.3093442" rpy="0 ${pi} 0"/>
+    </xacro:grab_handle>
+
     <xacro:grab_handle prefix="${prefix}internal_" parent="${prefix}hatch_face">
       <origin xyz="-0.0597 -0.788394 0.3147147" rpy="-0.3926991 0 0"/>
     </xacro:grab_handle>
