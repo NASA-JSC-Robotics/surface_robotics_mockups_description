@@ -57,7 +57,6 @@ class MockupStateManager(Node):
     def load_mockup_configs(self):
         """loads the parameters provided with each of the relevaant joints and populates self.mockup_configs"""
         # get the list of topic names first
-        # self.declare_parameter("topic_names", [""])
 
         topic_params = self.get_parameters_by_prefix("topics")
 
