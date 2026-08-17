@@ -60,7 +60,7 @@ class MockupStateManager(Node):
 
         topic_params = self.get_parameters_by_prefix("topics")
 
-        topic_names = set([key.split(".")[0] for key in topic_params.keys()])
+        topic_names = {key.split(".")[0] for key in topic_params.keys()}
 
         # puopulate self.mockup_configs based on loaded parameters
         self.mockup_configs = []
