@@ -10,6 +10,7 @@ install(DIRECTORY config launch
 
 install(PROGRAMS
   scripts/multi_transform_static_publisher.py
+  scripts/mockup_state_manager.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
