@@ -27,7 +27,6 @@ class MockupStateManager(Node):
         )
 
         # set default parameter of prefix to empty
-        self.declare_parameter("prefix", "")
         self.prefix = self.get_parameter("prefix").get_parameter_value().string_value
 
         self.load_mockup_configs()
