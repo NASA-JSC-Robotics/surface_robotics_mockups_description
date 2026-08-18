@@ -20,10 +20,13 @@ class MockupConfig:
 
 class MockupStateManager(Node):
     def __init__(self):
-        super().__init__("mockup_state_manager")
+        super().__init__(
+            "mockup_state_manager",
+            allow_undeclared_parameters=True,
+            automatically_declare_parameters_from_overrides=True,
+        )
 
         # set default parameter of prefix to empty
-        self.declare_parameter("prefix", "")
         self.prefix = self.get_parameter("prefix").get_parameter_value().string_value
 
         self.load_mockup_configs()
@@ -50,39 +53,23 @@ class MockupStateManager(Node):
 
         self.lock = threading.Lock()
 
-        # update the joint states
-        self._joint_states = dict()
-        for mockup_config in self.mockup_configs:
-            self._joint_states[self.prefix + mockup_config.joint_name] = copy.deepcopy(mockup_config.position)
-
-        self.joint_state_cb()  # going ahead and starting
-
     def load_mockup_configs(self):
         """loads the parameters provided with each of the relevaant joints and populates self.mockup_configs"""
         # get the list of topic names first
-        self.declare_parameter("topic_names", [""])
-        self.topic_names = self.get_parameter("topic_names").get_parameter_value().string_array_value
 
-        # if we didn't get any topic names, don't try anything else
-        if self.topic_names == [""]:
-            self.get_logger().warning("Did not find any topics, is your parameter file set up properly?")
-            return
+        topic_params = self.get_parameters_by_prefix("topics")
+
+        topic_names = {key.split(".")[0] for key in topic_params.keys()}
 
         # puopulate self.mockup_configs based on loaded parameters
         self.mockup_configs = []
-        for topic in self.topic_names:
+        for topic in topic_names:
             self.get_logger().info(f"Loading: {self.prefix + topic}")
-            self.declare_parameter("topics." + topic + ".joint_name", "")
-            self.declare_parameter("topics." + topic + ".min_position", 0.0)
-            self.declare_parameter("topics." + topic + ".max_position", 0.0)
-            self.declare_parameter("topics." + topic + ".initial_position", 0.0)
 
-            joint_name = self.get_parameter("topics." + topic + ".joint_name").get_parameter_value().string_value
-            min_position = self.get_parameter("topics." + topic + ".min_position").get_parameter_value().double_value
-            max_position = self.get_parameter("topics." + topic + ".max_position").get_parameter_value().double_value
-            initial_position = (
-                self.get_parameter("topics." + topic + ".initial_position").get_parameter_value().double_value
-            )
+            joint_name = topic_params[f"{topic}.joint_name"].value
+            min_position = topic_params[f"{topic}.min_position"].value
+            max_position = topic_params[f"{topic}.max_position"].value
+            initial_position = topic_params[f"{topic}.initial_position"].value
 
             # add mockups to the member variable
             self.mockup_configs.append(MockupConfig(topic, min_position, max_position, initial_position, joint_name))
