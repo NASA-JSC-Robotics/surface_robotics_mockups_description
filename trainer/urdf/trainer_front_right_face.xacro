@@ -56,7 +56,7 @@
       <geometry>
         <mesh filename="package://trainer/meshes/visual/cabinet_door_1.stl"/>
       </geometry>
-      <material name="blue"/>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="${-0.0075 - 0.003175} -0.00366 0.0" rpy="0 0 0"/>
@@ -117,7 +117,7 @@
       <geometry>
         <mesh filename="package://trainer/meshes/visual/round_latch_handle.stl"/>
       </geometry>
-      <material name="blue"/>
+      <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -149,7 +149,7 @@
       <geometry>
         <mesh filename="package://trainer/meshes/visual/cabinet_door_2.stl"/>
       </geometry>
-      <material name="blue"/>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="${-0.0075 - 0.003175} 0.00366 0.0" rpy="0 0 0"/>
@@ -212,7 +212,7 @@
       <geometry>
         <mesh filename="package://trainer/meshes/visual/push_latch_button.stl"/>
       </geometry>
-      <material name="blue"/>
+      <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -244,7 +244,7 @@
       <geometry>
         <mesh filename="package://trainer/meshes/visual/push_latch_handle.stl"/>
       </geometry>
-      <material name="blue"/>
+      <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -277,7 +277,7 @@
       <geometry>
         <mesh filename="package://trainer/meshes/visual/cabinet_door_3.stl"/>
       </geometry>
-      <material name="blue"/>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="${-0.0075 - 0.003175} -0.00366 0.0" rpy="0 0 0"/>

@@ -146,7 +146,7 @@
       <geometry>
         <mesh filename="package://trainer/meshes/visual/paddle_latch_handle.stl"/>
       </geometry>
-      <material name="blue"/>
+      <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -178,7 +178,7 @@
       <geometry>
         <mesh filename="package://trainer/meshes/visual/drawer_1_face.stl"/>
       </geometry>
-      <material name="blue"/>
+      <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -207,7 +207,7 @@
       <geometry>
         <box size="0.013 0.305 0.096"/>
       </geometry>
-      <material name="blue"/>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
@@ -236,7 +236,7 @@
       <geometry>
         <box size="0.013 0.305 0.096"/>
       </geometry>
-      <material name="blue"/>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
@@ -265,7 +265,7 @@
       <geometry>
         <box size="0.293 0.305 0.013"/>
       </geometry>
-      <material name="blue"/>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="${0.293/2} ${0.305/2} ${0.013/2}" rpy="0 0 0"/>
@@ -297,7 +297,7 @@
       <geometry>
         <mesh filename="package://trainer/meshes/visual/drawer_2_face.stl"/>
       </geometry>
-      <material name="blue"/>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -358,7 +358,7 @@
       <geometry>
         <mesh filename="package://trainer/meshes/visual/recessed_latch_handle.stl"/>
       </geometry>
-      <material name="blue"/>
+      <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -387,7 +387,7 @@
       <geometry>
         <box size="0.013 0.305 0.096"/>
       </geometry>
-      <material name="blue"/>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
@@ -416,7 +416,7 @@
       <geometry>
         <box size="0.013 0.305 0.096"/>
       </geometry>
-      <material name="blue"/>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="${0.013/2} ${0.305/2} ${0.096/2}" rpy="0 0 0"/>
@@ -445,7 +445,7 @@
       <geometry>
         <box size="0.293 0.305 0.013"/>
       </geometry>
-      <material name="blue"/>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="${0.293/2} ${0.305/2} ${0.013/2}" rpy="0 0 0"/>
