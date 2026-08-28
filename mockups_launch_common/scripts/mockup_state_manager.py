@@ -91,7 +91,10 @@ class MockupStateManager(Node):
         for field in ("position", "velocity", "effort"):
             values = getattr(req.joint_state, field)
             if values and (len(values) != msg_size):
-                error_msg += f"The size of `{field}` ({len(values)}) does not match the size of `name` ({msg_size}) in SetJointState. "
+                error_msg += (
+                    f"The size of `{field}` ({len(values)}) does not match the size of"
+                    "`name` ({msg_size}) in SetJointState. "
+                )
                 valid = False
 
         # return early if not valid
