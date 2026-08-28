@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
 import rclpy
+from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
 from std_msgs.msg import Float64
 from sensor_msgs.msg import JointState
-import copy
-import threading
+from mockup_msgs.srv import SetJointState
 
 
 # Class that stores the information for each mockup config
@@ -16,6 +16,11 @@ class MockupConfig:
         self.min_position = min_position
         self.max_position = max_position
         self.position = initial_position
+        self.velocity = 0.0
+        self.effort = 0.0
+
+    def set_position(self, desired_position):
+        self.position = max(self.min_position, min(desired_position, self.max_position))
 
 
 class MockupStateManager(Node):
@@ -34,6 +39,8 @@ class MockupStateManager(Node):
         # create the joint state publisher
         self.publisher_ = self.create_publisher(JointState, "joint_states", 10)
 
+        self.set_joint_state_service = self.create_service(SetJointState, "~/set_joint_state", self.set_joint_state_cb)
+
         subscriptions = []
         for index, mockup_config in enumerate(self.mockup_configs):
             # this was a bit funky for copying in index
@@ -51,8 +58,6 @@ class MockupStateManager(Node):
         timer_period_sec = 0.5  # unit: seconds
         self.timer = self.create_timer(timer_period_sec, self.joint_state_cb)
 
-        self.lock = threading.Lock()
-
     def load_mockup_configs(self):
         """loads the parameters provided with each of the relevaant joints and populates self.mockup_configs"""
         # get the list of topic names first
@@ -62,7 +67,7 @@ class MockupStateManager(Node):
         topic_names = {key.split(".")[0] for key in topic_params.keys()}
 
         # puopulate self.mockup_configs based on loaded parameters
-        self.mockup_configs = []
+        self.mockup_configs = dict()
         for topic in topic_names:
             self.get_logger().info(f"Loading: {self.prefix + topic}")
 
@@ -72,47 +77,55 @@ class MockupStateManager(Node):
             initial_position = topic_params[f"{topic}.initial_position"].value
 
             # add mockups to the member variable
-            self.mockup_configs.append(MockupConfig(topic, min_position, max_position, initial_position, joint_name))
+            self.mockup_configs["joint_name"] = MockupConfig(
+                topic, min_position, max_position, initial_position, joint_name
+            )
 
     def joint_state_cb(self):
         """Publisher for the manager which publishes the joint state info."""
         msg = JointState()
         msg.header.stamp = self.get_clock().now().to_msg()
         # with mutex locking, add all of the joint states
-        with self.lock:
-            for mockup_config in self.mockup_configs:
-                msg.name.append(self.prefix + mockup_config.joint_name)
-                msg.position.append(mockup_config.position)
-                msg.velocity.append(0.0)
-                msg.effort.append(0.0)
+        for mockup_config in self.mockup_configs:
+            msg.name.append(self.prefix + mockup_config.joint_name)
+            msg.position.append(mockup_config.position)
+            msg.velocity.append(mockup_config.position)
+            msg.effort.append(mockup_config.effort)
 
         self.publisher_.publish(msg)
 
-        self.get_logger().debug(
-            f"This is the hatch joint state message: {msg}"
-        )  # this will fill in the string with formatted msg data
+        self.get_logger().debug(f"This is the hatch joint state message: {msg}")
 
-    def position_cb(self, msg: Float64, index):
-        """callback for the position setting
-
-        Args:
-            msg (Float64): This message transmits the joint position (in radians or meters)
-            index (int): the index that we are accessing (to ineracte with self.mockup_configs
+    def set_joint_state_cb(self, req: SetJointState.Request, res: SetJointState.Response):
         """
-        self.get_logger().debug(
-            f"This is the new position of {self.prefix + self.mockup_configs[index].joint_name}: {msg}"
-        )
-        if self.mockup_configs[index].min_position <= msg.data and msg.data <= self.mockup_configs[index].max_position:
-            with self.lock:
-                self.mockup_configs[index].position = msg.data
-        elif self.mockup_configs[index].min_position >= msg.data:
-            with self.lock:
-                self.mockup_configs[index].position = copy.deepcopy(self.mockup_configs[index].min_position)
-        elif self.mockup_configs[index].max_position <= msg.data:
-            with self.lock:
-                self.mockup_configs[index].position = copy.deepcopy(self.mockup_configs[index].max_position)
-        else:  # I don't think this will ever happen 0.o
-            raise Exception(self.mockup_configs[index].joint_name + " joint angle out of range")
+        Callback for the setting internal joint states which will then be published.
+        """
+
+        # Check first to make sure that data is the right size.
+        # Any non-empty lists must be of the same size of names
+        error_msg = ""
+        msg_size = len(req.joint_state.name)
+        valid = True
+
+        for field in ("position", "velocity", "effort"):
+            values = getattr(req.joint_state, field)
+            if values and (len(values) != msg_size):
+                error_msg += f"The size of `{field}` ({len(values)}) does not match the size of `name` ({msg_size}) in SetJointState\n"
+                valid = False
+
+        # return early if not valid
+        if not valid:
+            res.message = error_msg
+            return res
+
+        for i, name in enumerate(req.joint_state.name):
+            # position is special because we have to clamp it, so it uses a member function
+            if req.joint_state.position:
+                self.mockup_configs[name].set_position(req.joint_state.position[i])
+            if req.joint_state.velocity:
+                self.mockup_configs[name].velocity(req.joint_state.velocity[i])
+            if req.joint_state.effort:
+                self.mockup_configs[name].effort(req.joint_state.effort[i])
 
 
 def main(args=None):
@@ -120,13 +133,13 @@ def main(args=None):
 
     mockup_state_manager = MockupStateManager()
 
-    rclpy.spin(mockup_state_manager)
-
-    # Destroy the node explicitly
-    # (optional - otherwise it will be done automatically
-    # when the garbage collector destroys the node object)
-    mockup_state_manager.destroy_node()
-    rclpy.shutdown()
+    try:
+        rclpy.spin(mockup_state_manager)
+    except (KeyboardInterrupt, ExternalShutdownException):
+        pass
+    finally:
+        mockup_state_manager.destroy_node()
+        rclpy.try_shutdown()
 
 
 if __name__ == "__main__":
