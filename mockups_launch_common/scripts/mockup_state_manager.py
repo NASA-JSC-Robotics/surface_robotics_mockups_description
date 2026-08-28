@@ -10,8 +10,7 @@ from mockup_msgs.srv import SetJointState
 
 # Class that stores the information for each mockup config
 class MockupConfig:
-    def __init__(self, topic_name, min_position, max_position, initial_position, joint_name):
-        self.topic_name = topic_name
+    def __init__(self, min_position, max_position, initial_position, joint_name):
         self.joint_name = joint_name
         self.min_position = min_position
         self.max_position = max_position
@@ -41,19 +40,6 @@ class MockupStateManager(Node):
 
         self.set_joint_state_service = self.create_service(SetJointState, "~/set_joint_state", self.set_joint_state_cb)
 
-        subscriptions = []
-        for index, mockup_config in enumerate(self.mockup_configs):
-            # this was a bit funky for copying in index
-            # see https://github.com/ros2/rclpy/issues/629#issuecomment-1542151499 for reference
-            subscriptions.append(
-                self.create_subscription(
-                    Float64,
-                    self.prefix + mockup_config.topic_name,
-                    lambda msg, idx=index: self.position_cb(msg, idx),
-                    10,
-                )
-            )
-
         # create the timer for joint state publisher callback
         timer_period_sec = 0.5  # unit: seconds
         self.timer = self.create_timer(timer_period_sec, self.joint_state_cb)
@@ -62,36 +48,35 @@ class MockupStateManager(Node):
         """loads the parameters provided with each of the relevaant joints and populates self.mockup_configs"""
         # get the list of topic names first
 
-        topic_params = self.get_parameters_by_prefix("topics")
+        joints_params = self.get_parameters_by_prefix("joints")
 
-        topic_names = {key.split(".")[0] for key in topic_params.keys()}
+        joints = {key.split(".")[0] for key in joints_params.keys()}
 
         # puopulate self.mockup_configs based on loaded parameters
         self.mockup_configs = dict()
-        for topic in topic_names:
-            self.get_logger().info(f"Loading: {self.prefix + topic}")
+        for joint in joints:
+            self.get_logger().info(f"Loading: {self.prefix + joint}")
 
-            joint_name = topic_params[f"{topic}.joint_name"].value
-            min_position = topic_params[f"{topic}.min_position"].value
-            max_position = topic_params[f"{topic}.max_position"].value
-            initial_position = topic_params[f"{topic}.initial_position"].value
+            joint_name = joint
+            min_position = joints_params[f"{joint}.min_position"].value
+            max_position = joints_params[f"{joint}.max_position"].value
+            initial_position = joints_params[f"{joint}.initial_position"].value
 
             # add mockups to the member variable
-            self.mockup_configs["joint_name"] = MockupConfig(
-                topic, min_position, max_position, initial_position, joint_name
-            )
+            self.mockup_configs[joint_name] = MockupConfig(min_position, max_position, initial_position, joint_name)
 
     def joint_state_cb(self):
         """Publisher for the manager which publishes the joint state info."""
         msg = JointState()
         msg.header.stamp = self.get_clock().now().to_msg()
-        # with mutex locking, add all of the joint states
-        for mockup_config in self.mockup_configs:
+        # add all of the joint states
+        for mockup_config in self.mockup_configs.values():
             msg.name.append(self.prefix + mockup_config.joint_name)
             msg.position.append(mockup_config.position)
             msg.velocity.append(mockup_config.position)
             msg.effort.append(mockup_config.effort)
 
+        self.get_logger().info(f"publishing: {msg}")
         self.publisher_.publish(msg)
 
         self.get_logger().debug(f"This is the hatch joint state message: {msg}")
@@ -110,12 +95,13 @@ class MockupStateManager(Node):
         for field in ("position", "velocity", "effort"):
             values = getattr(req.joint_state, field)
             if values and (len(values) != msg_size):
-                error_msg += f"The size of `{field}` ({len(values)}) does not match the size of `name` ({msg_size}) in SetJointState\n"
+                error_msg += f"The size of `{field}` ({len(values)}) does not match the size of `name` ({msg_size}) in SetJointState. "
                 valid = False
 
         # return early if not valid
         if not valid:
             res.message = error_msg
+            res.success = False
             return res
 
         for i, name in enumerate(req.joint_state.name):
@@ -126,6 +112,9 @@ class MockupStateManager(Node):
                 self.mockup_configs[name].velocity(req.joint_state.velocity[i])
             if req.joint_state.effort:
                 self.mockup_configs[name].effort(req.joint_state.effort[i])
+
+        res.success = True
+        return res
 
 
 def main(args=None):
