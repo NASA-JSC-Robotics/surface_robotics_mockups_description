@@ -104,13 +104,14 @@ class MockupStateManager(Node):
             return res
 
         for i, name in enumerate(req.joint_state.name):
+            mockup_config = self.mockup_configs[name]
             # position is special because we have to clamp it, so it uses a member function
             if req.joint_state.position:
-                self.mockup_configs[name].set_position(req.joint_state.position[i])
+                mockup_config.set_position(req.joint_state.position[i])
             if req.joint_state.velocity:
-                self.mockup_configs[name].velocity(req.joint_state.velocity[i])
+                mockup_config.velocity = req.joint_state.velocity[i]
             if req.joint_state.effort:
-                self.mockup_configs[name].effort(req.joint_state.effort[i])
+                mockup_config.effort = req.joint_state.effort[i]
 
         res.success = True
         return res
