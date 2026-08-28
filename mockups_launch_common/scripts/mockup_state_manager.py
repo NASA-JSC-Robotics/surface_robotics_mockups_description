@@ -76,10 +76,7 @@ class MockupStateManager(Node):
             msg.velocity.append(mockup_config.position)
             msg.effort.append(mockup_config.effort)
 
-        self.get_logger().info(f"publishing: {msg}")
         self.publisher_.publish(msg)
-
-        self.get_logger().debug(f"This is the hatch joint state message: {msg}")
 
     def set_joint_state_cb(self, req: SetJointState.Request, res: SetJointState.Response):
         """
