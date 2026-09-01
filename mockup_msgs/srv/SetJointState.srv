@@ -1,0 +1,7 @@
+# This service takes in a joint state, and uses that to update an internal representation of joint state,
+# returning success if the set was successful, and optionally returning a message
+
+sensor_msgs/JointState joint_state
+---
+bool success
+string message
