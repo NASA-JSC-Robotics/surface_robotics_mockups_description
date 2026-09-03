@@ -72,7 +72,7 @@ class MockupStateManager(Node):
         for mockup_config in self.mockup_configs.values():
             msg.name.append(self.prefix + mockup_config.joint_name)
             msg.position.append(mockup_config.position)
-            msg.velocity.append(mockup_config.position)
+            msg.velocity.append(mockup_config.velocity)
             msg.effort.append(mockup_config.effort)
 
         self.publisher_.publish(msg)
