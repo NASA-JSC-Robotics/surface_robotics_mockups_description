@@ -55,7 +55,70 @@
 
   </xacro:macro>
 
-  <xacro:macro name="grab_handle_mj_processed_inputs">
-    <decompose_mesh mesh_name="grab_handle"/>
+  <xacro:macro name="grab_handle_mj_processed_inputs" params="
+    prefix:=''
+    ">
+    <replace_collision link="${prefix}grab_handle" stage="urdf">
+      <collision>
+        <geometry>
+          <mesh filename="package://hatch_accessories/meshes/collision/grab_handle/grab_handle_decomp_0.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://hatch_accessories/meshes/collision/grab_handle/grab_handle_decomp_1.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://hatch_accessories/meshes/collision/grab_handle/grab_handle_decomp_2.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://hatch_accessories/meshes/collision/grab_handle/grab_handle_decomp_3.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://hatch_accessories/meshes/collision/grab_handle/grab_handle_decomp_4.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://hatch_accessories/meshes/collision/grab_handle/grab_handle_decomp_5.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://hatch_accessories/meshes/collision/grab_handle/grab_handle_decomp_6.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://hatch_accessories/meshes/collision/grab_handle/grab_handle_decomp_7.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://hatch_accessories/meshes/collision/grab_handle/grab_handle_decomp_8.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://hatch_accessories/meshes/collision/grab_handle/grab_handle_decomp_9.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://hatch_accessories/meshes/collision/grab_handle/grab_handle_decomp_10.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://hatch_accessories/meshes/collision/grab_handle/grab_handle_decomp_11.stl"/>
+        </geometry>
+      </collision>
+    </replace_collision>
   </xacro:macro>
 </robot>
