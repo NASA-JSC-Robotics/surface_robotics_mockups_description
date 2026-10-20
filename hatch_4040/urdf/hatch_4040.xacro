@@ -107,9 +107,13 @@
 
   </xacro:macro>
 
-  <xacro:macro name="hatch_4040_mj_processed_inputs">
+  <xacro:macro name="hatch_4040_mj_processed_inputs" params="
+    prefix:=''
+    ">
     <xacro:include filename="$(find hatch_accessories)/urdf/grab_handle.xacro"/>
-    <xacro:grab_handle_mj_processed_inputs/>
+    <xacro:grab_handle_mj_processed_inputs prefix="${prefix}external_"/>
+    <xacro:grab_handle_mj_processed_inputs prefix="${prefix}external_hinge_"/>
+    <xacro:grab_handle_mj_processed_inputs prefix="${prefix}internal_"/>
     <decompose_mesh mesh_name="hatch_4040_frame" threshold="0.01"/>
     <decompose_mesh mesh_name="hatch_4040_face" threshold="0.01"/>
   </xacro:macro>
