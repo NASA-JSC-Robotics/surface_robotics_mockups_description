@@ -55,6 +55,15 @@
 
   </xacro:macro>
 
+  <!-- Grab handles are thin, convex-decomposed meshes that can "catch" on a gripper's own convex-decomposed
+       fingertip meshes, needing a surprisingly long time/force to separate from an open grasp.
+       priority="1" makes this friction value win over whatever other contacting geoms specify. -->
+  <xacro:property name="grab_handle_contact_friction" value="0.3 0.005 0.0001"/>
+  <xacro:macro name="_grab_handle_decomp_friction" params="index">
+    <modify_element type="geom" mesh="grab_handle_decomp_${index}" class="collision"
+      friction="${grab_handle_contact_friction}" priority="1"/>
+  </xacro:macro>
+
   <xacro:macro name="grab_handle_mj_processed_inputs" params="
     prefix:=''
     ">
@@ -120,5 +129,18 @@
         </geometry>
       </collision>
     </replace_collision>
+
+    <xacro:_grab_handle_decomp_friction index="0"/>
+    <xacro:_grab_handle_decomp_friction index="1"/>
+    <xacro:_grab_handle_decomp_friction index="2"/>
+    <xacro:_grab_handle_decomp_friction index="3"/>
+    <xacro:_grab_handle_decomp_friction index="4"/>
+    <xacro:_grab_handle_decomp_friction index="5"/>
+    <xacro:_grab_handle_decomp_friction index="6"/>
+    <xacro:_grab_handle_decomp_friction index="7"/>
+    <xacro:_grab_handle_decomp_friction index="8"/>
+    <xacro:_grab_handle_decomp_friction index="9"/>
+    <xacro:_grab_handle_decomp_friction index="10"/>
+    <xacro:_grab_handle_decomp_friction index="11"/>
   </xacro:macro>
 </robot>
